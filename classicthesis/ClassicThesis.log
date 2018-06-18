@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.6.7)  15 JUN 2018 19:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.6.7)  18 JUN 2018 13:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2376,17 +2376,11 @@ n/10.95 , \OML/zplm/m/it/10.95 x[]\OT1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 x[
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 47--48
+Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
  []
 
-<img/SAT1.jpg, id=160, 1284.8pt x 722.7pt>
-File: img/SAT1.jpg Graphic file (type jpg)
- <use img/SAT1.jpg>
-Package pdftex.def Info: img/SAT1.jpg used on input line 55.
-(pdftex.def)             Requested size: 256.95544pt x 144.53743pt.
-)
-(./chapters/BelProp.tex [4 <./img/SAT1.jpg>])) [5]
+) (./chapters/BelProp.tex [4])) [5]
 \openout2 = `chapters/BPFS.aux'.
 
  (./chapters/BPFS.tex
@@ -2676,7 +2670,6 @@ FrontBackmatter/Contents.tex
 chapters/Einleitung.tex
 chapters/Begriffe.tex
 chapters/FG.tex
-img/SAT1.jpg
 chapters/BelProp.tex
 chapters/BPFS.tex
 chapters/WP.tex
@@ -2702,10 +2695,10 @@ Package logreq Info: Writing requests to 'ClassicThesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43085 strings out of 492995
- 821118 string characters out of 6136403
+ 43115 strings out of 492995
+ 821581 string characters out of 6136403
  1225942 words of memory out of 5000000
- 45803 multiletter control sequences out of 15000+600000
+ 45836 multiletter control sequences out of 15000+600000
  81743 words of font info for 124 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  69i,22n,90p,10518b,2236s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2724,10 +2717,10 @@ c/bera/fvmr8a.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/urw/pal
 atino/uplb8a.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/urw/pala
 tino/uplr8a.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/urw/palat
 ino/uplri8a.pfb>
-Output written on ClassicThesis.pdf (23 pages, 199646 bytes).
+Output written on ClassicThesis.pdf (23 pages, 146532 bytes).
 PDF statistics:
  289 PDF objects out of 1000 (max. 8388607)
- 247 compressed objects within 3 object streams
- 56 named destinations out of 1000 (max. 500000)
- 17074 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 248 compressed objects within 3 object streams
+ 57 named destinations out of 1000 (max. 500000)
+ 17069 words of extra memory for PDF output out of 17280 (max. 10000000)
 

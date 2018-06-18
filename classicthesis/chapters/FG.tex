@@ -36,6 +36,9 @@ $$f(x_1, x_2, x_3) = \underbrace{P(X_1 = x_1)}_{f_1(x_1)} * \underbrace{P(X_2 = 
 \end{tikzpicture}
 \caption{Factor graph of $f$s factorization into $f_1, f_2, f_3$}
 \end{figure}
+
+the variable nodes are drawn here as circles whereas constraint nodes are drawn as rectangles to easily distinguish the types of nodes
+
 \end{example}
 % zu allgemein?
 %
@@ -48,14 +51,46 @@ Factor graphs can also be used for describing constraint satisfaction problems. 
 
 
 \subsection{Factor graph of a SAT Problem}
-\begin{itemize}
-\item definition: sat
-\item notation from source
-\end{itemize}
-\includegraphics[scale = 0.2]{img/SAT1}
+In the case of SAT problems $x_1 \ldots x_n$ are boolean values that can be either $0$ or $1$. The constraints are called \textit{clauses} and are. 
 
 
-In this example and in all following ones variable nodes are drawn as circles whereas constraint nodes are drawn as rectangles to easily distinguish the types of nodes. In the case of SAT an edge ($x_i, C_J$) is drawn dotted, if the variable appears in the clause $C_j$ as $\overline{x_i}$, and continious if not.
+\begin{example}
+$$F = \underbrace{(x_1 \lor x_2 \lor x_3)}_{a} \land \underbrace{(\overline{x_1} \lor x_3 \lor x_4) }_{b}\land \underbrace{\overline{x_3} \lor x_4)}_{c} \land \underbrace{(\overline{x_1} \lor \overline{x_2})}_{d}$$
+\begin{figure}[h]
+\centering
 
+\begin{tikzpicture}[scale=1.0,transform shape]
+   	\node[shape=circle,draw=black] (x1) at (3,0) {$x_1$};
+    \node[shape=circle,draw=black] (x2) at (1,-2) {$x_2$};
+    \node[shape=circle,draw=black] (x3) at (-1,-2) {$x_3$};
+    \node[shape=circle,draw=black] (x4) at (1,-4) {$x_4$};
+    
+    \node[rectangle,draw=black, label = {$a$}, fill] (a) at (0,0) {};
+     \node[rectangle,draw=black, label = {$d$}, fill] (d) at (2,-1) {};
+     \node[rectangle,draw=black, label = {$b$}, fill] (b) at (4,-2) {};
+     \node[rectangle,draw=black, label = {$b$}, fill] (c) at (0,-3) {};
+     
+ 
+    \path [-] (x1) edge node[left] {} (a);
+    \path [-] (x2) edge node[left] {} (a);
+    \path [-] (x3) edge node[left] {} (a);
+    
+    \path [dotted] (x1) edge node[left] {} (d);
+    \path [dotted] (x2) edge node[left] {} (d);
+    
+    \path [-] (x2) edge node[left] {} (b);
+    \path [dotted] (x1) edge node[left] {} (b);
+    \path [-] (x4) edge node[left] {} (b);
+    
+    \path [-] (x4) edge node[left] {} (c);
+    \path [dotted] (x3) edge node[left] {} (c);
+    
 
+  
+\end{tikzpicture}
+\caption{Factor graph of a SAT formula}
+\end{figure}
 
+Again the circles are variable nodes, the rectangles are constraint nodes. If if $x_i$ appears negated in the clause $a$ (if $J_a^i = 1$), the edge is drawn dotted.  
+
+\end{example}
