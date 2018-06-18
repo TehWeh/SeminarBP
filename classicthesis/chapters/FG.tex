@@ -1,0 +1,61 @@
+\section{Factor Graphs}
+
+For problems that include many variables influencing each other it is usefull to have an abstract representation of how those	 variables are related to each other. So called factor graphs are such representations.\newline
+
+In general, factor graphs represent the structure of a function's factorization into smaller functions. \newline If a function $f(X_1, \ldots, X_n)$ can be written as a product $\prod_{j=1}^{m}{f_j(S_j)}$  where the functions $f_j$ have smaller inputs $S_j \subset X$, its factorization 
+can be expressed by a factor graph: The graph has two types of nodes: 
+\emph{variable nodes} that correspond to the variables $X_i$ and \emph{factor nodes} corresponding to the functions $f_j$. An edge connects a variable node $X_i$ to a factor node $f_j$ if $X_i$ is part of $f_j$'s input. 
+This means the factor graph is an undirected bipartite graph with the node set $ V = \{X_1, \ldots, X_n\} \cup \{f_1, \ldots, f_n\}$ and edge set $E = \{(X_i, f_j) \; | \; X_i \in S_j\}$. 
+
+In many applications the global function $f$ is a joined propability distribution that can be factorized by using information about independece between the variables. Typical tasks on factor graphs are computing variable assignments that maximize or minimize $f$ or computing marginal distributions if $f$ is a propability distribution. Both of these will be done in Section \ref{BPFS}\newline
+
+\begin{example}
+For random Variables $X_1, X_2 \text{ and } X_3$ their joined propability distribution $f$ is defined as $f(x_1, x_2, x_3) := P(X_1 = x_1 \land X_2  = x_2 \land X_3 = x_3)$. If $X_2 and X_3$ are conditionally independant given $X_1$ this function can be factorized as follows. $f$ can factorized using conditional probabilies: $$f(x_1, x_2, x_3) = P(X_1 = x_1) * P(X_2 = x_2 \land X_3 = X_3 \; | \; X_1 = x_1)$$
+This factorization still contains a factor depending on all variables. If $X_2$ and $X_3$ are known to be conditionally independant given $X_1$ this factor can again be factorized:
+
+$$f(x_1, x_2, x_3) = \underbrace{P(X_1 = x_1)}_{f_1(x_1)} * \underbrace{P(X_2 = x_2 \; | \; X_1 = x_1)}_{f_2(x_1, x_2)} * \underbrace{P(X_3 = x_3 \; | \; X_1 = x_1)}_{f_3(x_1, x_3)}$$
+
+%\includegraphics[scale = 0.3]{img/Proba1}
+\begin{figure}
+\centering
+
+\begin{tikzpicture}[scale=1.0,transform shape]
+   	\node[shape=circle,draw=black] (x1) at (0,0) {$x_1$};
+    \node[shape=circle,draw=black] (x2) at (-2,-2) {$x_2$};
+    \node[shape=circle,draw=black] (x3) at (2,-2) {$x_3$};
+    \node[rectangle,draw=black, label = {$f_1$}, fill] (f1) at (0,2) {};
+    \node[rectangle, fill, draw=black, label = {$f_2$}] (f2) at (-1,-1) {};
+    \node[rectangle, fill, draw=black, label = {$f_3$}] (f3) at (1, -1) {} ;
+
+    \path [-] (x1) edge node[left] {} (f1);
+    \path [-] (x1) edge node[left] {} (f2);
+    \path [-] (x1) edge node[left] {} (f3);
+    \path [-] (f2) edge node[left] {} (x2);
+    \path [-] (f3) edge node[left] {} (x3);
+   
+\end{tikzpicture}
+\caption{Factor graph of $f$s factorization into $f_1, f_2, f_3$}
+\end{figure}
+\end{example}
+% zu allgemein?
+%
+%A Constraint Satisfaction Problem (\textit{CSP}) consists of a set of variables $X = \{x_1, \ldots, x_n\}$, a set of domains $D = \{D_1, \ldots, D_n\}$ that specify which values each variable may take and a set of constraints $C = \{C_1, \ldots, C_m\}$ that must hold for the chosen values $x_i \in D_i$. \newline
+%SAT can be written as CSP where each clause $C_j = {x_i, \ldots, x_k}$
+
+%\newtheorem*{definition}{Definition}
+\newpage
+Factor graphs can also be used for describing constraint satisfaction problems. A factor $j$ corresponds to a constraint on its neighbour vertices, it evaluates to $1$ if the constraint is satisfied and to $0$ if not. For the global function $f$ - the product of all factors - to be $1$, every constraint has to be is satisfied.  \newline
+
+
+\subsection{Factor graph of a SAT Problem}
+\begin{itemize}
+\item definition: sat
+\item notation from source
+\end{itemize}
+\includegraphics[scale = 0.2]{img/SAT1}
+
+
+In this example and in all following ones variable nodes are drawn as circles whereas constraint nodes are drawn as rectangles to easily distinguish the types of nodes. In the case of SAT an edge ($x_i, C_J$) is drawn dotted, if the variable appears in the clause $C_j$ as $\overline{x_i}$, and continious if not.
+
+
+

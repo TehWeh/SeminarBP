@@ -1,0 +1,71 @@
+\section{Warning Propagation}
+
+The messages used in the Warning Propagation Algorithm (WP) presented in [\cite{dummyzitat}] are called \emph{warnings}. A warning $u_{a\rightarrow i} \in \{0, 1\}$ is passed from clause $a$ to variable $i$. A converged warning  $u^{\star}_{a\rightarrow i}$ with value $1$ should indicate, that  to satisfy the clause $a$, the variable $i$ has to take the value $1$ if $j \in V_+(a)$ or $0$ if $j \in V_-(a)$. The warning $u^{\star}_{a \rightarrow i}$ will \emph{fix} the variable $i$. 
+\subsection{Propagation Algorithm}
+
+Like the general algorithm described in section \ref{BPA} warning propagation is correct on trees and can be used as a heuristic for cyclic graphs by randomly initializing the warnings and hoping for convergence.
+
+The algorithm starts by assigning each warning $u_{a\rightarrow i}$ a random starting value and updates these provisional warnings until their values have converged to a set of fixed point warnings $u^{\star}_{a \rightarrow i}$ or until the number of iterations has exceeded some limit $t_{max}$.
+
+The general idea is that the clause $a$ has to fix the variable $i$ only if the all of its other variables $j \in V(a)\setminus i$ are already fixed to values that do not satisfy the clause $a$. \newline
+The first step in the update procedure is to compute for each $j \in V(a) \setminus i$ the so called \emph{cavity field} $h_{j \rightarrow a}$ that indicates what value $j$ should take in the subproblem defined by $\tau_{j \rightarrow a}$. To compute $h_{j \rightarrow a}$ one has to count how many of the clauses $b \neq a$ fix $j$ to $1$ and how many fix $j$ to $0$:
+$$h_{j \rightarrow a} = \sum_{b \in V_+(j)\setminus a}{u_{b \rightarrow j}} - \sum_{b \in V_-(j)\setminus a}{u_{b \rightarrow j}}$$
+
+The clauses $b \in V_+(j)$ are the ones that would fix $i$ to $1$ if their warnings are active, the clauses $b \in V_-(j)$ would fix $i$ to $0$.
+So if $h_{j \rightarrow a}$ is positive, the variable $i$ tends to the value $1$, if the cavity field is negative it tends to $0$. If $h_{j \rightarrow a} = 0$ which includes the case $V(j) \setminus a = \emptyset$ no conclusion can be made.
+
+When all cavity fields are computed, each variable $j$ with $h_{j \rightarrow a} \neq 0$ has a preferred value. This preferred value either makes the clause $a$ satisfied or does not contribute to the clause. If all variables $j \in V(a)\setminus i$ prefer a non satisfying value, the clause $a$ sends a warning to $i$, meaning that $i$ should take the satisfying value.
+
+This warning can be computed by $$u_{a \rightarrow i} = \prod_{j\in V(a)\setminus i}{\theta(h_{j \rightarrow a}J_j^a)} \quad \text{ with } \theta(x) = \left\{
+  \begin{array}{@{}ll@{}}
+    0, & \text{if}\ x \leq 0 \\
+    1, & \text{otherwise}
+  \end{array}\right\}$$
+
+The factor $\theta(h_{j \rightarrow a}J_j^a)$ is $1$ if $j$ prefers to violate $a$ and $0$ if not:
+\begin{itemize}
+\item[] If $j$ has no prefered value its cavity field is $0$ and $\theta(h_{j \rightarrow a}J_j^a) = 0$
+\item[] If the preferred value of $j$ satisfies $a$, $J_j^a$ and $h_{j \rightarrow a}$ have different signs and $\theta(h_{j \rightarrow a}J_j^a) = 0$
+\item[] If the preferred value of $j$ \emph{violates} $a$, $J_j^a$ and $h_{j \rightarrow a}$ have the same sign and $\theta(h_{j \rightarrow a}J_j^a) = 1$
+\end{itemize}
+
+
+\begin{lstlisting}[mathescape=true]
+	Warning Propagation Algorithm
+	
+	0. Randomly initialize all warnings $u_{a \rightarrow i} \in_R \{0, 1\}$
+	
+	1. For $t=0$ to $t = t_{max}$
+		1.1 Compute in random order for all edges (a, i) $u_{a \rightarrow i} := \prod_{j \in V(a) \setminus i} {\theta \left( -J_j^a \left( \sum_{b\in V(j) \setminus a}{J_j^b u_{b \rightarrow j}} \right) \right)}$
+		1.2 If no message has changed goto 2.
+	2. If $t = t_{max}$ return UN-CONVERGED, else return the generated warnings $u_{a \rightarrow i}^{\star}$
+\end{lstlisting}
+
+If the algorithm successfully returns a set of converged warnings, each warning $u^{\star}_{a \rightarrow i} = 1$ fixes the variable $i$ to the value satisfying a:
+
+
+
+\subsection{Decimation Algorithm}
+
+\begin{itemize}
+\item Contradiction Numbers
+\item Lemma: $u^{\star}_{a \rightarrow i} = 1 \Rightarrow \text{ i has a fixed value}$
+\item Decimation Algorithm
+\item Example on graph from last chapter
+	  (Je nachdem wie viel Platz in Tabellenform oder grafisch)
+
+\end{itemize} 
+\newtheorem*{lemma}{Lemma}
+%\begin{lemma}
+%If $u^{\star}_{a \rightarrow i} = 1$ the subproblem $a$ can not be satisfied if $i$ is removed from the set of its variables
+
+%\begin{proof} 
+%\begin{itemize}
+%\item[] If the edge $(a, i)$ has level $1$, the clause $a$ only contains the variable $i$. Without $i$, it is an empty disjunction and evaluates to $0$
+%\item[] If the edge $(a, i)$ has level $2$ the remaining variables $j \in V(a) \setminus i \neq \emptyset$ only appear in $a$. Their cavity fields must be $0$ so in any step of the algorithm $u^{\star}_{a \rightarrow i}$ is set to $0$.
+%\item[] If the edge's level is r > 2 and $u^{\star}_{a \rightarrow i} = 1$ each $j\in V(a) \setminus i$ receives at least one warning from 
+%\end{itemize}
+%\end{proof}
+%\end{lemma}
+
+\newpage

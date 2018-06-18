@@ -1,0 +1,21 @@
+\section{Message Passing Algorithms on Trees}
+
+If the factor graph is a tree, many problems can be solved efficiently using a form of dynamic programming called \emph{message passing}. \newline 
+In general, message passing algorithms compute values for each edge of the factor graph. These values can be interpreted as \emph{messages} that are sent between the nodes. Since all edges connect factor nodes to variable nodes there can be two types of messages: messages passed from a variable $i$ to a factor $a$, denoted as $m_{i \rightarrow a}$ and messages passed from $a$ to $i$, denoted as $m_{a \rightarrow i}$. \newline
+The messages must be defined so that a message $m_{a \rightarrow i}$ is determined by the messages $m_{j \rightarrow a}$ that $a$ received from neighbour variables $j \neq i$. 
+The same must hold for $m_{i \rightarrow a}$. \newline
+Usually the massages $m_{i \rightarrow a}$ are obtained by summing over $m_{b \rightarrow i}$ and $m_{a \rightarrow i}$ by multiplying the messages $m_{j \rightarrow a}$. \newline
+For tree factor graphs which do not contain cycles the value of $m_{j \rightarrow a}$ does not influence its predecessors $m_{b \rightarrow j}$. The messages can be computed sequentially starting with the factor graphs's leaves.
+
+
+
+
+\section{Message Passing on general graphs}
+
+\begin{itemize}
+	\item "Loopy" belief propagation
+	\item Convergence for trees
+	\item Heuristic for general graphs
+	\item Examples only in next chapter
+		  
+\end{itemize}
