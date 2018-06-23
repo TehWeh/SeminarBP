@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.6.7)  18 JUN 2018 13:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.6.7)  18 JUN 2018 20:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2380,6 +2380,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
  []
 
+
+LaTeX Warning: Citation 'Zitat' on page 4 undefined on input line 55.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 ) (./chapters/BelProp.tex [4])) [5]
 \openout2 = `chapters/BPFS.aux'.
 
@@ -2695,10 +2701,10 @@ Package logreq Info: Writing requests to 'ClassicThesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43115 strings out of 492995
- 821581 string characters out of 6136403
- 1225942 words of memory out of 5000000
- 45836 multiletter control sequences out of 15000+600000
+ 43113 strings out of 492995
+ 821505 string characters out of 6136403
+ 1225954 words of memory out of 5000000
+ 45834 multiletter control sequences out of 15000+600000
  81743 words of font info for 124 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  69i,22n,90p,10518b,2236s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2717,7 +2723,7 @@ c/bera/fvmr8a.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/urw/pal
 atino/uplb8a.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/urw/pala
 tino/uplr8a.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/urw/palat
 ino/uplri8a.pfb>
-Output written on ClassicThesis.pdf (23 pages, 146532 bytes).
+Output written on ClassicThesis.pdf (23 pages, 147635 bytes).
 PDF statistics:
  289 PDF objects out of 1000 (max. 8388607)
  248 compressed objects within 3 object streams

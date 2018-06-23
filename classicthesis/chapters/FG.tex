@@ -10,7 +10,7 @@ This means the factor graph is an undirected bipartite graph with the node set $
 In many applications the global function $f$ is a joined propability distribution that can be factorized by using information about independece between the variables. Typical tasks on factor graphs are computing variable assignments that maximize or minimize $f$ or computing marginal distributions if $f$ is a propability distribution. Both of these will be done in Section \ref{BPFS}\newline
 
 \begin{example}
-For random Variables $X_1, X_2 \text{ and } X_3$ their joined propability distribution $f$ is defined as $f(x_1, x_2, x_3) := P(X_1 = x_1 \land X_2  = x_2 \land X_3 = x_3)$. If $X_2 and X_3$ are conditionally independant given $X_1$ this function can be factorized as follows. $f$ can factorized using conditional probabilies: $$f(x_1, x_2, x_3) = P(X_1 = x_1) * P(X_2 = x_2 \land X_3 = X_3 \; | \; X_1 = x_1)$$
+For random variables $X_1, X_2 \text{ and } X_3$ their joined propability distribution $f$ is defined as $f(x_1, x_2, x_3) := P(X_1 = x_1 \land X_2  = x_2 \land X_3 = x_3)$. If $X_2$ and $X_3$ are conditionally independant given $X_1$ this function can be factorized: $$f(x_1, x_2, x_3) = P(X_1 = x_1) * P(X_2 = x_2 \land X_3 = X_3 \; | \; X_1 = x_1)$$
 This factorization still contains a factor depending on all variables. If $X_2$ and $X_3$ are known to be conditionally independant given $X_1$ this factor can again be factorized:
 
 $$f(x_1, x_2, x_3) = \underbrace{P(X_1 = x_1)}_{f_1(x_1)} * \underbrace{P(X_2 = x_2 \; | \; X_1 = x_1)}_{f_2(x_1, x_2)} * \underbrace{P(X_3 = x_3 \; | \; X_1 = x_1)}_{f_3(x_1, x_3)}$$
@@ -47,15 +47,20 @@ the variable nodes are drawn here as circles whereas constraint nodes are drawn 
 
 %\newtheorem*{definition}{Definition}
 \newpage
-Factor graphs can also be used for describing constraint satisfaction problems. A factor $j$ corresponds to a constraint on its neighbour vertices, it evaluates to $1$ if the constraint is satisfied and to $0$ if not. For the global function $f$ - the product of all factors - to be $1$, every constraint has to be is satisfied.  \newline
+Factor graphs can also be used for describing constraint satisfaction problems. A factor corresponds to a constraint on its neighbour vertices, it evaluates to $1$ if the constraint is satisfied and to $0$ if not. For the global function $f$ - the product of all factors - to be $1$, every constraint has to be is satisfied.  \newline
+
 
 
 \subsection{Factor graph of a SAT Problem}
-In the case of SAT problems $x_1 \ldots x_n$ are boolean values that can be either $0$ or $1$. The constraints are called \textit{clauses} and are. 
+In the case of CNF-SAT $x_1 \ldots x_n$ are boolean variables and the constraints are disjunctions of variables and variables' negations. \newline A clause $a$ may contain a variable $i$ either in negated or in un-negated form. In \cite{Zitat} the value  $J_a^i$ is used to describe the exact relationship between $a$ and $i$: $J_a^i$ is   is $-1$ if $i$ is negated and $1$ if not. 
+The constraints can directly be viewed as functions ...
 
 
 \begin{example}
 $$F = \underbrace{(x_1 \lor x_2 \lor x_3)}_{a} \land \underbrace{(\overline{x_1} \lor x_3 \lor x_4) }_{b}\land \underbrace{\overline{x_3} \lor x_4)}_{c} \land \underbrace{(\overline{x_1} \lor \overline{x_2})}_{d}$$
+
+The defined values of clause $a$ are $V_+(b) = \{x_2, x_4\}, V_-(b) = \{x_1\}$
+
 \begin{figure}[h]
 \centering
 
@@ -75,15 +80,15 @@ $$F = \underbrace{(x_1 \lor x_2 \lor x_3)}_{a} \land \underbrace{(\overline{x_1}
     \path [-] (x2) edge node[left] {} (a);
     \path [-] (x3) edge node[left] {} (a);
     
-    \path [dotted] (x1) edge node[left] {} (d);
-    \path [dotted] (x2) edge node[left] {} (d);
+    \path [dashed] (x1) edge node[left] {} (d);
+    \path [dashed] (x2) edge node[left] {} (d);
     
     \path [-] (x2) edge node[left] {} (b);
-    \path [dotted] (x1) edge node[left] {} (b);
+    \path [dashed] (x1) edge node[left] {} (b);
     \path [-] (x4) edge node[left] {} (b);
     
     \path [-] (x4) edge node[left] {} (c);
-    \path [dotted] (x3) edge node[left] {} (c);
+    \path [dashed] (x3) edge node[left] {} (c);
     
 
   
