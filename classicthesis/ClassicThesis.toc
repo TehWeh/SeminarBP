@@ -1,10 +1,14 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
-\babel@toc {american}{}
+\defcounter {refsection}{0}\relax 
+\select@language {american}
 \defcounter {refsection}{0}\relax 
 \vspace {-\cftbeforepartskip }
-\babel@toc {american}{}
-\babel@toc {ngerman}{}
-\babel@toc {american}{}
+\defcounter {refsection}{0}\relax 
+\select@language {american}
+\defcounter {refsection}{0}\relax 
+\select@language {ngerman}
+\defcounter {refsection}{0}\relax 
+\select@language {american}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}{Einleitung}}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
@@ -14,7 +18,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.1.1}{Factor graph of a SAT Problem}}{4}{subsection.2.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}{Message Passing Algorithms on Trees}}{4}{section.2.2}
+\contentsline {section}{\numberline {2.2}{Message Passing Algorithms on Trees}}{5}{section.2.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.3}{Message Passing on general graphs}}{5}{section.2.3}
 \defcounter {refsection}{0}\relax 
