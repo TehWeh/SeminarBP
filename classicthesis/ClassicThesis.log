@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.6.7)  26 JUN 2018 19:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.6.7)  27 JUN 2018 19:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2391,34 +2391,7 @@ LaTeX Warning: Reference `PBFS' on page 4 undefined on input line 58.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (./chapters/BelProp.tex [4] [5]
-
-! LaTeX Error: Environment lemma undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.17 \begin{lemma}
-                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: \begin{document} ended by \end{lemma}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.19 \end{lemma}
-                
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-)) [6]
+) (./chapters/BelProp.tex [4] [5])) [6]
 \openout2 = `chapters/BPFS.aux'.
 
  (./chapters/BPFS.tex
@@ -2444,7 +2417,7 @@ OT1/pplx/m/n/10.95 0, 1\OMS/zplm/m/n/10.95 g$
 
 ]
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 8.50006pt on input line 33.
+(Font)              scaled to size 8.50006pt on input line 32.
  [8]) (./chapters/BP.tex
 Overfull \hbox (10.05698pt too wide) in paragraph at lines 7--8
 []\T1/pplj/m/n/10.95 In [][]3.2.1[][] Al-go-rith-mus beschreiben. Grund-sät-zli
@@ -2732,10 +2705,10 @@ Package logreq Info: Writing requests to 'ClassicThesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43184 strings out of 492995
- 822512 string characters out of 6136403
- 1225986 words of memory out of 5000000
- 45903 multiletter control sequences out of 15000+600000
+ 43183 strings out of 492995
+ 822495 string characters out of 6136403
+ 1227001 words of memory out of 5000000
+ 45902 multiletter control sequences out of 15000+600000
  82067 words of font info for 125 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  69i,22n,90p,10520b,2236s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2754,7 +2727,7 @@ c/bera/fvmr8a.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/urw/pal
 atino/uplb8a.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/urw/pala
 tino/uplr8a.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/urw/palat
 ino/uplri8a.pfb>
-Output written on ClassicThesis.pdf (23 pages, 153544 bytes).
+Output written on ClassicThesis.pdf (23 pages, 154080 bytes).
 PDF statistics:
  290 PDF objects out of 1000 (max. 8388607)
  249 compressed objects within 3 object streams

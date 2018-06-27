@@ -24,11 +24,10 @@ This warning can be computed by $$u_{a \rightarrow i} = \prod_{j\in V(a)\setminu
 
 The factor $\theta(h_{j \rightarrow a}J_j^a)$ is $1$ if $j$ prefers to violate $a$ and $0$ if not:
 \begin{itemize}
-\item[] If $j$ has no prefered value its cavity field is $0$ and $\theta(h_{j \rightarrow a}J_j^a) = 0$
-\item[] If the preferred value of $j$ satisfies $a$, $J_j^a$ and $h_{j \rightarrow a}$ have different signs and $\theta(h_{j \rightarrow a}J_j^a) = 0$
-\item[] If the preferred value of $j$ \emph{violates} $a$, $J_j^a$ and $h_{j \rightarrow a}$ have the same sign and $\theta(h_{j \rightarrow a}J_j^a) = 1$
+\item[] If $j$ has no prefered value its cavity field is $0$ and $\theta(h_{j \rightarrow a}J_j^a) = 0$ meaning no warning will be sent.
+\item[] If the preferred value of $j$ satisfies $a$, $J_j^a$ and $h_{j \rightarrow a}$ have different signs and  $\theta(h_{j \rightarrow a}J_j^a)$ is again $0$.
+\item[] If the preferred value of $j$ \emph{violates} $a$, $J_j^a$ and $h_{j \rightarrow a}$ have the same sign and $\theta(h_{j \rightarrow a}J_j^a) = 1$. If this is the case for all $j \neq i$ the product evaluates to $1$ and $a$ sends a warning to $i$.
 \end{itemize}
-
 
 \begin{lstlisting}[mathescape=true]
 	Warning Propagation Algorithm
@@ -54,8 +53,8 @@ If the algorithm successfully returns a set of converged warnings, each warning 
 \item Example on graph from last chapter
 	  (Je nachdem wie viel Platz in Tabellenform oder grafisch)
 
+
 \end{itemize} 
-\newtheorem*{lemma}{Lemma}
 %\begin{lemma}
 %If $u^{\star}_{a \rightarrow i} = 1$ the subproblem $a$ can not be satisfied if $i$ is removed from the set of its variables
 

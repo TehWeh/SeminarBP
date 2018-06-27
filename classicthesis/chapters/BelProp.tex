@@ -9,13 +9,14 @@ For tree factor graphs which do not contain cycles the value of $m_{i \rightarro
 
 
 \section{Message Passing on general graphs}
-If a graph contains cycles, the above described messages are in general not well-defined. However, message passing algorithms which are correct for trees can be used as heuristic for general graphs. \newline
-This \emph{loopy} form of message passing consists of two parts. In the initialization  step each message is provisionally assigned a random value. Now that each message is set the sum-product equation can be used not to compute the absolute result but to update the provisional values. The update steps are repeatedly performed for each edge $i \rightarrow a$ in random order. The goal is to reach a point where no message would significantly change when applying the update rule to it. If this is the case, the messages are said to have \emph{converged}. Since there is no guarantee for convergence it is also possible for the update process to never terminate. In this case the computation has to be terminated after a fixed number of steps.
+If a graph contains cycles, the above described messages are in general not well-defined. However, message passing algorithms which are correct for trees can be used as a heuristic for general graphs. \newline
+This \emph{loopy} form of message passing consists of two parts. In the initialization  step each message is provisionally assigned a random value. Now that each message is set the sum-product equation can be used not to compute the absolute result but to update the provisional values. The update steps are repeatedly performed for each edge $i \rightarrow a$ in random order. The goal is to reach a point where no message would significantly change when applying the update rule to it. If this is the case, the messages are said to have \emph{converged}. Since there is no guarantee for convergence it is also possible for the update process to never terminate. In this case the computation has to be terminated after a fixed number of steps. \newline
+In practice the update rule has to be slightly modify when applying message passing on loopy graphs. Since the messages are computed from random starting values they often do not fulfill properties which the original defined messages do.
 
-While it is not assured that ... good on trees.
+On trees this heuristical approach still returns correct results, on general graphs experience shows that convergence happens rather frequently.
 
 \begin{lemma}
-
+Loopy message passing converges on trees.
 \end{lemma}
 
 \begin{itemize}
