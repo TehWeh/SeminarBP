@@ -1,0 +1,78 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/W32TeX)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: ClassicThesis.aux
+The style file: biblatex.bst
+A level-1 auxiliary file: FrontBackmatter/DirtyTitlepage.aux
+A level-1 auxiliary file: FrontBackmatter/Titlepage.aux
+A level-1 auxiliary file: FrontBackmatter/Titleback.aux
+A level-1 auxiliary file: FrontBackmatter/Abstract.aux
+A level-1 auxiliary file: FrontBackmatter/Contents.aux
+A level-1 auxiliary file: chapters/Einleitung.aux
+A level-1 auxiliary file: chapters/Begriffe.aux
+A level-1 auxiliary file: chapters/BPFS.aux
+A level-1 auxiliary file: FrontBackmatter/Bibliography.aux
+A level-1 auxiliary file: FrontBackmatter/Declaration.aux
+A level-1 auxiliary file: FrontBackmatter/Colophon.aux
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: ClassicThesis-blx.bib
+Database file #2: Bibliography.bib
+Warning--I didn't find a database entry for "survprop"
+Warning--I didn't find a database entry for "dummizitat"
+Biblatex version: 3.3
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+You've used 2 entries,
+            6256 wiz_defined-function locations,
+            1195 strings with 9048 characters,
+and the built_in function-call counts, 7339 in all, are:
+= -- 457
+> -- 192
+< -- 32
++ -- 200
+- -- 86
+* -- 527
+:= -- 914
+add.period$ -- 0
+call.type$ -- 2
+change.case$ -- 1
+chr.to.int$ -- 30
+cite$ -- 2
+duplicate$ -- 671
+empty$ -- 630
+format.name$ -- 87
+if$ -- 1520
+int.to.chr$ -- 0
+int.to.str$ -- 2
+missing$ -- 0
+newline$ -- 56
+num.names$ -- 41
+pop$ -- 391
+preamble$ -- 1
+purify$ -- 18
+quote$ -- 0
+skip$ -- 259
+stack$ -- 0
+substring$ -- 779
+swap$ -- 159
+text.length$ -- 47
+text.prefix$ -- 1
+top$ -- 1
+type$ -- 56
+warning$ -- 0
+while$ -- 122
+width$ -- 0
+write$ -- 55
+(There were 2 warnings)

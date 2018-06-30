@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.6.7)  27 JUN 2018 19:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.6.7)  29 JUN 2018 20:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2142,9 +2142,9 @@ Package biblatex Info: Data encoding 'ascii' specified.
 \openout4 = `ClassicThesis-blx.bib'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'ClassicThesis.bbl' not found.
+Package biblatex Info: ... file 'ClassicThesis.bbl' found.
 
-No file ClassicThesis.bbl.
+(./ClassicThesis.bbl)
 Package biblatex Info: Reference section=0 on input line 30.
 Package biblatex Info: Reference segment=0 on input line 30.
 Package caption Info: Begin \AtBeginDocument code.
@@ -2156,6 +2156,7 @@ Package caption Info: End \AtBeginDocument code.
 Package scrhack Info: undefining \float@addtolists on input line 30.
 \AtBeginShipoutBox=\box60
 Package hyperref Info: Link coloring ON on input line 30.
+
 (c:/program_files/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -2391,34 +2392,28 @@ LaTeX Warning: Reference `PBFS' on page 4 undefined on input line 58.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (./chapters/BelProp.tex [4] [5])) [6]
+) (./chapters/BelProp.tex [4] [5]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+)) [6] [7]
 \openout2 = `chapters/BPFS.aux'.
 
  (./chapters/BPFS.tex
 Chapter 3.
-
-LaTeX Warning: Citation 'dummizitat' on page 7 undefined on input line 2.
-
-(./chapters/WP.tex
-
-LaTeX Warning: Citation 'dummyzitat' on page 7 undefined on input line 3.
-
-
-Overfull \hbox (0.88406pt too wide) in paragraph at lines 3--4
-\T1/pplj/m/n/10.95 sented in [[[]]] are called \T1/pplj/m/it/10.95 warn-ings\T1
-/pplj/m/n/10.95 . A warn-ing $\OML/zplm/m/it/10.95 u[] \OMS/zplm/m/n/10.95 2 f\
-OT1/pplx/m/n/10.95 0, 1\OMS/zplm/m/n/10.95 g$
- []
-
-[7
+[8
 
 
 
 
 ]
+
+LaTeX Warning: Citation 'dummizitat' on page 9 undefined on input line 2.
+
+(./chapters/WP.tex [9]
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
 (Font)              scaled to size 8.50006pt on input line 32.
- [8]) (./chapters/BP.tex
+ [10] [11]) (./chapters/BP.tex
 Overfull \hbox (10.05698pt too wide) in paragraph at lines 7--8
 []\T1/pplj/m/n/10.95 In [][]3.2.1[][] Al-go-rith-mus beschreiben. Grund-sät-zli
 che Vorge-hensweise
@@ -2437,49 +2432,56 @@ plm/m/n/10.95 = \OT1/pplx/m/n/10.95 1$ \T1/pplj/m/n/10.95 aus den kon-vergierte
 n Nachrichten
  []
 
-)) [9] [10
+)) [12] [13
 
 
 
-] [11
 
 
-] [12]
+] [14]
 \openout2 = `FrontBackmatter/Bibliography.aux'.
 
  (./FrontBackmatter/Bibliography.tex
+Overfull \hbox (37.76791pt too wide) in paragraph at lines 15--15
+\T1/pplj/m/n/10.95 vey prop-a-ga-tion: an al-go-rithm for sat-is-fi-a-bil-ity.^
+^Q In: \T1/pplj/m/it/10.95 CoRR \T1/pplj/m/n/10.95 cs.CC/0212002
+ []
 
-LaTeX Warning: Empty bibliography on input line 15.
+) [15
 
-)
+
+
+
+
+] [16
+
+
+
+]
 \openout2 = `FrontBackmatter/Declaration.aux'.
 
- (./FrontBackmatter/Declaration.tex) [13
+ (./FrontBackmatter/Declaration.tex) [17
 
 
 
-
-
-
-
-
-
-] [14
+] [18
 
 
 
 ]
 \openout2 = `FrontBackmatter/Colophon.aux'.
 
- (./FrontBackmatter/Colophon.tex) [15
+
+(./FrontBackmatter/Colophon.tex) [19
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 91.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 91.
- (./ClassicThesis.aux (./FrontBackmatter/DirtyTitlepage.aux)
-(./FrontBackmatter/Titlepage.aux) (./FrontBackmatter/Titleback.aux)
-(./FrontBackmatter/Abstract.aux) (./FrontBackmatter/Contents.aux)
-(./chapters/Einleitung.aux) (./chapters/Begriffe.aux) (./chapters/BPFS.aux)
+ (./ClassicThesis.aux
+(./FrontBackmatter/DirtyTitlepage.aux) (./FrontBackmatter/Titlepage.aux)
+(./FrontBackmatter/Titleback.aux) (./FrontBackmatter/Abstract.aux)
+(./FrontBackmatter/Contents.aux) (./chapters/Einleitung.aux)
+(./chapters/Begriffe.aux) (./chapters/BPFS.aux)
 (./FrontBackmatter/Bibliography.aux) (./FrontBackmatter/Declaration.aux)
 (./FrontBackmatter/Colophon.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 91.
@@ -2656,6 +2658,7 @@ american.lbx    2016/12/05 v3.7 biblatex localization (PK/JW/AB)
  ngerman.lbx    2016/12/05 v3.7 biblatex localization (PK/JW/AB)
   ts1cmr.fd    2014/09/29 v2.5h Standard LaTeX font definitions
   t1pplj.fd    2004/09/06 font definitions for T1/pplj.
+ClassicThesis.bbl
  nameref.sty    2016/05/21 v2.44 Cross-referencing by name of section
 gettitlestring.sty    2016/05/16 v1.5 Cleanup title references (HO)
 ClassicThesis.out
@@ -2691,7 +2694,7 @@ FrontBackmatter/Colophon.tex
 
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 91.
 Package rerunfilecheck Info: File `ClassicThesis.out' has not changed.
-(rerunfilecheck)             Checksum: 02E83EFA2098F35ADB59274F6E7618CC;1347.
+(rerunfilecheck)             Checksum: EA0FD3849AD81F00F1F8E927B3998D96;1402.
 
 LaTeX Warning: There were undefined references.
 
@@ -2705,13 +2708,13 @@ Package logreq Info: Writing requests to 'ClassicThesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43183 strings out of 492995
- 822495 string characters out of 6136403
- 1227001 words of memory out of 5000000
- 45902 multiletter control sequences out of 15000+600000
- 82067 words of font info for 125 fonts, out of 8000000 for 9000
+ 43212 strings out of 492995
+ 822963 string characters out of 6136403
+ 1228070 words of memory out of 5000000
+ 45920 multiletter control sequences out of 15000+600000
+ 83352 words of font info for 128 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
- 69i,22n,90p,10520b,2236s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,23n,90p,10520b,2236s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/program_files/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/pro
 gram_files/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c
 :/program_files/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.p
@@ -2727,10 +2730,10 @@ c/bera/fvmr8a.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/urw/pal
 atino/uplb8a.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/urw/pala
 tino/uplr8a.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/urw/palat
 ino/uplri8a.pfb>
-Output written on ClassicThesis.pdf (23 pages, 154080 bytes).
+Output written on ClassicThesis.pdf (27 pages, 160689 bytes).
 PDF statistics:
- 290 PDF objects out of 1000 (max. 8388607)
- 249 compressed objects within 3 object streams
- 58 named destinations out of 1000 (max. 500000)
- 17581 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 318 PDF objects out of 1000 (max. 8388607)
+ 273 compressed objects within 3 object streams
+ 64 named destinations out of 1000 (max. 500000)
+ 17589 words of extra memory for PDF output out of 20736 (max. 10000000)
 

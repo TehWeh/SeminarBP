@@ -1,6 +1,6 @@
 \section{Warning Propagation}
 
-The messages used in the Warning Propagation Algorithm (WP) presented in [\cite{dummyzitat}] are called \emph{warnings}. A warning $u_{a\rightarrow i} \in \{0, 1\}$ is passed from clause $a$ to variable $i$. A converged warning  $u^{\star}_{a\rightarrow i}$ with value $1$ should indicate, that  to satisfy the clause $a$, the variable $i$ has to take the value $1$ if $j \in V_+(a)$ or $0$ if $j \in V_-(a)$. The warning $u^{\star}_{a \rightarrow i}$ will \emph{fix} the variable $i$. 
+The messages used in the Warning Propagation Algorithm (WP) presented in \cite{survprob} are called \emph{warnings}. A warning $u_{a\rightarrow i} \in \{0, 1\}$ is passed from clause $a$ to variable $i$. A converged warning  $u^{\star}_{a\rightarrow i}$ with value $1$ should indicate, that  to satisfy the clause $a$, the variable $i$ has to take the value $1$ if $j \in V_+(a)$ or $0$ if $j \in V_-(a)$. The warning $u^{\star}_{a \rightarrow i}$ will \emph{fix} the variable $i$. 
 \subsection{Propagation Algorithm}
 
 Like the general algorithm described in section \ref{BPA} warning propagation is correct on trees and can be used as a heuristic for cyclic graphs by randomly initializing the warnings and hoping for convergence.
@@ -40,9 +40,21 @@ The factor $\theta(h_{j \rightarrow a}J_j^a)$ is $1$ if $j$ prefers to violate $
 	2. If $t = t_{max}$ return UN-CONVERGED, else return the generated warnings $u_{a \rightarrow i}^{\star}$
 \end{lstlisting}
 
-If the algorithm successfully returns a set of converged warnings, each warning $u^{\star}_{a \rightarrow i} = 1$ fixes the variable $i$ to the value satisfying a:
+The following lemma shows that - on trees - the computed messages indeed serve the purpose described in the first paragraph: If the algorithm successfully returns a set of converged warnings, each warning $u^{\star}_{a \rightarrow i} = 1$ fixes the variable $i$ to the value satisfying a:
 
+\begin{lemma}\cite{survprob} Let $a \rightarrow i$ be an edge on level $r$. \newline
+If $u^{\ast}_{a \rightarrow i} = 1$ the SAT formula defined by $\tau_{a \rightarrow i}$ is not satisfiable.
 
+\begin{proof} Induction on $r$.
+\begin{itemize}
+	\item If $r = 0$, $a$ is a leaf and $\tau_{a \rightarrow i}$ defines a formula that consists of one empty clause.
+	\item If $r = 1$ the message $u^{\ast}_{a \rightarrow i}$ cannot be $1$: $a$ contains one or more variables $j \neq i$ which all are leaf nodes that pass the message $m_{j \rightarrow a} = 0$ to $a$. The update equation yields $m_{a \rightarrow i} = \prod_j \theta(0) = 0$.
+	\item Let $r \geq 2$ and $u^{\ast}_{a \rightarrow i}$. This means that all variables $j \neq i$ of $a$ received a warning $u^\star_{b \rightarrow j} = 1$ with $J_j^b \neq J_j^a$. 
+%By induction $\tau_{b \rightarrow j}$ is unsatisfiable so the only way to satisfy the formula is to set $j$ to the value of $j$ to satisfy $b$ thus not satisfying $a$.
+\end{itemize}
+\end{proof}
+
+\end{lemma}
 
 \subsection{Decimation Algorithm}
 

@@ -4,50 +4,57 @@ If the factor graph is a tree, many problems can be solved efficiently using a f
 In general, message passing algorithms compute values for each edge of the factor graph. These values can be interpreted as \emph{messages} that are sent between the nodes. Since all edges connect factor nodes to variable nodes there can be two types of messages: messages passed from a variable $i$ to a factor $a$, denoted as $m_{i \rightarrow a}$ and messages passed from $a$ to $i$, denoted as $m_{a \rightarrow i}$. \newline
 The messages must be defined so that a message $m_{a \rightarrow i}$ is determined by the messages $m_{j \rightarrow a}$ that $a$ received from neighbour variables $j \neq i$. 
 The same must hold for $m_{i \rightarrow a}$. \newline
-Usually the massages $m_{i \rightarrow a}$ are obtained by summing over $m_{b \rightarrow i}$ and $m_{a \rightarrow i}$ by multiplying the messages $m_{j \rightarrow a}$. The fundamental equation usually has the form $m_{i \rightarrow a} = \sum_{j \in V(a) \setminus i} \prod_{b \in V(j) \setminus a} m_{j \rightarrow b}$. Therefore these types of algorithms are called \emph{sum-product}-algorithms. \newline
+Usually the massages $m_{i \rightarrow a}$ are obtained by summing over $m_{b \rightarrow i}$ and $m_{a \rightarrow i}$ by multiplying the messages $m_{j \rightarrow a}$. The fundamental equation form $$m_{a \rightarrow i} = \prod_{j \in V(a) \setminus i} \underbrace{\sum_{b \in V(j) \setminus a} m_{b \rightarrow j}}_{m_{j \rightarrow a}}$$ Therefore these types of algorithms are called \emph{sum-product}-algorithms. The messages sent from factors to variables only appear as intermediate results in the computation of messages sent from variables to factors. \newline
 For tree factor graphs which do not contain cycles the value of $m_{i \rightarrow a}$ does not influence its predecessors $m_{b \rightarrow i}$. The messages can be computed sequentially starting with the factor graphs's leaves.
 
 
 \section{Message Passing on general graphs}
 If a graph contains cycles, the above described messages are in general not well-defined. However, message passing algorithms which are correct for trees can be used as a heuristic for general graphs. \newline
-This \emph{loopy} form of message passing consists of two parts. In the initialization  step each message is provisionally assigned a random value. Now that each message is set the sum-product equation can be used not to compute the absolute result but to update the provisional values. The update steps are repeatedly performed for each edge $i \rightarrow a$ in random order. The goal is to reach a point where no message would significantly change when applying the update rule to it. If this is the case, the messages are said to have \emph{converged}. Since there is no guarantee for convergence it is also possible for the update process to never terminate. In this case the computation has to be terminated after a fixed number of steps. \newline
-In practice the update rule has to be slightly modify when applying message passing on loopy graphs. Since the messages are computed from random starting values they often do not fulfill properties which the original defined messages do.
+This \emph{loopy} form of message passing consists of two parts. In the initialization  step each message is provisionally assigned a random value. Now that each message is set the sum-product equation can be used not to compute the absolute result but to repeatedly update the provisional values. In each update step the update rule is applied to all edges $i \rightarrow a$. There are several variants how to schedule these update tasks. For example the messages could be updated in parallel (\emph{synchronous}) or step by step (\emph{asynchronous}) in a fixed order. Here, the order of updates is chosen uniformly at random in each update step. If a message changed its value in the beginning of the step the following updates can instantly access and use its new value. 
 
-On trees this heuristical approach still returns correct results, on general graphs experience shows that convergence happens rather frequently.
+The goal is to reach a point where no message would significantly change when applying the update rule to it. If this is the case, the messages are said to have \emph{converged}. Since there is no guarantee for convergence it is also possible for the update process to never terminate. In this case the computation has to be terminated after a fixed number of steps. \newline
+In practice the update rules have to be slightly modified when applying message passing on loopy graphs. The messages are computed from random starting values and often do not fulfil properties which the original defined messages do. 
 
-\begin{lemma}
-Loopy message passing converges on trees.
-\end{lemma}
+On trees this heuristical approach still returns correct results, on general graphs experience shows that convergence happens rather frequently. \newline
+Convergence for trees, like other properties of message passing algorithms, can be shown by induction on the \textit{level} of a message.
 
+\begin{definition} Let $u \rightarrow v$ be an edge of a tree $\tau$. \newline
+Let $\tau_{u \rightarrow v}$ be the component of $\tau \setminus (u, v)$ that still contains $u$. The \emph{level} of $u \rightarrow v$ is the height of $u$ in $\tau_{u \rightarrow v}$. 
+\end{definition}
+The level can be thought as the length of the longest path in $\tau$ that ends in $u$ and does not pass $v$.
+\begin{lemma}\cite{survprob}
+On a tree factor graph the message on an edge $a \rightarrow i$ at level $r$ converges after at most $r/2 + 1$ update steps.
+\begin{proof} Induction on $r$:
 \begin{itemize}
-	\item "Loopy" belief propagation
-	\item Convergence for trees
-	\item Heuristic for general graphs
-	\item Examples only in next chapter
+\item[] If $r = 0$, $a$ is a leaf since there are no ingoing messages $j \rightarrow a$ so its message is constant at every step. \newline
+Similarly for $r = 1$ all ingoing edges have level $0$ and $m_{a \rightarrow i}$ is constant from step $0$.
+\item[] If $r \geq 2$ the message $m_{a \rightarrow i}$ is determined by the set of messages $m_{b \rightarrow j}$ sent to adjacent variables $j$. These messages are sent on edges with level $\leq r-2$ and have by induction converged on step $\frac{r-2}{2} + 1 = r / 2$. $m_{a \rightarrow i}$ converges on the next update step.
 \end{itemize}
+\end{proof}
+\end{lemma}
 
 \begin{figure}[h]
 \centering
 
 \begin{tikzpicture}[scale=1.0,transform shape]
-   	\node[rectangle,draw=black, label = {$a$}, fill] (a) at (5,0) {$a$};
-    \node[shape=circle,draw=black] (i) at (3,0) {$i$};
+   	\node[rectangle,draw=black, label = {$a$}, fill] (i) at (3,0) {$a$};
+    \node[shape=circle,draw=black] (a) at (5,0) {$i$};
    
-  \node[rectangle,draw=black, label = {$b_1$}, fill] (b1) at (0,2) {$a$};
-  \node[rectangle,draw=black, label = {$b_2$}, fill] (b2) at (0,0) {$a$};
-  \node[rectangle,draw=black, label = {$b_3$}, fill] (b3) at (0,-2) {$a$};
+  \node[shape=circle,draw=black] (b1) at (0,2) {$j_1$};
+  \node[shape=circle,draw=black] (b2) at (0,0) {$j_2$};
+  \node[shape=circle,draw=black] (b3) at (0,-2) {$j_3$};
 
-	\node[shape=circle,draw=black] (j1) at (-3,3) {$j_1$};
-	\node[shape=circle,draw=black] (j2) at (-3,1) {$j_2$};
-	\node[shape=circle,draw=black] (j3) at (-3,-1) {$j_3$};
-	\node[shape=circle,draw=black] (j4) at (-3,-3) {$j_4$};
+	\node[rectangle,draw=black, label = {$b_1$}, fill] (j1) at (-3,3) {};
+	\node[rectangle,draw=black, label = {$b_2$}, fill] (j2) at (-3,1) {};
+	\node[rectangle,draw=black, label = {$b_3$}, fill] (j3) at (-3,-1) {};
+	\node[rectangle,draw=black, label = {$b_4$}, fill] (j4) at (-3,-3) {};
 
 
     
 	\draw[->] (b3) edge [right] node {$m_{b_3 \rightarrow i}$} (i);
 	\draw[->] (b2) edge [above] node {$m_{b_2 \rightarrow i}$} (i);
 	\draw[->] (b1) edge [right] node {$m_{b_1 \rightarrow i}$} (i);
-	\draw[->] (i) edge [above] node {$m_{i \rightarrow a}$} (a);
+	\draw[->] (i) edge [above] node {$m_{a \rightarrow i}$} (a);
 	
 	\draw[->] (j1) edge [above] node {$m_{j_1 \rightarrow b_1}$} (b1);
   	\draw[->] (j2) edge [above] node {$m_{j_2 \rightarrow b_2}$} (b2);
@@ -55,5 +62,5 @@ Loopy message passing converges on trees.
 	\draw[->] (j4) edge [above] node {$m_{j_4 \rightarrow b_3}$} (b3);
 
 \end{tikzpicture}
-\caption{Factor graph of a SAT formula}
+\caption{Subgraph of a factor tree with all messages required for computing $m_{a \rightarrow i}$}
 \end{figure}
