@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.6.7)  29 JUN 2018 20:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.6.7)  1 JUL 2018 22:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2412,7 +2412,7 @@ LaTeX Warning: Citation 'dummizitat' on page 9 undefined on input line 2.
 
 (./chapters/WP.tex [9]
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 8.50006pt on input line 32.
+(Font)              scaled to size 8.50006pt on input line 31.
  [10] [11]) (./chapters/BP.tex
 Overfull \hbox (10.05698pt too wide) in paragraph at lines 7--8
 []\T1/pplj/m/n/10.95 In [][]3.2.1[][] Al-go-rith-mus beschreiben. Grund-sät-zli
@@ -2432,13 +2432,14 @@ plm/m/n/10.95 = \OT1/pplx/m/n/10.95 1$ \T1/pplj/m/n/10.95 aus den kon-vergierte
 n Nachrichten
  []
 
-)) [12] [13
+[12])) [13] [14
 
 
 
+] [15
 
 
-] [14]
+] [16]
 \openout2 = `FrontBackmatter/Bibliography.aux'.
 
  (./FrontBackmatter/Bibliography.tex
@@ -2447,20 +2448,9 @@ Overfull \hbox (37.76791pt too wide) in paragraph at lines 15--15
 ^Q In: \T1/pplj/m/it/10.95 CoRR \T1/pplj/m/n/10.95 cs.CC/0212002
  []
 
-) [15
+) [17
 
 
-
-
-
-] [16
-
-
-
-]
-\openout2 = `FrontBackmatter/Declaration.aux'.
-
- (./FrontBackmatter/Declaration.tex) [17
 
 
 
@@ -2469,10 +2459,21 @@ Overfull \hbox (37.76791pt too wide) in paragraph at lines 15--15
 
 
 ]
+\openout2 = `FrontBackmatter/Declaration.aux'.
+
+ (./FrontBackmatter/Declaration.tex) [19
+
+
+
+] [20
+
+
+
+]
 \openout2 = `FrontBackmatter/Colophon.aux'.
 
 
-(./FrontBackmatter/Colophon.tex) [19
+(./FrontBackmatter/Colophon.tex) [21
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 91.
@@ -2694,7 +2695,7 @@ FrontBackmatter/Colophon.tex
 
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 91.
 Package rerunfilecheck Info: File `ClassicThesis.out' has not changed.
-(rerunfilecheck)             Checksum: EA0FD3849AD81F00F1F8E927B3998D96;1402.
+(rerunfilecheck)             Checksum: E32549F92438245B008773E31658B698;1402.
 
 LaTeX Warning: There were undefined references.
 
@@ -2708,13 +2709,13 @@ Package logreq Info: Writing requests to 'ClassicThesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43212 strings out of 492995
- 822963 string characters out of 6136403
- 1228070 words of memory out of 5000000
- 45920 multiletter control sequences out of 15000+600000
+ 43230 strings out of 492995
+ 823307 string characters out of 6136403
+ 1228076 words of memory out of 5000000
+ 45932 multiletter control sequences out of 15000+600000
  83352 words of font info for 128 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
- 70i,23n,90p,10520b,2236s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,23n,90p,10520b,2240s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/program_files/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/pro
 gram_files/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c
 :/program_files/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.p
@@ -2730,10 +2731,10 @@ c/bera/fvmr8a.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/urw/pal
 atino/uplb8a.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/urw/pala
 tino/uplr8a.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/urw/palat
 ino/uplri8a.pfb>
-Output written on ClassicThesis.pdf (27 pages, 160689 bytes).
+Output written on ClassicThesis.pdf (29 pages, 169000 bytes).
 PDF statistics:
- 318 PDF objects out of 1000 (max. 8388607)
- 273 compressed objects within 3 object streams
- 64 named destinations out of 1000 (max. 500000)
+ 331 PDF objects out of 1000 (max. 8388607)
+ 284 compressed objects within 3 object streams
+ 70 named destinations out of 1000 (max. 500000)
  17589 words of extra memory for PDF output out of 20736 (max. 10000000)
 
