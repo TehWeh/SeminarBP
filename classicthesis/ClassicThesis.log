@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.6.7)  1 JUL 2018 22:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.6.7)  3 JUL 2018 18:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2072,7 +2072,15 @@ File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
 (c:/program_files/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/li
 braries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
-))))
+)))
+(c:/program_files/texlive/2017/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen290
+\WF@size=\dimen291
+\c@WF@wrappedlines=\count402
+\WF@box=\box60
+\WF@everypar=\toks55
+Package: wrapfig 2003/01/31  v 3.6
+))
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
@@ -2151,10 +2159,11 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
+Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count402
+\c@lstlisting=\count403
 Package scrhack Info: undefining \float@addtolists on input line 30.
-\AtBeginShipoutBox=\box60
+\AtBeginShipoutBox=\box61
 Package hyperref Info: Link coloring ON on input line 30.
 
 (c:/program_files/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -2164,7 +2173,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 ty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count403
+\c@section@level=\count404
 )
 LaTeX Info: Redefining \ref on input line 30.
 LaTeX Info: Redefining \pageref on input line 30.
@@ -2176,17 +2185,17 @@ LaTeX Info: Redefining \nameref on input line 30.
 
 (c:/program_files/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count404
-\scratchdimen=\dimen290
-\scratchbox=\box61
-\nofMPsegments=\count405
-\nofMParguments=\count406
-\everyMPshowfont=\toks55
-\MPscratchCnt=\count407
-\MPscratchDim=\dimen291
-\MPnumerator=\count408
-\makeMPintoPDFobject=\count409
-\everyMPtoPDFconversion=\toks56
+\scratchcounter=\count405
+\scratchdimen=\dimen292
+\scratchbox=\box62
+\nofMPsegments=\count406
+\nofMParguments=\count407
+\everyMPshowfont=\toks56
+\MPscratchCnt=\count408
+\MPscratchDim=\dimen293
+\MPnumerator=\count409
+\makeMPintoPDFobject=\count410
+\everyMPtoPDFconversion=\toks57
 )
 (c:/program_files/texlive/2017/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -2413,33 +2422,15 @@ LaTeX Warning: Citation 'dummizitat' on page 9 undefined on input line 2.
 (./chapters/WP.tex [9]
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
 (Font)              scaled to size 8.50006pt on input line 31.
- [10] [11]) (./chapters/BP.tex
-Overfull \hbox (10.05698pt too wide) in paragraph at lines 7--8
-[]\T1/pplj/m/n/10.95 In [][]3.2.1[][] Al-go-rith-mus beschreiben. Grund-sät-zli
-che Vorge-hensweise
- []
-
-
-Overfull \hbox (31.05457pt too wide) in paragraph at lines 7--8
-\T1/pplj/m/n/10.95 ist dieselbe wie WP, also "nur" un-ter-schiedliche Arten von
- Nachrichten
- []
-
-
-Overfull \hbox (22.47581pt too wide) in paragraph at lines 9--10
-\T1/pplj/m/n/10.95 die Wahrschein-lichkeit für $\OML/zplm/m/it/10.95 x[] \OT1/z
-plm/m/n/10.95 = \OT1/pplx/m/n/10.95 1$ \T1/pplj/m/n/10.95 aus den kon-vergierte
-n Nachrichten
- []
-
-[12])) [13] [14
+ [10] [11]) (./chapters/BP.tex [12])) [13] [14
 
 
 
 ] [15
 
 
-] [16]
+]
+[16]
 \openout2 = `FrontBackmatter/Bibliography.aux'.
 
  (./FrontBackmatter/Bibliography.tex
@@ -2653,6 +2644,7 @@ pgfcomp-version-1-18.sty    2007/07/23 v3.0.1a (rcs-revision 1.1)
  pgfmath.code.tex
   pgffor.code.tex
     tikz.code.tex
+ wrapfig.sty    2003/01/31  v 3.6
  english.lbx    2016/12/05 v3.7 biblatex localization (PK/JW/AB)
 american.lbx    2016/12/05 v3.7 biblatex localization (PK/JW/AB)
   german.lbx    2016/12/05 v3.7 biblatex localization (PK/JW/AB)
@@ -2709,10 +2701,10 @@ Package logreq Info: Writing requests to 'ClassicThesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43230 strings out of 492995
- 823307 string characters out of 6136403
- 1228076 words of memory out of 5000000
- 45932 multiletter control sequences out of 15000+600000
+ 43293 strings out of 492995
+ 824206 string characters out of 6136403
+ 1229272 words of memory out of 5000000
+ 45991 multiletter control sequences out of 15000+600000
  83352 words of font info for 128 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  70i,23n,90p,10520b,2240s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2731,10 +2723,10 @@ c/bera/fvmr8a.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/urw/pal
 atino/uplb8a.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/urw/pala
 tino/uplr8a.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/urw/palat
 ino/uplri8a.pfb>
-Output written on ClassicThesis.pdf (29 pages, 169000 bytes).
+Output written on ClassicThesis.pdf (29 pages, 170452 bytes).
 PDF statistics:
- 331 PDF objects out of 1000 (max. 8388607)
- 284 compressed objects within 3 object streams
+ 330 PDF objects out of 1000 (max. 8388607)
+ 283 compressed objects within 3 object streams
  70 named destinations out of 1000 (max. 500000)
  17589 words of extra memory for PDF output out of 20736 (max. 10000000)
 
