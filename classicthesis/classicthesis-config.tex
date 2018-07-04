@@ -264,6 +264,16 @@
 \usepackage{classicthesis}
 
 \usepackage{tikz}
+\usepackage{floatrow}
+\newfloatcommand{capbtabbox}{table}[][\FBwidth]
+
+\makeatletter
+\newcommand*{\centerfloat}{%
+  \parindent \z@
+  \leftskip \z@ \@plus 1fil \@minus \textwidth
+  \rightskip\leftskip
+  \parfillskip \z@skip}
+\makeatother
 
 \newtheorem*{example}{Example}
 \newtheorem*{definition}{Definition}

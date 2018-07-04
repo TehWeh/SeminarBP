@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.6.7)  3 JUL 2018 18:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.6.7)  4 JUL 2018 22:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2073,12 +2073,59 @@ File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
 braries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 )))
+(c:/program_files/texlive/2017/texmf-dist/tex/latex/floatrow/floatrow.sty
+Package: floatrow 2008/08/02 v0.3b floatrow: float package extension
+\c@float@type=\count402
+\float@exts=\toks55
+\float@box=\box60
+\@floatcapt=\box61
+Package floatrow Info: Modified float package code loaded on input line 455.
+Package floatrow Info: Modified rotfloat package code loaded on input line 473.
+
+\FR@everyfloat=\toks56
+\flrow@foot=\insert252
+\FB@wd=\dimen290
+\FBo@wd=\dimen291
+\FBc@wd=\dimen292
+\FBo@ht=\skip145
+\FBc@ht=\skip146
+\FBf@ht=\skip147
+\FBo@max=\skip148
+\FBc@max=\skip149
+\FBf@max=\skip150
+\c@FBl@b=\count403
+\floatbox@depth=\count404
+\c@FRobj=\count405
+\c@FRsobj=\count406
+\Xhsize=\skip151
+\sXhsize=\skip152
+\Zhsize=\skip153
+\sZhsize=\skip154
+\flrow@rowbox=\box62
+\FR@Zunitlength=\dimen293
+\c@FBcnt=\count407
+\FPOScnt=\count408
+\LTleft=\skip155
+\LTright=\skip156
+\LTleft=\skip157
+\LTright=\skip158
+\flrow@types=\toks57
+)
+Package scrhack Info: loading floatrow hack on input line 268.
+
+(c:/program_files/texlive/2017/texmf-dist/tex/latex/koma-script/floatrow.hak
+File: floatrow.hak 2017/04/13 v3.23 KOMA-Script package (hacking package floatr
+ow)
+Package scrhack Info: redefining \DeclareNewFloatType on input line 148.
+Package scrhack Info: redefining \listof on input line 148.
+Package scrhack Info: undefining \float@addtolists on input line 148.
+)
 (c:/program_files/texlive/2017/texmf-dist/tex/latex/wrapfig/wrapfig.sty
-\wrapoverhang=\dimen290
-\WF@size=\dimen291
-\c@WF@wrappedlines=\count402
-\WF@box=\box60
-\WF@everypar=\toks55
+\wrapoverhang=\dimen294
+\WF@size=\dimen295
+\c@WF@wrappedlines=\count409
+\WF@box=\box63
+\WF@everypar=\toks58
 Package: wrapfig 2003/01/31  v 3.6
 ))
 Package csquotes Info: Checking for multilingual support...
@@ -2111,8 +2158,8 @@ File: german.lbx 2016/12/05 v3.7 biblatex localization (PK/JW/AB)
 (./FrontBackmatter/Titlepage.aux) (./FrontBackmatter/Titleback.aux)
 (./FrontBackmatter/Abstract.aux) (./FrontBackmatter/Contents.aux)
 (./chapters/Einleitung.aux) (./chapters/Begriffe.aux) (./chapters/BPFS.aux)
-(./FrontBackmatter/Bibliography.aux) (./FrontBackmatter/Declaration.aux)
-(./FrontBackmatter/Colophon.aux))
+(./chapters/Conc.aux) (./FrontBackmatter/Bibliography.aux)
+(./FrontBackmatter/Declaration.aux))
 \openout1 = `ClassicThesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
@@ -2157,13 +2204,16 @@ Package biblatex Info: Reference section=0 on input line 30.
 Package biblatex Info: Reference segment=0 on input line 30.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: floatrow package is loaded.
+Package caption Info: float package is loaded.
+Package caption Info: floatrow package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count403
+\c@lstlisting=\count410
 Package scrhack Info: undefining \float@addtolists on input line 30.
-\AtBeginShipoutBox=\box61
+\AtBeginShipoutBox=\box64
 Package hyperref Info: Link coloring ON on input line 30.
 
 (c:/program_files/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -2173,7 +2223,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 ty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count404
+\c@section@level=\count411
 )
 LaTeX Info: Redefining \ref on input line 30.
 LaTeX Info: Redefining \pageref on input line 30.
@@ -2185,17 +2235,17 @@ LaTeX Info: Redefining \nameref on input line 30.
 
 (c:/program_files/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count405
-\scratchdimen=\dimen292
-\scratchbox=\box62
-\nofMPsegments=\count406
-\nofMParguments=\count407
-\everyMPshowfont=\toks56
-\MPscratchCnt=\count408
-\MPscratchDim=\dimen293
-\MPnumerator=\count409
-\makeMPintoPDFobject=\count410
-\everyMPtoPDFconversion=\toks57
+\scratchcounter=\count412
+\scratchdimen=\dimen296
+\scratchbox=\box65
+\nofMPsegments=\count413
+\nofMParguments=\count414
+\everyMPshowfont=\toks59
+\MPscratchCnt=\count415
+\MPscratchDim=\dimen297
+\MPnumerator=\count416
+\makeMPintoPDFobject=\count417
+\everyMPtoPDFconversion=\toks60
 )
 (c:/program_files/texlive/2017/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -2227,9 +2277,15 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
 )
 ABD: EveryShipout initializing macros
+(c:/program_files/texlive/2017/texmf-dist/tex/latex/floatrow/fr-subfig.sty
+Package: fr-subfig 2007/12/24 v0.1g (beta) floatrow: additions for subfig
+\FBsc@max=\skip159
+\FBso@max=\skip160
+)
 \openout2 = `FrontBackmatter/DirtyTitlepage.aux'.
 
- (./FrontBackmatter/DirtyTitlepage.tex)
+
+(./FrontBackmatter/DirtyTitlepage.tex)
 LaTeX Font Info:    Try loading font information for T1+fvm on input line 41.
 
 (c:/program_files/texlive/2017/texmf-dist/tex/latex/bera/t1fvm.fd
@@ -2308,9 +2364,9 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language append on input line 21.
+(babel)             in language  on input line 21.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language append on input line 21.
+(babel)             in language  on input line 21.
 )
 [5
 
@@ -2422,15 +2478,47 @@ LaTeX Warning: Citation 'dummizitat' on page 9 undefined on input line 2.
 (./chapters/WP.tex [9]
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
 (Font)              scaled to size 8.50006pt on input line 31.
- [10] [11]) (./chapters/BP.tex [12])) [13] [14
+ [10]
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
+
+ []
+
+[11]) (./chapters/BP.tex
+Underfull \hbox (badness 10000) in paragraph at lines 8--10
+
+ []
 
 
+Overfull \hbox (4.00795pt too wide) in paragraph at lines 15--16
+\T1/pplj/m/n/10.95 The ba-sic pro-ce-dure of send-ing and up-dat-ing mes-sages 
+be-tween nodes
+ []
 
-] [15
+LaTeX Font Info:    Font shape `T1/fvm/m/it' in size <9> not available
+(Font)              Font shape `T1/fvm/m/sl' tried instead on input line 28.
+LaTeX Font Info:    Font shape `T1/fvm/m/sl' will be
+(Font)              scaled to size 7.65005pt on input line 28.
+[12]
+Overfull \hbox (128.22775pt too wide) in paragraph at lines 89--89
+[] 
+ []
+
+
+Overfull \hbox (2.8332pt too wide) in paragraph at lines 115--116
+ [][] 
+ []
+
+[13]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[14])) [15]
+\openout2 = `chapters/Conc.aux'.
+
+ (./chapters/Conc.tex) [16
 
 
 ]
-[16]
 \openout2 = `FrontBackmatter/Bibliography.aux'.
 
  (./FrontBackmatter/Bibliography.tex
@@ -2439,7 +2527,16 @@ Overfull \hbox (37.76791pt too wide) in paragraph at lines 15--15
 ^Q In: \T1/pplj/m/it/10.95 CoRR \T1/pplj/m/n/10.95 cs.CC/0212002
  []
 
+
+Overfull \hbox (147.17595pt too wide) in paragraph at lines 15--15
+\T1/fvm/m/n/10.95 sa = t & rct = j & q = &esrc = s & source = web & cd = 1 & ve
+d = 0ahUKEwiExLKCmYbcAhWBYVAKHWwbCikQFggqMAA &
+ []
+
 ) [17
+
+
+
 
 
 
@@ -2456,27 +2553,16 @@ Overfull \hbox (37.76791pt too wide) in paragraph at lines 15--15
 
 
 
-] [20
-
-
-
 ]
-\openout2 = `FrontBackmatter/Colophon.aux'.
-
-
-(./FrontBackmatter/Colophon.tex) [21
-
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 91.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 91.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 92.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 92.
  (./ClassicThesis.aux
 (./FrontBackmatter/DirtyTitlepage.aux) (./FrontBackmatter/Titlepage.aux)
 (./FrontBackmatter/Titleback.aux) (./FrontBackmatter/Abstract.aux)
 (./FrontBackmatter/Contents.aux) (./chapters/Einleitung.aux)
-(./chapters/Begriffe.aux) (./chapters/BPFS.aux)
-(./FrontBackmatter/Bibliography.aux) (./FrontBackmatter/Declaration.aux)
-(./FrontBackmatter/Colophon.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 91.
+(./chapters/Begriffe.aux) (./chapters/BPFS.aux) (./chapters/Conc.aux)
+(./FrontBackmatter/Bibliography.aux) (./FrontBackmatter/Declaration.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 92.
 
 
  *File List*
@@ -2644,6 +2730,9 @@ pgfcomp-version-1-18.sty    2007/07/23 v3.0.1a (rcs-revision 1.1)
  pgfmath.code.tex
   pgffor.code.tex
     tikz.code.tex
+floatrow.sty    2008/08/02 v0.3b floatrow: float package extension
+floatrow.hak    2017/04/13 v3.23 KOMA-Script package (hacking package floatrow)
+
  wrapfig.sty    2003/01/31  v 3.6
  english.lbx    2016/12/05 v3.7 biblatex localization (PK/JW/AB)
 american.lbx    2016/12/05 v3.7 biblatex localization (PK/JW/AB)
@@ -2661,6 +2750,7 @@ epstopdf-base.sty    2016/05/15 v2.6 Base part for package epstopdf
   grfext.sty    2016/05/16 v1.2 Manage graphics extensions (HO)
 epstopdf-sys.cfg    2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
   mt-ppl.cfg    2005/11/16 v1.6 microtype config. file: Palatino (RS)
+fr-subfig.sty    2007/12/24 v0.1g (beta) floatrow: additions for subfig
 FrontBackmatter/DirtyTitlepage.tex
    t1fvm.fd    2004/09/07 scalable font definitions for T1/fvm.
 FrontBackmatter/Titlepage.tex
@@ -2680,14 +2770,14 @@ chapters/BelProp.tex
 chapters/BPFS.tex
 chapters/WP.tex
 chapters/BP.tex
+chapters/Conc.tex
 FrontBackmatter/Bibliography.tex
 FrontBackmatter/Declaration.tex
-FrontBackmatter/Colophon.tex
  ***********
 
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 91.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 92.
 Package rerunfilecheck Info: File `ClassicThesis.out' has not changed.
-(rerunfilecheck)             Checksum: E32549F92438245B008773E31658B698;1402.
+(rerunfilecheck)             Checksum: 90126A088E068FE0B7C6EBEA3C1A6F44;1359.
 
 LaTeX Warning: There were undefined references.
 
@@ -2701,11 +2791,11 @@ Package logreq Info: Writing requests to 'ClassicThesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43293 strings out of 492995
- 824206 string characters out of 6136403
- 1229272 words of memory out of 5000000
- 45991 multiletter control sequences out of 15000+600000
- 83352 words of font info for 128 fonts, out of 8000000 for 9000
+ 43861 strings out of 492995
+ 832932 string characters out of 6136403
+ 1242133 words of memory out of 5000000
+ 46545 multiletter control sequences out of 15000+600000
+ 85874 words of font info for 133 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  70i,23n,90p,10520b,2240s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/program_files/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/pro
@@ -2719,14 +2809,15 @@ c/mathpazo/fplmr.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/publ
 ic/mathpazo/fplmri.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/pu
 blic/fpl/fplrc8a.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/publ
 ic/fpl/fplrij8a.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/publi
-c/bera/fvmr8a.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/urw/pal
-atino/uplb8a.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/urw/pala
-tino/uplr8a.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/urw/palat
-ino/uplri8a.pfb>
-Output written on ClassicThesis.pdf (29 pages, 170452 bytes).
+c/bera/fvmr8a.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/public/
+bera/fvmro8a.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/urw/pala
+tino/uplb8a.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/urw/palat
+ino/uplr8a.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/urw/palati
+no/uplri8a.pfb>
+Output written on ClassicThesis.pdf (27 pages, 182883 bytes).
 PDF statistics:
- 330 PDF objects out of 1000 (max. 8388607)
- 283 compressed objects within 3 object streams
+ 333 PDF objects out of 1000 (max. 8388607)
+ 287 compressed objects within 3 object streams
  70 named destinations out of 1000 (max. 500000)
- 17589 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 18605 words of extra memory for PDF output out of 20736 (max. 10000000)
 

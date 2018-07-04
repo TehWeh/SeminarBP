@@ -58,13 +58,13 @@ If $u^{\ast}_{a \rightarrow i} = 1$ the SAT formula defined by $\tau_{a \rightar
 
 \subsection{Decimation Algorithm}
 
-The algorithm that computes satisfying assignments based on the WP results is called \emph{Warning Inspired Decimation}. CID uses WP as a subprocedure. For a satisfiable formula $\mathcal{F}$ after running WP a partial assignment is computed that can be applied to $\mathcal{F}$ to obtain a smaller formula. Running CID recursively on that smaller formula gives a complete satisfying assignments. CID detects after the first run of WP if $\mathcal{F}$ is not satisfiable.
+The algorithm that computes satisfying assignments based on the WP results is called \emph{Warning Inspired Decimation} (CID). CID uses WP as a subprocedure. For a satisfiable formula $\mathcal{F}$ after running WP, a partial assignment is computed that can be applied to $\mathcal{F}$ to obtain a smaller formula. Running CID recursively on that smaller formula gives a complete satisfying assignment. CID detects after the first run of WP if $\mathcal{F}$ is not satisfiable. \newline
 
 To determine if a formula is satisfiable one has to compute certain values using the converged WP messages.
 
 The \emph{local field} of a variable $i$ is defined as $H_i := - \sum_{b \in V(i)} J_i^b u^\ast_{b\rightarrow i}$. \newline $H_i$ is computed similar to $h_{i \rightarrow a}$ in the WP algorithm. While 
-$h_{i \rightarrow a}$ gave the current tendency of $i$ when ignoring $a$, the local field of $i$ uses the converged messages and counts how often $i$ is fixed to $1$ or $0$. \newline
-If a variable is both fixed to $1$ and $0$, the formula must be unsatisfiable. \newline
+$h_{i \rightarrow a}$ gave the current tendency of $i$ when ignoring $a$, the local field of $i$ uses the converged messages and counts how often $i$ is fixed to $1$ or $0$ by all of its neighbours (including $a$). \newline
+If a variable gets both fixed to $1$ and $0$, the formula must be unsatisfiable. \newline
 If no such contradiction appears a partial assignment can be obtained by setting each variable to the value it was fixed to: $1$ if $H_i > 0$ and $0$ if $H_i < 0$. If no variable is fixed (all $H_i$ are $0$), CID chooses a random variable and sets it to a random value.
 
 

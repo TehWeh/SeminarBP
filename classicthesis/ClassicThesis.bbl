@@ -52,5 +52,31 @@
     \field{journaltitle}{CoRR}
     \field{year}{2002}
   \endentry
+
+  \entry{lecture}{article}{}
+    \name{author}{1}{}{%
+      {{hash=UR}{%
+         family={Urbanke},
+         familyi={U\bibinitperiod},
+         given={Rudiger},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{UR1}
+    \strng{fullhash}{UR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{U}
+    \field{sortinithash}{U}
+    \field{title}{Lecture Notes 8: BP-Guided Decimation for SAT Problems}
+    \verb{url}
+    \verb https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0
+    \verb ahUKEwiExLKCmYbcAhWBYVAKHWwbCikQFggqMAA&url=https%3A%2F%2Fdocuments.e
+    \verb pfl.ch%2Fgroups%2Fi%2Fip%2Fipg%2Fwww%2F2010-2011%2FStatistical_Physic
+    \verb s_for_Communication_and_Computer_Science%2Flecture_8.pdf&usg=AOvVaw0m
+    \verb Od6nk3ZdURHEf358rHvl
+    \endverb
+    \field{year}{2011}
+  \endentry
 \endsortlist
 \endinput

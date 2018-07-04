@@ -10,9 +10,9 @@ A level-1 auxiliary file: FrontBackmatter/Contents.aux
 A level-1 auxiliary file: chapters/Einleitung.aux
 A level-1 auxiliary file: chapters/Begriffe.aux
 A level-1 auxiliary file: chapters/BPFS.aux
+A level-1 auxiliary file: chapters/Conc.aux
 A level-1 auxiliary file: FrontBackmatter/Bibliography.aux
 A level-1 auxiliary file: FrontBackmatter/Declaration.aux
-A level-1 auxiliary file: FrontBackmatter/Colophon.aux
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=20001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
@@ -34,45 +34,45 @@ Warning--I didn't find a database entry for "dummizitat"
 Biblatex version: 3.3
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 2 entries,
+You've used 3 entries,
             6256 wiz_defined-function locations,
-            1195 strings with 9048 characters,
-and the built_in function-call counts, 7339 in all, are:
-= -- 457
-> -- 192
-< -- 32
-+ -- 200
-- -- 86
-* -- 527
-:= -- 914
+            1200 strings with 9413 characters,
+and the built_in function-call counts, 10828 in all, are:
+= -- 633
+> -- 270
+< -- 57
++ -- 255
+- -- 120
+* -- 761
+:= -- 1194
 add.period$ -- 0
-call.type$ -- 2
-change.case$ -- 1
+call.type$ -- 3
+change.case$ -- 2
 chr.to.int$ -- 30
-cite$ -- 2
-duplicate$ -- 671
-empty$ -- 630
-format.name$ -- 87
-if$ -- 1520
+cite$ -- 4
+duplicate$ -- 1084
+empty$ -- 1006
+format.name$ -- 134
+if$ -- 2266
 int.to.chr$ -- 0
-int.to.str$ -- 2
+int.to.str$ -- 4
 missing$ -- 0
-newline$ -- 56
-num.names$ -- 41
-pop$ -- 391
+newline$ -- 82
+num.names$ -- 82
+pop$ -- 719
 preamble$ -- 1
-purify$ -- 18
+purify$ -- 29
 quote$ -- 0
-skip$ -- 259
+skip$ -- 415
 stack$ -- 0
-substring$ -- 779
-swap$ -- 159
-text.length$ -- 47
-text.prefix$ -- 1
+substring$ -- 998
+swap$ -- 275
+text.length$ -- 72
+text.prefix$ -- 2
 top$ -- 1
-type$ -- 56
+type$ -- 90
 warning$ -- 0
-while$ -- 122
+while$ -- 159
 width$ -- 0
-write$ -- 55
+write$ -- 80
 (There were 2 warnings)

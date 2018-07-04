@@ -38,12 +38,12 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {3.2.1.2}{Update Rules}}{13}{subsubsection.3.2.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}{Marginal Propabilities}}{13}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.2}{Marginal Probabilities}}{15}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.3}{Number of satisfying assignments}}{13}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.3}{Number of satisfying assignments}}{15}{subsection.3.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{\numberline {i}{Appendix}}{15}{part.1}
+\contentsline {section}{\numberline {3.3}{Conclusion}}{16}{section.3.3}
 \defcounter {refsection}{0}\relax 
 \vspace {\beforebibskip }
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {}{Bibliography}}{17}{section*.6}
+\contentsline {chapter}{\numberline {}{Bibliography}}{17}{section*.8}
