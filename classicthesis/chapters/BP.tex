@@ -51,8 +51,9 @@ Let $\mathcal{F} = \underbrace{(x_1 \lor x_2 \lor \overline{x_3})}_a  \land \und
 \end{tikzpicture}
 \end{figure}
 The messages exchanged between $b$ and $x_3$ can be computed using only the definition: \newline
-For example $\mu_{b \rightarrow 3}(1)$ is the probability that $(x_3 \lor x_4)$ is satisfied by an assignment where $x_3 = 1$. Its value is $1$ because each such assignment satisfy $b$. If $x_3 = 0$, only those assignments where $x_4 = 1$ will satisfy $b$ so $\mu_{b \rightarrow 3}(0) = 0.5$. \newline
-Out of all 14 configurations satisfying $(x_1 \lor x_2 \lor \overline{x_3})$ there are $8$ where $x_3 = 0$ and $6$ where $x_3 = 1$, so $\mu_{3 \rightarrow b}(0) = \frac{4}{7}, \, \mu_{3 \rightarrow b}(1) = \frac{3}{7}$. 
+For example $\mu_{b \rightarrow 3}(1)$ is the probability that $(x_3 \lor x_4)$ is satisfied by an assignment where $x_3 = 1$. Its value is $1$ because each such assignment satisfies $b$. If $x_3 = 0$, only those assignments where $x_4 = 1$ will satisfy $b$ so $\mu_{b \rightarrow 3}(0) = 0.5$. \newline
+Out of all 14 configurations satisfying $(x_1 \lor x_2 \lor \overline{x_3})$ there are $8$ where $x_3 = 0$ and $6$ where $x_3 = 1$, so $\mu_{3 \rightarrow b}(0) = \frac{4}{7}, \, \mu_{3 \rightarrow b}(1) = \frac{3}{7}$.
+This method of counting desired configurations out of the whole configuration space is infeasible for larger graphs. Instead the messages are obtained by message passing.
 
 \subsubsection{Update Rules}
 
@@ -88,7 +89,7 @@ Using Bayes theorem and the fact that $\mu_{b_i \rightarrow i}$ are conditionall
 &= \underbrace{\frac{P(x = x_i)}{P(\tau_{i \rightarrow a}\text{ is sat})}}_{C_{i \rightarrow a}} \prod_{b \neq a} \mu_{b \rightarrow i}(x) \\
 \end{align*}
 
-The factor $C_{i \rightarrow a}$ is the same for $x=0$ and $x=1$ so it suffices to compute the products for $x_i = 0$ and $x_i = 1$ and then to normalize so that $\mu_{i\rightarrow a}(0) + \mu_{i \rightarrow a}(1) = 1$. \cite{lecture} 
+The factor $C_{i \rightarrow a}$ is the same for $x=0$ and $x=1$ so it suffices to compute the products for $x_i = 0$ and $x_i = 1$ and then to normalize so that $\mu_{i\rightarrow a}(0) + \mu_{i \rightarrow a}(1) = 1$. The usual notation to indicate the implicit existence of a formalization factor is $\mu_{i \rightarrow a}(x) \propto \prod \mu_{b \rightarrow i}(x)$. \cite{lecture} 
 
 
 \begin{wrapfigure}{r}{0.3\textwidth}
@@ -202,24 +203,44 @@ The values for the remaining 3 edges of level $4$ can be looked up in the tabula
 \end{figure}
 
 
-
-In \cite{survprob} the standard BP rules are expressed in a different, but equivalent way: \newline
-Instead of computing $\mu_{i \rightarrow a}(0)$ and $\mu_{i \rightarrow a}(1)$ which add up to $1$, one can also compute the value $\gamma_{i \rightarrow a}$, the probability that $x_i$ violates $a$. 
+The equations described above are the general BP update rules that can be applied not only to SAT problems but to any problem that is solved by belief propagation.
+In \cite{survprob} and \cite{lecture} these standard rules are expressed in a different, but equivalent way to make computation easier. \newline
+Instead of computing functions where $\mu_{i \rightarrow a}(0)$ and $\mu_{i \rightarrow a}(1)$ add up to $1$, one can also compute the value $\gamma_{i \rightarrow a}$, the probability that $x_i$ violates $a$. 
 It can be expressed as $\gamma_{i \rightarrow a} = \left\{
   \begin{array}{@{}ll@{}}
     \mu_{i \rightarrow a}(0) & \text{if}\ J_a^i = 1 \\
     \mu_{i \rightarrow a}(1), &  \text{if}\ J_a^i = 0
   \end{array}\right\}$
   
-The message sent from $a$ to $i$ is the probability that all neighbour variables $j \neq i$ would violate $a$: $\delta_{a \rightarrow i} = \prod_{j \neq i} \gamma_{j \rightarrow a}$ which is already the first update equation for the modified BP version.
-The opposite direction $i \rightarrow a$ is the more complicated one: 
-Like in the WP-update the variable $i$ may satisfy $a$, if for \emph{none} of its other neighbours $b$ with $J_b^i \neq J_a^i$ fixes $i$. In terms of BP messages the probability for this situation is $$P_{i \rightarrow a}^s = \prod_{b \in V_a^u(i)}(1 - \delta_{b \rightarrow i})$$
-The same applies to the probability that $i$ may violate $a$: 
- $$P_{i \rightarrow a}^u = \prod_{b \in V_a^s(i)}(1 - \delta_{b \rightarrow i})$$
 
-The values $P_{i \rightarrow a}^u$ and $P_{i \rightarrow a}^s$ are exactly 
+In the original BP equation for $\mu_{a \rightarrow i}(x_i)$ one has to sum over all satisfying configurations of $a$'s variables $j \neq i$. Since there is only one configuration that does not satisfy $a$ it is easier to just compute the probability of this single configuration. The message $\delta_{a \rightarrow i}$ is the probability that all of $a$'s neighbours are in a state that violates $a$ (conditioned on $a$ still being satisfiable). The probabilities for these states are exactly the incoming messages $\gamma_{j \rightarrow a}$ which are conditionally independent.
+$\delta_{a \rightarrow i} = \prod_{j \neq i} \gamma_{j \rightarrow a}$ is the first update equation for the modified BP version.
 
-Like in the original update for $\mu_{i \rightarrow a}$ the value of \
+The more complicated part is to compute $\gamma_{i \rightarrow a}$ from incoming messages $\delta_{b \rightarrow i}$. The probability that $i$ violates $a$ conditioned on $\tau_{i \rightarrow a}$ being satisfied is again proportional to the probability  that $\tau_{i \rightarrow a}$ is satisfied conditioned on $i$ violating $a$. This is the case exactly if if no $b \neq a$ fixes $i$ to the value that would satisfy $a$.
+$$\gamma_{i \rightarrow a} \propto P_{i \rightarrow a}^u := \prod_{b \in V_a^s(i)} (1 - \delta_{b \rightarrow i})$$
+To get the real value of $\gamma_{i \rightarrow a}$ one has to normalize so that $P_{i \rightarrow a}^u$ and the probability for $i$ to satisfy $a$, $P_{i \rightarrow a}^s$, add up to $1$.
+
+With these new update equations the overall update procedure is
+
+\begin{lstlisting}[mathescape=true]
+	Belief Propagation Algorithm
+	
+	0. Randomly initialize all message $\delta_{a \rightarrow i} \in_R [0, 1]$
+	
+	1. For $t=0$ to $t = t_{max}$
+		1.1 Compute in random order for all edges (a, i)
+		  $\delta_{a \rightarrow i} := \prod_{j \in V(a) \setminus i} \gamma_{j \rightarrow a}$		 
+		where $\gamma_{j \rightarrow a} := \frac{P_{j\rightarrow a}^u}{P_{j\rightarrow a}^u + P_{j\rightarrow a}^s} = \frac{\prod_{b \in V_a^s(j)} (1 - \delta_{b \rightarrow j})}{\prod_{b \in V_a^s(j)} (1 - \delta_{b \rightarrow j}) + \prod_{b \in V_a^u(j)} (1 - \delta_{b \rightarrow j})}$
+		 		
+		1.2 If no $\delta_{a \rightarrow i}$ has changed more than $\epsilon$ goto 2.
+	2. If $t = t_{max}$ return UN-CONVERGED, else return the generated warnings $\delta_{a \rightarrow i}^{\star}$
+\end{lstlisting}
+
 \subsection{Marginal Probabilities}
 
+If the BP-Algorithm returns a set of converged messages one can obtain the single variable marginal $\mu_i = P(x_i = 1 \; | \mathcal{F} \text{ is satisfied})$ in the same way, the values $P_{i \rightarrow a}$ where defined: The normalized probability that $\mathcal{F}$ is satisfied conditioned on $x_i = 1$.
+$$ \mu_i = \gamma_{j \rightarrow a} := \frac{\prod_{b \in V_-(i)} (1 - \delta_{b \rightarrow i})}{\prod_{b \in V_-(i)} (1 - \delta_{b \rightarrow i}) + \prod_{b \in V_+(i)} (1 - \delta_{b \rightarrow i})}$$
+
 \subsection{Number of satisfying assignments}
+
+The original normalization constant $\mathcal{N}$ can also be obtained from the converged messages. 

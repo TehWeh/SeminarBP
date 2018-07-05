@@ -1,19 +1,22 @@
 \section{Factor Graphs}
 
-For problems that include many variables influencing each other it is useful to have an abstract representation of how those	 variables are related to each other. So called factor graphs are such representations.\newline
+For problems that include complex relations among many variables it is useful to have an abstract representation of how those	variables interact with each other. So called \emph{factor graphs} are such representations.\newline
 
-In general, factor graphs represent the structure of a function's factorization into smaller functions. \newline If a function $f(X_1, \ldots, X_n)$ can be written as a product $\prod_{j=1}^{m}{f_j(S_j)}$  where the functions $f_j$ have smaller inputs $S_j \subset X$, its factorization 
+In general, a factor graph represents the structure of a function's factorization into smaller functions. \newline If a function $f(X_1, \ldots, X_n)$ can be written as a product $\prod_{j=1}^{m}{f_j(S_j)}$  where the functions $f_j$ have smaller inputs $S_j \subset X$, its factorization 
 can be expressed by a factor graph: The graph has two types of nodes: 
-\emph{variable nodes} that correspond to the variables $X_i$ and \emph{factor nodes} corresponding to the functions $f_j$. An edge connects a variable node $X_i$ to a factor node $f_j$ if $X_i$ is part of $f_j$'s input. 
-This means the factor graph is an undirected bipartite graph with the node set $ V = \{X_1, \ldots, X_n\} \cup \{f_1, \ldots, f_n\}$ and edge set $E = \{(X_i, f_j) \; | \; X_i \in S_j\}$. 
+\emph{variable nodes} that correspond to the variables $X_i$ and \emph{factor nodes} corresponding to the functions $f_j$. An edge connects a variable node $X_i$ to a factor node $f_j$ if and only if $X_i$ is part of $f_j$'s input. 
+This means the graph is an undirected bipartite graph with the node set $ V = \{X_1, \ldots, X_n\} \cup \{f_1, \ldots, f_n\}$ and edge set $E = \{(X_i, f_j) \; | \; X_i \in S_j\}$. 
 
-In many applications the global function $f$ is a joined probability distribution that can be factorized by using information about independence between the variables. Typical tasks on factor graphs are computing variable assignments that maximize or minimize $f$ or computing marginal distributions if $f$ is a probability distribution. Both of these will be done in Section \ref{BPFS}\newline
+In many applications the global function $f$ is a joined probability distribution that can be factorized by using information about independence between the variables. Typical tasks on factor graphs are computing variable assignments that maximize or minimize $f$ or computing marginal distributions if $f$ is a probability distribution. Both of these will be done in Section \ref{BPFS}.
 
 \begin{example}
-For random variables $X_1, X_2 \text{ and } X_3$ their joined probability distribution $f$ is defined as $f(x_1, x_2, x_3) := P(X_1 = x_1 \land X_2  = x_2 \land X_3 = x_3)$. If $X_2$ and $X_3$ are conditionally independent given $X_1$ this function can be factorized: $$f(x_1, x_2, x_3) = P(X_1 = x_1) * P(X_2 = x_2 \land X_3 = X_3 \; | \; X_1 = x_1)$$
-This factorization still contains a factor depending on all variables. If $X_2$ and $X_3$ are known to be conditionally independent given $X_1$ this factor can again be factorized:
+For random variables $X_1, X_2 \text{ and } X_3$ their joined probability distribution $f$ is defined as $f(x_1, x_2, x_3) := P(X_1 = x_1 \land X_2  = x_2 \land X_3 = x_3)$. 
+$f$ can be factorized using the definition of conditional probabilities: $$f(x_1, x_2, x_3) = P(X_1 = x_1) * P(X_2 = x_2 \land X_3 = X_3 \; | \; X_1 = x_1)$$
+This factorization still contains a function depending on all $3$ variables and is not useful. If $X_2$ and $X_3$ are known to be conditionally independent given $X_1$ this unwanted function can itself be factorized:
 
 $$f(x_1, x_2, x_3) = \underbrace{P(X_1 = x_1)}_{f_1(x_1)} * \underbrace{P(X_2 = x_2 \; | \; X_1 = x_1)}_{f_2(x_1, x_2)} * \underbrace{P(X_3 = x_3 \; | \; X_1 = x_1)}_{f_3(x_1, x_3)}$$
+
+In this factorization of $f$ each factor's input is smaller than the original one.
 
 %\includegraphics[scale = 0.3]{img/Proba1}
 \begin{figure}
@@ -34,10 +37,11 @@ $$f(x_1, x_2, x_3) = \underbrace{P(X_1 = x_1)}_{f_1(x_1)} * \underbrace{P(X_2 = 
     \path [-] (f3) edge node[left] {} (x3);
    
 \end{tikzpicture}
-\caption{Factor graph of $f$s factorization into $f_1, f_2, f_3$}
+\caption{Factor graph of $f$'s factorization into $f_1, f_2, f_3$ \newline Usually variable nodes are drawn as circles whereas constraint nodes are drawn as rectangles to easily distinguish the types of nodes}
+
 \end{figure}
 
-the variable nodes are drawn here as circles whereas constraint nodes are drawn as rectangles to easily distinguish the types of nodes
+
 
 \end{example}
 % zu allgemein?
@@ -52,13 +56,19 @@ Factor graphs can also be used for describing constraint satisfaction problems. 
 
 
 \subsection{Factor graph of a SAT Problem}
-A SAT formula in CNF form can be interpreted as a boolean function that factorizes to the formulas clauses. \newline
-In the corresponding factor graph each factor node $a$ represents the local function defined by a single clause of the original formula. The clause is a disjunction of variables and negated variables $(x_i\lor \overline{x_j} \lor \ldots)$. If the variable $x_i$ or its negation $\overline{x_i}$ appears in this clause the factor graph contains an edge between $a$ and the variable node $i$.
+Any SAT formula over the variables $x_1, \ldots, x_n$ in CNF form can be interpreted as a function that factorizes to the formulas clauses. \newline
+$x_1, \ldots, x_n$ are boolean variables which can be either $0$ or $1$. A SAT formula $\mathcal{F}$ is a conjunction / product of special constraints, the formula's \emph{clauses}. A clause is a disjunction of variables and their negations  $(x_i\lor \overline{x_j} \lor \ldots)$ and is satisfied if at least one variable $x_i$ that appears unnegated is set to $1$ or at least one $x_j$ that appears negated is set to $0$. \newline
+In the factor graph of a formula each factor node $a$ represents the local function defined by a single clause. If the variable $x_i$ or its negation $\overline{x_i}$ appears in this clause the factor graph contains an edge between $a$ and the variable node $i$. 
 
-In \cite{survprop} some additional notation is defined to simplify the description of the algorithms in section \ref{PBFS}: 
-\begin{definition} Let $a$ be a factor node and $i$ a variable node
+In following descriptions the letters $a$ and $b$ are always factor nodes, $i$ and $j$ are used for variable nodes. Also often no distinction is made between the nodes of the factor graph and the corresponding elements of the formula. Especially from here on variables are denoted as single letters $i, j$ whereas the value of a variable $i$ is written as $x_i \in \{0, 1\}$
+
+In \cite{survprob} some additional notation is defined to simplify the description of the algorithms in section \ref{BPFS}: 
+\newpage
+\begin{definition} Let $a$ be a factor node and $i$ one of its variables
 \begin{itemize}
-\item The value $J_i^a$
+\item The value $J_i^a$ is $1$ if $i$ appears negated in $a$ and $-1$ if not
+\item $V(a)$ the set of all variables in $a$, $V(i)$ is the set of all clauses defining $i$.  Alternatively $V(a)$ and $V(i)$ are the neighbourhoods $a$ and $i$ in the factor graph.
+\item $V_+(a)$ is set of variables that appear unnegated in $a$, $V_-(a)$ is set of negated variables.
 \end{itemize}
 \end{definition}
 The constraints can directly be viewed as functions ...

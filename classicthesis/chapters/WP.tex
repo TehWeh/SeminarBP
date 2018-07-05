@@ -64,10 +64,21 @@ To determine if a formula is satisfiable one has to compute certain values using
 
 The \emph{local field} of a variable $i$ is defined as $H_i := - \sum_{b \in V(i)} J_i^b u^\ast_{b\rightarrow i}$. \newline $H_i$ is computed similar to $h_{i \rightarrow a}$ in the WP algorithm. While 
 $h_{i \rightarrow a}$ gave the current tendency of $i$ when ignoring $a$, the local field of $i$ uses the converged messages and counts how often $i$ is fixed to $1$ or $0$ by all of its neighbours (including $a$). \newline
-If a variable gets both fixed to $1$ and $0$, the formula must be unsatisfiable. \newline
-If no such contradiction appears a partial assignment can be obtained by setting each variable to the value it was fixed to: $1$ if $H_i > 0$ and $0$ if $H_i < 0$. If no variable is fixed (all $H_i$ are $0$), CID chooses a random variable and sets it to a random value.
+The \emph{contradiction number} $c_i$ of a variable is $1$ if $i$ gets fixed to different values and $0$, if not. $c_i$ can be obtained from the converged WP messages. If after running WP a variable has a contradiction number of $1$ the formula is unsatisfiable. \newline
+The opposite direction is also true: If no contradiction appears, the formula is satisfiable and CID returns a valid assignment. 
+After one run of WP a partial assignment can be obtained by setting all variables with active warnings to the value they were fixed to: $1$ if $H_i > 0$ and $0$ if $H_i < 0$. If $i$ received at least one warning, $H_i$ can not be $0$ because all incoming warnings fix $i$ to the same value. If no variable received a warning (all $H_i$ are $0$), CID chooses a random variable and sets it to a random value. \newline
+Now the factor graph is modified (\emph{cleaned}) according to the partial assignment. The graph is cleaned by removing all fixed variables and all clauses satisfied by them.  The modified formula will be satisfiable and cause no contradictions in the following WP runs.
 
-
+\begin{lstlisting}[mathescape=true]
+	Warning Inspired Decimation
+	
+	1. While there are unfixed variables
+		1.1 Run WP
+		1.2 If WP does not converge, return UN-CONVERGED. Else compute the numbers $H_i$ and $c_i$
+		1.3 If at least one $c_i = 1$ return UNSAT.
+		1.4 Clean the graph
+	2. return the complete assignment
+\end{lstlisting}
 
 %\begin{lemma}
 %If $u^{\star}_{a \rightarrow i} = 1$ the subproblem $a$ can not be satisfied if $i$ is removed from the set of its variables

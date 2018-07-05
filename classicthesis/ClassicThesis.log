@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.6.7)  4 JUL 2018 22:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.6.7)  5 JUL 2018 22:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2432,12 +2432,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 10--11
-
- []
-
-
-Overfull \hbox (15.28271pt too wide) detected at line 16
+Overfull \hbox (15.28271pt too wide) detected at line 17
 \OML/zplm/m/it/10.95 f\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 x[]\OT1/pplx/m/
 n/10.95 , \OML/zplm/m/it/10.95 x[]\OT1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 x[
 ]\OT1/zplm/m/n/10.95 ) = [] \OMS/zplm/m/n/10.95 ^^C [] ^^C []
@@ -2447,21 +2442,12 @@ n/10.95 , \OML/zplm/m/it/10.95 x[]\OT1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 x[
 
 
 
-]
-
-LaTeX Warning: Citation 'survprop' on page 4 undefined on input line 58.
-
-
-LaTeX Warning: Reference `PBFS' on page 4 undefined on input line 58.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-) (./chapters/BelProp.tex [4] [5]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-)) [6] [7]
+] [4]) (./chapters/BelProp.tex [5]
+LaTeX Font Info:    Font shape `T1/fvm/m/it' in size <9> not available
+(Font)              Font shape `T1/fvm/m/sl' tried instead on input line 23.
+LaTeX Font Info:    Font shape `T1/fvm/m/sl' will be
+(Font)              scaled to size 7.65005pt on input line 23.
+ [6])) [7]
 \openout2 = `chapters/BPFS.aux'.
 
  (./chapters/BPFS.tex
@@ -2471,11 +2457,7 @@ Chapter 3.
 
 
 
-]
-
-LaTeX Warning: Citation 'dummizitat' on page 9 undefined on input line 2.
-
-(./chapters/WP.tex [9]
+] (./chapters/WP.tex [9]
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
 (Font)              scaled to size 8.50006pt on input line 31.
  [10]
@@ -2494,17 +2476,13 @@ Overfull \hbox (4.00795pt too wide) in paragraph at lines 15--16
 be-tween nodes
  []
 
-LaTeX Font Info:    Font shape `T1/fvm/m/it' in size <9> not available
-(Font)              Font shape `T1/fvm/m/sl' tried instead on input line 28.
-LaTeX Font Info:    Font shape `T1/fvm/m/sl' will be
-(Font)              scaled to size 7.65005pt on input line 28.
 [12]
-Overfull \hbox (128.22775pt too wide) in paragraph at lines 89--89
+Overfull \hbox (128.22775pt too wide) in paragraph at lines 90--90
 [] 
  []
 
 
-Overfull \hbox (2.8332pt too wide) in paragraph at lines 115--116
+Overfull \hbox (2.8332pt too wide) in paragraph at lines 116--117
  [][] 
  []
 
@@ -2512,16 +2490,21 @@ Overfull \hbox (2.8332pt too wide) in paragraph at lines 115--116
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[14])) [15]
+[14] [15])) [16]
 \openout2 = `chapters/Conc.aux'.
 
- (./chapters/Conc.tex) [16
+ (./chapters/Conc.tex) [17
+
+
+] [18
+
 
 
 ]
 \openout2 = `FrontBackmatter/Bibliography.aux'.
 
- (./FrontBackmatter/Bibliography.tex
+
+(./FrontBackmatter/Bibliography.tex
 Overfull \hbox (37.76791pt too wide) in paragraph at lines 15--15
 \T1/pplj/m/n/10.95 vey prop-a-ga-tion: an al-go-rithm for sat-is-fi-a-bil-ity.^
 ^Q In: \T1/pplj/m/it/10.95 CoRR \T1/pplj/m/n/10.95 cs.CC/0212002
@@ -2533,23 +2516,20 @@ Overfull \hbox (147.17595pt too wide) in paragraph at lines 15--15
 d = 0ahUKEwiExLKCmYbcAhWBYVAKHWwbCikQFggqMAA &
  []
 
-) [17
+) [19
 
 
 
 
 
-
-
-
-] [18
+] [20
 
 
 
 ]
 \openout2 = `FrontBackmatter/Declaration.aux'.
 
- (./FrontBackmatter/Declaration.tex) [19
+ (./FrontBackmatter/Declaration.tex) [21
 
 
 
@@ -2778,26 +2758,18 @@ FrontBackmatter/Declaration.tex
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 92.
 Package rerunfilecheck Info: File `ClassicThesis.out' has not changed.
 (rerunfilecheck)             Checksum: 90126A088E068FE0B7C6EBEA3C1A6F44;1359.
-
-LaTeX Warning: There were undefined references.
-
-
-Package biblatex Warning: Please (re)run BibTeX on the file(s):
-(biblatex)                ClassicThesis
-(biblatex)                and rerun LaTeX afterwards.
-
 Package logreq Info: Writing requests to 'ClassicThesis.run.xml'.
 \openout1 = `ClassicThesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43861 strings out of 492995
- 832932 string characters out of 6136403
- 1242133 words of memory out of 5000000
- 46545 multiletter control sequences out of 15000+600000
- 85874 words of font info for 133 fonts, out of 8000000 for 9000
+ 43944 strings out of 492995
+ 833895 string characters out of 6136403
+ 1242131 words of memory out of 5000000
+ 46601 multiletter control sequences out of 15000+600000
+ 86787 words of font info for 137 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
- 70i,23n,90p,10520b,2240s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,23n,90p,10520b,3466s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/program_files/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/pro
 gram_files/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c
 :/program_files/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.p
@@ -2814,10 +2786,10 @@ bera/fvmro8a.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/urw/pala
 tino/uplb8a.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/urw/palat
 ino/uplr8a.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on ClassicThesis.pdf (27 pages, 182883 bytes).
+Output written on ClassicThesis.pdf (29 pages, 189752 bytes).
 PDF statistics:
- 333 PDF objects out of 1000 (max. 8388607)
- 287 compressed objects within 3 object streams
- 70 named destinations out of 1000 (max. 500000)
+ 372 PDF objects out of 1000 (max. 8388607)
+ 323 compressed objects within 4 object streams
+ 93 named destinations out of 1000 (max. 500000)
  18605 words of extra memory for PDF output out of 20736 (max. 10000000)
 
