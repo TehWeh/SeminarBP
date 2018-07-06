@@ -1,20 +1,20 @@
 \section{Warning Propagation}
 
-The messages used in the \emph{Warning Propagation} Algorithm (WP) presented in \cite{survprob} are called \emph{warnings}. A warning $u_{a\rightarrow i} \in \{0, 1\}$ is passed from clause $a$ to variable $i$. A converged warning  $u^{\star}_{a\rightarrow i}$ with value $1$ should indicate, that  to satisfy the clause $a$, the variable $i$ has to take the value $1$ if $j \in V_+(a)$ or $0$ if $j \in V_-(a)$. The warning $u^{\star}_{a \rightarrow i}$ will \emph{fix} the variable $i$. 
+The messages used in the \emph{Warning Propagation} Algorithm (WP) presented in \cite{survprob} are called \emph{warnings}. A warning $u_{a\rightarrow i} \in \{0, 1\}$ is passed from clause $a$ to variable $i$. A converged warning  $u^{\star}_{a\rightarrow i}$ with value $1$ should indicate, that  to satisfy the clause $a$, the variable $i$ has to take the value $1$ if $j \in V_+(a)$ or $0$ if $j \in V_-(a)$. Equivalently if $i$ does not satisfy $a$, the entire formula can not be satisfied. The warning $u^{\star}_{a \rightarrow i}$ will \emph{fix} the variable $i$. 
 \subsection{Propagation Algorithm}
 
 Like the general algorithm described in section \ref{BPA} warning propagation is correct on trees and can be used as a heuristic for cyclic graphs by randomly initializing the warnings and hoping for convergence.
 
 The algorithm starts by assigning each warning $u_{a\rightarrow i}$ a random starting value and updates these provisional warnings until their values have converged to a set of fixed point warnings $u^{\star}_{a \rightarrow i}$ or until the number of iterations has exceeded some limit $t_{max}$.
 
-The general idea is that the clause $a$ has to fix the variable $i$ only if the all of its other variables $j \in V(a)\setminus i$ are already fixed to values that do not satisfy the clause $a$. \newline
+The general idea is that the clause $a$ has to fix the variable $i$ only if all of its other variables $j \in V(a)\setminus i$ are already fixed to values that do not satisfy the clause $a$. \newline
 The first step in the update procedure is to compute for each $j \in V(a) \setminus i$ the so called \emph{cavity field} $h_{j \rightarrow a}$ that indicates what value $j$ should take in the subproblem defined by $\tau_{j \rightarrow a}$. To compute $h_{j \rightarrow a}$ one has to count how many of the clauses $b \neq a$ fix $j$ to $1$ and how many fix $j$ to $0$:
 $$h_{j \rightarrow a} = \sum_{b \in V_+(j)\setminus a}{u_{b \rightarrow j}} - \sum_{b \in V_-(j)\setminus a}{u_{b \rightarrow j}} = -\sum_{b \in V(j)} J^b_j u_{b \rightarrow j}$$
 
-The clauses $b \in V_+(j)$ are the ones that would fix $i$ to $1$ if their warnings are active, the clauses $b \in V_-(j)$ would fix $i$ to $0$.
-So if $h_{j \rightarrow a}$ is positive, the variable $i$ tends to the value $1$, if the cavity field is negative it tends to $0$. If $h_{j \rightarrow a} = 0$ which includes the case $V(j) \setminus a = \emptyset$ no conclusion can be made.
+The clauses $b \in V_+(j)$ are the ones that would fix $j$ to $1$ if their warnings are active, the clauses $b \in V_-(j)$ would fix $j$ to $0$.
+So if $h_{j \rightarrow a}$ is positive, the variable $j$ tends to the value $1$, if the cavity field is negative it tends to $0$. If $h_{j \rightarrow a} = 0$ which includes the case $V(j) \setminus a = \emptyset$ no conclusion can be made.
 
-When all cavity fields are computed, each variable $j$ with $h_{j \rightarrow a} \neq 0$ has a preferred value. This preferred value either makes the clause $a$ satisfied or does not contribute to the clause. If all variables $j \in V(a)\setminus i$ prefer a non satisfying value, the clause $a$ sends a warning to $i$, meaning that $i$ should take the satisfying value.
+When all cavity fields are computed, each variable $j$ with $h_{j \rightarrow a} \neq 0$ has a preferred value. This preferred value either makes the clause $a$ satisfied or does not contribute to its satisfaction. If all variables $j \in V(a)\setminus i$ prefer a non satisfying value, the clause $a$ sends a warning to $i$, meaning that $i$ should take the satisfying value.
 
 This warning can be computed by $$u_{a \rightarrow i} = \prod_{j\in V(a)\setminus i}{\theta(h_{j \rightarrow a}J_j^a)} \quad \text{ with } \theta(x) = \left\{
   \begin{array}{@{}ll@{}}
@@ -25,11 +25,12 @@ This warning can be computed by $$u_{a \rightarrow i} = \prod_{j\in V(a)\setminu
 The factor $\theta(h_{j \rightarrow a}J_j^a)$ is $1$ if $j$ prefers to violate $a$ and $0$ if not:
 \begin{itemize}
 \item[] If $j$ has no preferred value its cavity field is $0$ and $\theta(h_{j \rightarrow a}J_j^a) = 0$ meaning no warning will be sent.
-\item[] If the preferred value of $j$ satisfies $a$, $J_j^a$ and $h_{j \rightarrow a}$ have different signs and  $\theta(h_{j \rightarrow a}J_j^a)$ is again $0$.
+\item[] If the preferred value of $j$ satisfies $a$, $J_j^a$ and $h_{j \rightarrow a}$ have different signs and \newline $\theta(h_{j \rightarrow a}J_j^a) = \theta(-1)$ is again $0$.
 \item[] If the preferred value of $j$ \emph{violates} $a$, $J_j^a$ and $h_{j \rightarrow a}$ have the same sign and $\theta(h_{j \rightarrow a}J_j^a) = 1$. If this is the case for all $j \neq i$ the product evaluates to $1$ and $a$ sends a warning to $i$.
 \end{itemize}
-\begin{lstlisting}[mathescape=true]
+\begin{lstlisting}[mathescape=true, frame = single]
 	Warning Propagation Algorithm
+	  Input: A CNF formula and its factor graph
 	
 	0. Randomly initialize all warnings $u_{a \rightarrow i} \in_R \{0, 1\}$
 	
@@ -42,14 +43,14 @@ The factor $\theta(h_{j \rightarrow a}J_j^a)$ is $1$ if $j$ prefers to violate $
 
 The following lemma shows that - on trees - the computed messages indeed serve the purpose described in the first paragraph: If the algorithm successfully returns a set of converged warnings, each warning $u^{\star}_{a \rightarrow i} = 1$ fixes the variable $i$ to the value satisfying a:
 
-\begin{lemma}\cite{survprob} Let $a \rightarrow i$ be an edge on level $r$. \newline
+\begin{lemma}\cite{survprob} Let $a \rightarrow i$ be an edge of level $r$. \newline
 If $u^{\ast}_{a \rightarrow i} = 1$ the SAT formula defined by $\tau_{a \rightarrow i}$ is not satisfiable.
 
 \begin{proof} Induction on $r$.
 \begin{itemize}
 	\item If $r = 0$, $a$ is a leaf and $\tau_{a \rightarrow i}$ defines a formula that consists of one empty clause.
 	\item If $r = 1$ the message $u^{\ast}_{a \rightarrow i}$ cannot be $1$: $a$ contains one or more variables $j \neq i$ which all are leaf nodes that pass the message $m_{j \rightarrow a} = 0$ to $a$. The update equation yields $m_{a \rightarrow i} = \prod_j \theta(0) = 0$.
-	\item Let $r \geq 2$ and $u^{\ast}_{a \rightarrow i} = -1$. For each variable $j \neq i$ of $a$ there is at least one $b$ with $J_j^b J_j^a u^\star_{b \rightarrow j}= 1$ or equivalently $J_j^b \neq J_j^a$ and  $u^\star_{b \rightarrow j} = 1$. By induction the subproblem $\tau_{b \rightarrow j}$ is not satisfiable and any assignment in which $j$ supports $a$ must violate at least one clause on $\tau_{b \rightarrow j}$.
+	\item Let $r \geq 2$ and $u^{\ast}_{a \rightarrow i} = -1$. For each variable $j \neq i$ of $a$ there is at least one $b$ with $J_j^b J_j^a u^\star_{b \rightarrow j}= 1$ or equivalently $J_j^b \neq J_j^a$ and  $u^\star_{b \rightarrow j} = 1$. By induction the subproblem $\tau_{b \rightarrow j}$ is not satisfiable and any assignment in which $j$ supports $a$ must violate at least one clause in $\tau_{b \rightarrow j}$.
 \end{itemize}
 \end{proof}
 \end{lemma}
@@ -58,7 +59,7 @@ If $u^{\ast}_{a \rightarrow i} = 1$ the SAT formula defined by $\tau_{a \rightar
 
 \subsection{Decimation Algorithm}
 
-The algorithm that computes satisfying assignments based on the WP results is called \emph{Warning Inspired Decimation} (CID). CID uses WP as a subprocedure. For a satisfiable formula $\mathcal{F}$ after running WP, a partial assignment is computed that can be applied to $\mathcal{F}$ to obtain a smaller formula. Running CID recursively on that smaller formula gives a complete satisfying assignment. CID detects after the first run of WP if $\mathcal{F}$ is not satisfiable. \newline
+The algorithm that actually computes satisfying assignments based on the WP results is called \emph{Warning Inspired Decimation} (CID). CID uses WP as a subprocedure. For a satisfiable formula $\mathcal{F}$ after running WP, a partial assignment is computed that can be applied to $\mathcal{F}$ to obtain a smaller formula. Running CID recursively on that smaller formula gives a complete satisfying assignment. CID detects after the first run of WP if $\mathcal{F}$ is not satisfiable. \newline
 
 To determine if a formula is satisfiable one has to compute certain values using the converged WP messages.
 
@@ -67,16 +68,17 @@ $h_{i \rightarrow a}$ gave the current tendency of $i$ when ignoring $a$, the lo
 The \emph{contradiction number} $c_i$ of a variable is $1$ if $i$ gets fixed to different values and $0$, if not. $c_i$ can be obtained from the converged WP messages. If after running WP a variable has a contradiction number of $1$ the formula is unsatisfiable. \newline
 The opposite direction is also true: If no contradiction appears, the formula is satisfiable and CID returns a valid assignment. 
 After one run of WP a partial assignment can be obtained by setting all variables with active warnings to the value they were fixed to: $1$ if $H_i > 0$ and $0$ if $H_i < 0$. If $i$ received at least one warning, $H_i$ can not be $0$ because all incoming warnings fix $i$ to the same value. If no variable received a warning (all $H_i$ are $0$), CID chooses a random variable and sets it to a random value. \newline
-Now the factor graph is modified (\emph{cleaned}) according to the partial assignment. The graph is cleaned by removing all fixed variables and all clauses satisfied by them.  The modified formula will be satisfiable and cause no contradictions in the following WP runs.
+Now the factor graph is modified (\emph{cleaned}) according to the partial assignment. The graph is cleaned by removing all fixed variables and all clauses that are satisfied by them.  The modified formula will be satisfiable and cause no contradictions in the following WP runs.
+\newpage
 
-\begin{lstlisting}[mathescape=true]
+\begin{lstlisting}[mathescape=true, frame = single]
 	Warning Inspired Decimation
-	
+	  Input: A CNF formula and its factor graph 
 	1. While there are unfixed variables
 		1.1 Run WP
 		1.2 If WP does not converge, return UN-CONVERGED. Else compute the numbers $H_i$ and $c_i$
-		1.3 If at least one $c_i = 1$ return UNSAT.
-		1.4 Clean the graph
+		1.3 If at least one $c_i$ is $1$ return UNSAT.
+		1.4 Choose a partial assignment and clean the graph
 	2. return the complete assignment
 \end{lstlisting}
 
@@ -90,5 +92,3 @@ Now the factor graph is modified (\emph{cleaned}) according to the partial assig
 %\end{itemize}
 %\end{proof}
 %\end{lemma}
-
-\newpage

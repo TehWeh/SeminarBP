@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.6.7)  5 JUL 2018 22:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.6.7)  6 JUL 2018 20:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2404,20 +2404,23 @@ Package microtype Info: Character `029' is missing
 
 
 
-]
+] [1
+
+
+
+
+] [2]
 \openout2 = `chapters/Einleitung.aux'.
 
  (./chapters/Einleitung.tex
 Chapter 1.
 LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/pplj/b/n' tried instead on input line 7.
-) [1
+) [3
 
 
 
-
-
-] [2
+] [4
 
 
 
@@ -2438,65 +2441,65 @@ n/10.95 , \OML/zplm/m/it/10.95 x[]\OT1/pplx/m/n/10.95 , \OML/zplm/m/it/10.95 x[
 ]\OT1/zplm/m/n/10.95 ) = [] \OMS/zplm/m/n/10.95 ^^C [] ^^C []
  []
 
-[3
+[5
 
 
 
-] [4]) (./chapters/BelProp.tex [5]
-LaTeX Font Info:    Font shape `T1/fvm/m/it' in size <9> not available
-(Font)              Font shape `T1/fvm/m/sl' tried instead on input line 23.
-LaTeX Font Info:    Font shape `T1/fvm/m/sl' will be
-(Font)              scaled to size 7.65005pt on input line 23.
- [6])) [7]
+] [6]) (./chapters/BelProp.tex [7] [8]
+
+Package wrapfig Warning: Stationary wrapfigure forced to float on input line 49
+.
+
+)) [9]
 \openout2 = `chapters/BPFS.aux'.
 
  (./chapters/BPFS.tex
 Chapter 3.
-[8
+[10
 
 
 
 
-] (./chapters/WP.tex [9]
+] (./chapters/WP.tex [11]
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
 (Font)              scaled to size 8.50006pt on input line 31.
- [10]
-Underfull \hbox (badness 10000) in paragraph at lines 61--62
+ [12]
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
 
  []
 
-[11]) (./chapters/BP.tex
-Underfull \hbox (badness 10000) in paragraph at lines 8--10
+[13]) (./chapters/BP.tex
+Underfull \hbox (badness 10000) in paragraph at lines 6--9
 
  []
 
 
-Overfull \hbox (4.00795pt too wide) in paragraph at lines 15--16
+Overfull \hbox (4.00795pt too wide) in paragraph at lines 14--15
 \T1/pplj/m/n/10.95 The ba-sic pro-ce-dure of send-ing and up-dat-ing mes-sages 
 be-tween nodes
  []
 
-[12]
-Overfull \hbox (128.22775pt too wide) in paragraph at lines 90--90
+[14]
+Overfull \hbox (128.22775pt too wide) in paragraph at lines 91--91
 [] 
  []
 
-
+[15]
 Overfull \hbox (2.8332pt too wide) in paragraph at lines 116--117
  [][] 
  []
 
-[13]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[14] [15])) [16]
+LaTeX Font Info:    Font shape `T1/fvm/m/it' in size <9> not available
+(Font)              Font shape `T1/fvm/m/sl' tried instead on input line 148.
+LaTeX Font Info:    Font shape `T1/fvm/m/sl' will be
+(Font)              scaled to size 7.65005pt on input line 148.
+[16] [17])) [18]
 \openout2 = `chapters/Conc.aux'.
 
- (./chapters/Conc.tex) [17
+ (./chapters/Conc.tex) [19
 
 
-] [18
+] [20
 
 
 
@@ -2516,20 +2519,20 @@ Overfull \hbox (147.17595pt too wide) in paragraph at lines 15--15
 d = 0ahUKEwiExLKCmYbcAhWBYVAKHWwbCikQFggqMAA &
  []
 
-) [19
+) [21
 
 
 
 
 
-] [20
+] [22
 
 
 
 ]
 \openout2 = `FrontBackmatter/Declaration.aux'.
 
- (./FrontBackmatter/Declaration.tex) [21
+ (./FrontBackmatter/Declaration.tex) [23
 
 
 
@@ -2541,7 +2544,12 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 92.
 (./FrontBackmatter/Titleback.aux) (./FrontBackmatter/Abstract.aux)
 (./FrontBackmatter/Contents.aux) (./chapters/Einleitung.aux)
 (./chapters/Begriffe.aux) (./chapters/BPFS.aux) (./chapters/Conc.aux)
-(./FrontBackmatter/Bibliography.aux) (./FrontBackmatter/Declaration.aux))
+(./FrontBackmatter/Bibliography.aux) (./FrontBackmatter/Declaration.aux)
+
+Package mparhack Warning: Marginpars may have changed.
+(mparhack)                Rerun to get them right.
+
+)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 92.
 
 
@@ -2756,20 +2764,29 @@ FrontBackmatter/Declaration.tex
  ***********
 
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 92.
-Package rerunfilecheck Info: File `ClassicThesis.out' has not changed.
-(rerunfilecheck)             Checksum: 90126A088E068FE0B7C6EBEA3C1A6F44;1359.
+
+Package rerunfilecheck Warning: File `ClassicThesis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `ClassicThesis.out':
+(rerunfilecheck)             Before: 00ED794D18AB53FBFF5D0AEC04665C03;1359
+(rerunfilecheck)             After:  8F0BB2F06DA85B564E9EC2685EEBDD66;1442.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package logreq Info: Writing requests to 'ClassicThesis.run.xml'.
 \openout1 = `ClassicThesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43944 strings out of 492995
- 833895 string characters out of 6136403
- 1242131 words of memory out of 5000000
- 46601 multiletter control sequences out of 15000+600000
+ 44039 strings out of 492995
+ 835570 string characters out of 6136403
+ 1257131 words of memory out of 5000000
+ 46691 multiletter control sequences out of 15000+600000
  86787 words of font info for 137 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
- 70i,23n,90p,10520b,3466s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,23n,90p,10520b,2258s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/program_files/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/pro
 gram_files/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c
 :/program_files/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.p
@@ -2786,10 +2803,10 @@ bera/fvmro8a.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/urw/pala
 tino/uplb8a.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/urw/palat
 ino/uplr8a.pfb><c:/program_files/texlive/2017/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on ClassicThesis.pdf (29 pages, 189752 bytes).
+Output written on ClassicThesis.pdf (31 pages, 193377 bytes).
 PDF statistics:
- 372 PDF objects out of 1000 (max. 8388607)
- 323 compressed objects within 4 object streams
- 93 named destinations out of 1000 (max. 500000)
+ 385 PDF objects out of 1000 (max. 8388607)
+ 334 compressed objects within 4 object streams
+ 98 named destinations out of 1000 (max. 500000)
  18605 words of extra memory for PDF output out of 20736 (max. 10000000)
 

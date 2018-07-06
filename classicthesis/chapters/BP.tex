@@ -2,17 +2,16 @@
 
 The Warning Propagation algorithm is able to solve the decision problem and to compute valid assignments of SAT formulas. A different message passing method called the \emph{Belief Propagation} algorithm is able to determine the actual number of satisfying assignments and the fraction of those assignments where variables are restricted to fixed values. 
 
-The messages sent in the BP algorithm are conditional probabilities $\mu \in [0, 1]$. The corresponding events are taken from the probability space built by all configurations of the  boolean variables $x_1, \ldots, x_n$. The used probability measure is a uniform distribution so for a SAT formula over $n$ variables each assignment has probability $2^{-n}$. \newline
-This probability space can be restricted to only those configurations that satisfy a boolean formula $\mathcal{F}$. If there are $\mathcal{N}$ satisfying assignments the conditioned probability measure factorizes to $$P(X \; | \; X \text{ satisfies } \mathcal{F}) = \mathcal{N}^{-1} \prod_{a \in A} f_a(X)$$
-
+The messages sent in the BP algorithm are conditional probabilities $\mu \in [0, 1]$. The corresponding events are taken from the probability space built by all configurations $X$ of the  boolean variables $x_1, \ldots, x_n$. The used probability measure is a uniform distribution so for a SAT formula over $n$ variables each configuration has probability $P(X) = 2^{-n}$. \newline
+This probability space can be restricted to only those configurations that satisfy a boolean formula $\mathcal{F}$. If there are $\mathcal{N}$ satisfying assignments this conditioned probability measure factorizes to $$P(X \; | \; X \text{ satisfies } \mathcal{F}) = \mathcal{N}^{-1} \prod_{a \in A} f_a(X)$$
 where $A$ is the set of clauses in $\mathcal{F}$ and $f_a(X)$ the characteristic function of a clause $a$ which is $1$ if $X$ satisfies $a$ and $0$ if not. \newline
-The fraction of satisfying assignments where for example $x_1 = 1$ and $x_4 = 0$ can now be viewed as a marginals of the factorized function. \newline
+The fraction of satisfying assignments where for example $x_1 = 1$ or $x_4 = 0$ can now be viewed as a marginals of the factorized function. \newline
 
- Belief Propagation is a message passing technique for computing marginals of  factorized probability distributions. In this chapter the BP equations and their interpretations in the SAT context are explained and demonstrated on an example formula.
+In general, belief propagation is a message passing technique for approximating marginals of factorized probability distributions. In this chapter the BP equations and their interpretations in the SAT context are explained and demonstrated on an example formula.
 
 \subsection{Propagation Algorithm} \label{BPA}
 
-The basic procedure of sending and updating messages between nodes of the function's factor graph stays the same as in WP. Instead of warnings, the BP messages are conditional probabilities. From the converged probabilities one can obtain marginals and the functions normalization constant $\mathcal{N}$. With this information one gets the total number of satisfying assignments as well as the number of assignments where a variable has a fixed value.
+The basic procedure of sending and updating messages between nodes of the function's factor graph stays the same as in WP. Instead of warnings, the BP messages are conditional probabilities. From the converged probabilities one can obtain marginals and the functions normalization constant $\mathcal{N}$. With this information one gets the total number of satisfying assignments as well as the number of assignments where a single variable has a fixed value.
 
 \subsubsection{Messages}
 %The general idea behind Belief Propagation is to compute for each edge $u \rightarrow v$ a marginal 
@@ -25,7 +24,7 @@ The message $\mu_{i \rightarrow a}(x_i)$ sent in the opposite direction is the p
 
 \begin{example}
 Let $\mathcal{F} = \underbrace{(x_1 \lor x_2 \lor \overline{x_3})}_a  \land \underbrace{(x_3 \lor x_4)}_b $.
-\end{example}
+
 \begin{figure}[h]
 \centering
 
@@ -53,7 +52,9 @@ Let $\mathcal{F} = \underbrace{(x_1 \lor x_2 \lor \overline{x_3})}_a  \land \und
 The messages exchanged between $b$ and $x_3$ can be computed using only the definition: \newline
 For example $\mu_{b \rightarrow 3}(1)$ is the probability that $(x_3 \lor x_4)$ is satisfied by an assignment where $x_3 = 1$. Its value is $1$ because each such assignment satisfies $b$. If $x_3 = 0$, only those assignments where $x_4 = 1$ will satisfy $b$ so $\mu_{b \rightarrow 3}(0) = 0.5$. \newline
 Out of all 14 configurations satisfying $(x_1 \lor x_2 \lor \overline{x_3})$ there are $8$ where $x_3 = 0$ and $6$ where $x_3 = 1$, so $\mu_{3 \rightarrow b}(0) = \frac{4}{7}, \, \mu_{3 \rightarrow b}(1) = \frac{3}{7}$.
-This method of counting desired configurations out of the whole configuration space is infeasible for larger graphs. Instead the messages are obtained by message passing.
+\end{example}
+
+This method of counting desired configurations in the whole configuration space is infeasible for larger graphs. Instead the probabilities are obtained by message passing.
 
 \subsubsection{Update Rules}
 
@@ -81,15 +82,14 @@ This method of counting desired configurations out of the whole configuration sp
 
 \end{tikzpicture}
 \end{wrapfigure}
-$\mu_{b \rightarrow 3}(x)$, the message passed to $a$ tells the probability $i$ is $x_i = x$ considering only the factors on $i$'s side of the graph. \newline The node $i$ receives information about these factors through its neighbour vertices $b_i \neq a$. The incoming messages $\mu_{b_i \rightarrow i}(x)$ tell, if the factors are satisfied if $x_i = x$. \newline
-Using Bayes theorem and the fact that $\mu_{b_i \rightarrow i}$ are conditionally independent given $x_i$, one can write the outgoing message  as a product of the incoming ones:
+$\mu_{i \rightarrow a}(x)$, the message passed to $a$, tells the probability that $i$ is $x_i = x$ considering only the factors on $i$'s side of the graph. \newline The node $i$ receives information about these factors through its neighbour vertices $b_i \neq a$. The incoming messages $\mu_{b_i \rightarrow i}(x)$ tell, if the factors are satisfied conditioned on $x_i = x$. \newline
+Using Bayes' theorem and the fact that the messages $\mu_{b_i \rightarrow i}$ are conditionally independent, one can write the outgoing message  as a product of the incoming ones:
 \begin{align*}
 \mu_{i\rightarrow a}(x) = P(x_i = x \; | \; \tau_{i \rightarrow a} \text{ is sat})
-&= \frac{P(x = x_i) P(x = x_i \; | \; \tau_{i \rightarrow a} \text{ is sat})}{P(\tau_{i \rightarrow a} \text{ is sat})} \\
-&= \underbrace{\frac{P(x = x_i)}{P(\tau_{i \rightarrow a}\text{ is sat})}}_{C_{i \rightarrow a}} \prod_{b \neq a} \mu_{b \rightarrow i}(x) \\
+&= \frac{P(x_i = x) P(x_i = x \; | \; \tau_{i \rightarrow a} \text{ is sat})}{P(\tau_{i \rightarrow a} \text{ is sat})} \\
+&= \underbrace{\frac{P(x_i = x)}{P(\tau_{i \rightarrow a}\text{ is sat})}}_{C_{i \rightarrow a}} \prod_{b \neq a} \mu_{b \rightarrow i}(x) \\
 \end{align*}
-
-The factor $C_{i \rightarrow a}$ is the same for $x=0$ and $x=1$ so it suffices to compute the products for $x_i = 0$ and $x_i = 1$ and then to normalize so that $\mu_{i\rightarrow a}(0) + \mu_{i \rightarrow a}(1) = 1$. The usual notation to indicate the implicit existence of a formalization factor is $\mu_{i \rightarrow a}(x) \propto \prod \mu_{b \rightarrow i}(x)$. \cite{lecture} 
+The factor $C_{i \rightarrow a}$ is the same for $x=0$ and $x=1$ so it suffices to compute the products for $x_i = 0$ and $x_i = 1$ and then to normalize so that $\mu_{i\rightarrow a}(0) + \mu_{i \rightarrow a}(1) = 1$. The usual notation to indicate the implicit existence of a normalization factor is $\mu_{i \rightarrow a}(x) \propto \prod \mu_{b \rightarrow i}(x)$ (\cite{lecture}). 
 
 
 \begin{wrapfigure}{r}{0.3\textwidth}
@@ -116,9 +116,9 @@ The factor $C_{i \rightarrow a}$ is the same for $x=0$ and $x=1$ so it suffices 
 \end{tikzpicture}
 \end{wrapfigure}
 
-To compute $\mu_{a \rightarrow i}(x_i)$ one has to sum over all configurations $X$ of the variables in $a$ where $x_i = x$. If a configuration does not satisfy $a$, it contributes nothing to $\mu_{a \rightarrow i}(x_i)$. If it does, one has to compute the probability that it also satisfies the other factors in $\tau_{a \rightarrow i}$. The probability that a configuration where $j$ takes the value $x_j$ satisfies the factors behind the neighbour variable $j$ is $\mu_{j \rightarrow a}(x_j)$. Again these probabilities are independent and the probability for all factors is simply the product.
+To compute $\mu_{a \rightarrow i}(x)$ one has to sum over all configurations $X$ of the variables in $a$ where $x_i = x$. If a configuration does not satisfy $a$, it contributes nothing to $\mu_{a \rightarrow i}(x_i)$. If it does, one has to compute the probability that it also satisfies the other factors in $\tau_{a \rightarrow i}$. The probability that a configuration where $j$ takes the value $x_j$ satisfies the factors behind the neighbour variable $j$ is $\mu_{j \rightarrow a}(x_j)$. Again these probabilities are independent and the probability for all factors is simply the product.
 
-$$\mu_{a \rightarrow i}(x) = \sum_{ X = \{x_j (j \neq i), \; x_i = x\}} f_a(X) \prod_{j \neq i} \mu_{j \rightarrow a}(x_j)$$
+$$\mu_{a \rightarrow i}(x_i) = \sum_{ \sim \{x_i\}} f_a(X) \prod_{j \neq i} \mu_{j \rightarrow a}(x_j)$$
 
 
 \begin{example}
@@ -131,7 +131,7 @@ Since the formula's factor graph is a tree, the updates can be scheduled so that
 
 The leaves are all variable nodes. As they receive no incoming messages they will all send the same constant message. The empty product in the update rule evaluates to $1$, after normalization the values are \newline $\mu_{1 \rightarrow a}(0) = \mu_{1 \rightarrow a}(1) = 1/2$. The same holds for $2 \rightarrow a$ and $4 \rightarrow b$.
 
-\item Level 1
+\item Level 1.
 The message of level $1$ are both sent from factors to variables: 
 \begin{align*}
 \mu_{a \rightarrow 3}(0) = &\mu_{1 \rightarrow a}(0)\mu_{2 \rightarrow a}(0) + \mu_{1 \rightarrow a}(0)\mu_{2 \rightarrow a}(1) + \mu_{1 \rightarrow a}(1) \mu_{2 \rightarrow a}(0) \\ + & \mu_{1 \rightarrow a}(1)\mu_{2 \rightarrow a}(1) = 1 \\
@@ -140,7 +140,7 @@ The message of level $1$ are both sent from factors to variables:
 \mu_{b \rightarrow 3}(1) = &\mu_{4 \rightarrow b}(0) + \mu_{4 \rightarrow b}(1) = 1
 \end{align*}
 
-\item Level 2
+\item Level 2.
 The unnormalized values for $3 \rightarrow b$ are $0.5$ and $1$. After normalization one gets $\mu_{3 \rightarrow b}(0) = \frac{0.5}{0.5 + 1} = \frac{1}{3}$ and $\mu_{3 \rightarrow b}(1) = \frac{2}{3}$. \newline
 The values $\mu_{3 \rightarrow a}(0) = \frac{1}{1 + 0.75} = \frac{4}{7}$ and $\mu_{4 \rightarrow a}(1) = \frac{3}{7}$ are obtained in the same way.
 %  \item Level 3
@@ -208,12 +208,12 @@ In \cite{survprob} and \cite{lecture} these standard rules are expressed in a di
 Instead of computing functions where $\mu_{i \rightarrow a}(0)$ and $\mu_{i \rightarrow a}(1)$ add up to $1$, one can also compute the value $\gamma_{i \rightarrow a}$, the probability that $x_i$ violates $a$. 
 It can be expressed as $\gamma_{i \rightarrow a} = \left\{
   \begin{array}{@{}ll@{}}
-    \mu_{i \rightarrow a}(0) & \text{if}\ J_a^i = 1 \\
-    \mu_{i \rightarrow a}(1), &  \text{if}\ J_a^i = 0
+    \mu_{i \rightarrow a}(0) & \text{if}\ J_a^i = -1 \\
+    \mu_{i \rightarrow a}(1), &  \text{if}\ J_a^i = 1
   \end{array}\right\}$
   
 
-In the original BP equation for $\mu_{a \rightarrow i}(x_i)$ one has to sum over all satisfying configurations of $a$'s variables $j \neq i$. Since there is only one configuration that does not satisfy $a$ it is easier to just compute the probability of this single configuration. The message $\delta_{a \rightarrow i}$ is the probability that all of $a$'s neighbours are in a state that violates $a$ (conditioned on $a$ still being satisfiable). The probabilities for these states are exactly the incoming messages $\gamma_{j \rightarrow a}$ which are conditionally independent.
+In the original BP equation for $\mu_{a \rightarrow i}(x_i)$ one has to sum over all satisfying configurations of $a$'s variables $j \neq i$. Since there is only one configuration that does not satisfy $a$ it is easier to just compute the probability of this single configuration. The message $\delta_{a \rightarrow i}$ is the probability that all of $a$'s neighbours are in a state that violates $a$ (conditioned on $\tau_{a \rightarrow i}$ still being satisfiable). The probabilities for each $j$ to be in such a state are exactly the values of the incoming messages $\gamma_{j \rightarrow a}$ which are conditionally independent.
 $\delta_{a \rightarrow i} = \prod_{j \neq i} \gamma_{j \rightarrow a}$ is the first update equation for the modified BP version.
 
 The more complicated part is to compute $\gamma_{i \rightarrow a}$ from incoming messages $\delta_{b \rightarrow i}$. The probability that $i$ violates $a$ conditioned on $\tau_{i \rightarrow a}$ being satisfied is again proportional to the probability  that $\tau_{i \rightarrow a}$ is satisfied conditioned on $i$ violating $a$. This is the case exactly if if no $b \neq a$ fixes $i$ to the value that would satisfy $a$.
@@ -222,9 +222,9 @@ To get the real value of $\gamma_{i \rightarrow a}$ one has to normalize so that
 
 With these new update equations the overall update procedure is
 
-\begin{lstlisting}[mathescape=true]
+\begin{lstlisting}[mathescape=true, frame = single]
 	Belief Propagation Algorithm
-	
+	  Input: A CNF formula and its factor graph
 	0. Randomly initialize all message $\delta_{a \rightarrow i} \in_R [0, 1]$
 	
 	1. For $t=0$ to $t = t_{max}$

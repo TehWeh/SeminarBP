@@ -11,7 +11,7 @@ In many applications the global function $f$ is a joined probability distributio
 
 \begin{example}
 For random variables $X_1, X_2 \text{ and } X_3$ their joined probability distribution $f$ is defined as $f(x_1, x_2, x_3) := P(X_1 = x_1 \land X_2  = x_2 \land X_3 = x_3)$. 
-$f$ can be factorized using the definition of conditional probabilities: $$f(x_1, x_2, x_3) = P(X_1 = x_1) * P(X_2 = x_2 \land X_3 = X_3 \; | \; X_1 = x_1)$$
+$f$ can be factorized using the definition of conditional probabilities: $$f(x_1, x_2, x_3) = P(X_1 = x_1) * P(X_2 = x_2 \land X_3 = x_3 \; | \; X_1 = x_1)$$
 This factorization still contains a function depending on all $3$ variables and is not useful. If $X_2$ and $X_3$ are known to be conditionally independent given $X_1$ this unwanted function can itself be factorized:
 
 $$f(x_1, x_2, x_3) = \underbrace{P(X_1 = x_1)}_{f_1(x_1)} * \underbrace{P(X_2 = x_2 \; | \; X_1 = x_1)}_{f_2(x_1, x_2)} * \underbrace{P(X_3 = x_3 \; | \; X_1 = x_1)}_{f_3(x_1, x_3)}$$
@@ -60,24 +60,22 @@ Any SAT formula over the variables $x_1, \ldots, x_n$ in CNF form can be interpr
 $x_1, \ldots, x_n$ are boolean variables which can be either $0$ or $1$. A SAT formula $\mathcal{F}$ is a conjunction / product of special constraints, the formula's \emph{clauses}. A clause is a disjunction of variables and their negations  $(x_i\lor \overline{x_j} \lor \ldots)$ and is satisfied if at least one variable $x_i$ that appears unnegated is set to $1$ or at least one $x_j$ that appears negated is set to $0$. \newline
 In the factor graph of a formula each factor node $a$ represents the local function defined by a single clause. If the variable $x_i$ or its negation $\overline{x_i}$ appears in this clause the factor graph contains an edge between $a$ and the variable node $i$. 
 
-In following descriptions the letters $a$ and $b$ are always factor nodes, $i$ and $j$ are used for variable nodes. Also often no distinction is made between the nodes of the factor graph and the corresponding elements of the formula. Especially from here on variables are denoted as single letters $i, j$ whereas the value of a variable $i$ is written as $x_i \in \{0, 1\}$
+In following descriptions the letters $a$ and $b$ always describe factor nodes, $i$ and $j$ are used for variable nodes. Also often no distinction is made between the nodes of the factor graph and the corresponding elements of the formula. Especially from here on variables are denoted as single letters $i, j$ whereas the value of a variable $i$ is written as $x_i \in \{0, 1\}$
 
 In \cite{survprob} some additional notation is defined to simplify the description of the algorithms in section \ref{BPFS}: 
 \newpage
 \begin{definition} Let $a$ be a factor node and $i$ one of its variables
 \begin{itemize}
 \item The value $J_i^a$ is $1$ if $i$ appears negated in $a$ and $-1$ if not
-\item $V(a)$ the set of all variables in $a$, $V(i)$ is the set of all clauses defining $i$.  Alternatively $V(a)$ and $V(i)$ are the neighbourhoods $a$ and $i$ in the factor graph.
-\item $V_+(a)$ is set of variables that appear unnegated in $a$, $V_-(a)$ is set of negated variables.
+\item $V(a)$ is the set of all variables in $a$ \newline$V(i)$ is the set of all clauses containing $i$.  \newline Alternatively $V(a)$ and $V(i)$ are the neighbourhoods of $a$ and $i$ in the factor graph.
+\item $V_+(a)$ is set of variables that appear unnegated in $a$ \newline $V_-(a)$ is set of $a$'s negated variables.
+\item $V_a^u(i)$ is the set of $i$'s neighbours $b \neq a$ with $J_i^b \neq J_i^a$ \newline $V_a^s(i)$ is the set of neighbours $b \neq a$ with $J_i^b = J_i^a$
 \end{itemize}
 \end{definition}
-The constraints can directly be viewed as functions ...
 
 
 \begin{example}
-$$F = \underbrace{(x_1 \lor x_2 \lor x_3)}_{a} \land \underbrace{(\overline{x_1} \lor x_3 \lor x_4) }_{b}\land \underbrace{(\overline{x_3} \lor x_4)}_{c} \land \underbrace{(\overline{x_1} \lor \overline{x_2})}_{d}$$
-
-The defined values of clause $n$ are $V_+(b) = \{x_2, x_4\}, V_-(b) = \{x_1\}$
+Let $$\mathcal{F} = \underbrace{(x_1 \lor x_2 \lor x_3)}_{a} \land \underbrace{(\overline{x_1} \lor x_2 \lor x_4) }_{b}\land \underbrace{(\overline{x_3} \lor x_4)}_{c} \land \underbrace{(\overline{x_1} \lor \overline{x_2})}_{d}$$
 
 \begin{figure}[h]
 \centering
@@ -111,9 +109,12 @@ The defined values of clause $n$ are $V_+(b) = \{x_2, x_4\}, V_-(b) = \{x_1\}$
 
   
 \end{tikzpicture}
-\caption{Factor graph of a SAT formula}
+\caption{Factor graph of a $\mathcal{F}$}
 \end{figure}
 
-Again the circles are variable nodes, the rectangles are constraint nodes. If if $x_i$ appears negated in the clause $a$ (if $J_a^i = 1$), the edge is drawn dotted.  
+Again the circles are variable nodes, the rectangles are constraint nodes. If if $x_i$ appears negated in the clause $a$ (if $J_a^i = 1$), the edge is drawn dashed.  
+
+The variable sets of $b$ are for example $V(b) = \{1, 2, 4\}$, $V_+(b) = \{2, 4\}$, $ V_-(b) = \{1\}$.
+The sets of $x_1$ are $V(1) = \{a, b, d\}$, $V_a^s(1) = \emptyset$, $V_a^u(1) = \{b, d\}$.
 
 \end{example}
