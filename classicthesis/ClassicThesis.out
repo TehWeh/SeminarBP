@@ -1,21 +1,20 @@
 \BOOKMARK [1][-]{Abstract.1}{Abstract}{}% 1
 \BOOKMARK [1][-]{Zusammenfassung.1}{Zusammenfassung}{}% 2
 \BOOKMARK [1][-]{tableofcontents.1}{Contents}{}% 3
-\BOOKMARK [-1][]{part.1}{ Some Kind of Manual}{}% 4
-\BOOKMARK [0][]{chapter.1}{1 Einleitung}{part.1}% 5
-\BOOKMARK [0][]{chapter.2}{2 Belief Propagation}{part.1}% 6
-\BOOKMARK [1][-]{section.2.1}{2.1 Factor Graphs}{chapter.2}% 7
-\BOOKMARK [2][-]{subsection.2.1.1}{2.1.1 Factor graph of a SAT Problem}{section.2.1}% 8
-\BOOKMARK [1][-]{section.2.2}{2.2 Message Passing Algorithms on Trees}{chapter.2}% 9
-\BOOKMARK [1][-]{section.2.3}{2.3 Message Passing on general graphs}{chapter.2}% 10
-\BOOKMARK [0][]{chapter.3}{3 Belief Propagation for SAT Formulas}{part.1}% 11
-\BOOKMARK [1][-]{section.3.1}{3.1 Warning Propagation}{chapter.3}% 12
-\BOOKMARK [2][-]{subsection.3.1.1}{3.1.1 Propagation Algorithm}{section.3.1}% 13
-\BOOKMARK [2][-]{subsection.3.1.2}{3.1.2 Decimation Algorithm}{section.3.1}% 14
-\BOOKMARK [1][-]{section.3.2}{3.2 Belief Propagation}{chapter.3}% 15
-\BOOKMARK [2][-]{subsection.3.2.1}{3.2.1 Propagation Algorithm}{section.3.2}% 16
-\BOOKMARK [2][-]{subsection.3.2.2}{3.2.2 Marginal Probabilities}{section.3.2}% 17
-\BOOKMARK [2][-]{subsection.3.2.3}{3.2.3 Number of satisfying assignments}{section.3.2}% 18
-\BOOKMARK [1][-]{section.3.3}{3.3 Conclusion}{chapter.3}% 19
-\BOOKMARK [0][]{section*.9}{ Bibliography}{part.1}% 20
-\BOOKMARK [0][]{declaration.0}{Declaration}{part.1}% 21
+\BOOKMARK [0][]{chapter.1}{1 Einleitung}{}% 4
+\BOOKMARK [0][]{chapter.2}{2 Belief Propagation}{}% 5
+\BOOKMARK [1][-]{section.2.1}{2.1 Factor Graphs}{chapter.2}% 6
+\BOOKMARK [2][-]{subsection.2.1.1}{2.1.1 Factor graph of a SAT Problem}{section.2.1}% 7
+\BOOKMARK [1][-]{section.2.2}{2.2 Message Passing Algorithms on Trees}{chapter.2}% 8
+\BOOKMARK [1][-]{section.2.3}{2.3 Message Passing on general graphs}{chapter.2}% 9
+\BOOKMARK [0][]{chapter.3}{3 Belief Propagation for SAT Formulas}{}% 10
+\BOOKMARK [1][-]{section.3.1}{3.1 Warning Propagation}{chapter.3}% 11
+\BOOKMARK [2][-]{subsection.3.1.1}{3.1.1 Propagation Algorithm}{section.3.1}% 12
+\BOOKMARK [2][-]{subsection.3.1.2}{3.1.2 Decimation Algorithm}{section.3.1}% 13
+\BOOKMARK [1][-]{section.3.2}{3.2 Belief Propagation}{chapter.3}% 14
+\BOOKMARK [2][-]{subsection.3.2.1}{3.2.1 Propagation Algorithm}{section.3.2}% 15
+\BOOKMARK [2][-]{subsection.3.2.2}{3.2.2 Marginal Probabilities and valid assignments}{section.3.2}% 16
+\BOOKMARK [2][-]{subsection.3.2.3}{3.2.3 Number of satisfying assignments}{section.3.2}% 17
+\BOOKMARK [1][-]{section.3.3}{3.3 Conclusion}{chapter.3}% 18
+\BOOKMARK [0][]{section*.9}{ Bibliography}{}% 19
+\BOOKMARK [0][]{declaration.0}{Declaration}{}% 20

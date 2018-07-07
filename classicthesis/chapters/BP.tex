@@ -236,10 +236,28 @@ With these new update equations the overall update procedure is
 	2. If $t = t_{max}$ return UN-CONVERGED, else return the generated warnings $\delta_{a \rightarrow i}^{\star}$
 \end{lstlisting}
 
-\subsection{Marginal Probabilities}
+\subsection{Marginal Probabilities and valid assignments}
 
 If the BP-Algorithm returns a set of converged messages one can obtain the single variable marginal $\mu_i = P(x_i = 1 \; | \mathcal{F} \text{ is satisfied})$ in the same way, the values $P_{i \rightarrow a}$ where defined: The normalized probability that $\mathcal{F}$ is satisfied conditioned on $x_i = 1$.
-$$ \mu_i = \gamma_{j \rightarrow a} := \frac{\prod_{b \in V_-(i)} (1 - \delta_{b \rightarrow i})}{\prod_{b \in V_-(i)} (1 - \delta_{b \rightarrow i}) + \prod_{b \in V_+(i)} (1 - \delta_{b \rightarrow i})}$$
+$$ \mu_i := \frac{\prod_{b \in V_-(i)} (1 - \delta^\star_{b \rightarrow i})}{\prod_{b \in V_-(i)} (1 - \delta^\star_{b \rightarrow i}) + \prod_{b \in V_+(i)} (1 - \delta^\star_{b \rightarrow i})}$$
+
+At each step of the algorithm one can obtain in the same way the current \emph{belief} that $x_i = 1$ which has a chaning value until the messages converge. $\mu_i$ is the final belief induced by the converged messages. \newline
+
+These marginals are used to obtain satisfying assignments in the so called \emph{Belief Propagation Guided Decimation} algorithm. Like CID, the algorithm stepwise assigns  values to a formula's variables.
+
+For each variable $i$ the BP algorithm is run and $x_i$ is set to $1$ with probability $\mu_i$ and to $0$ with probability $1 - \mu_i$. Then the graph is cleaned like in the CID algorithm and the next variable can be assigned. After assigning a value to $x_i$ the formula must still be satisfiable because $x_i$ will be set to a value with positive marginal which means there exist assignments in which $x_i$ takes exactly the chosen value. By induction the returned assignment is valid.
+
+\begin{lstlisting}[mathescape=true, frame = single, escapechar=\%]
+	Belief Propagation Guided Decimation %\cite{BPGuideMe}%
+	  Input: A CNF formula and its factor graph
+	  
+	1. For $i = 1, \ldots, n$ do
+		1.1 Run BP and compute $\mu_i$
+		1.2 Assign $\rho(x_i) =$
+	2. Return the complete assignment
+\end{lstlisting}
+
+
 
 \subsection{Number of satisfying assignments}
 

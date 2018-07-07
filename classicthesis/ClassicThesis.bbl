@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 2.8 $
+% $ biblatex bbl format version 2.9 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -16,7 +16,7 @@
   {}
 \endgroup
 
-\sortlist[entry]{nyt/global/}
+\datalist[entry]{nyt/global//global/global}
   \entry{survprob}{article}{}
     \name{author}{3}{}{%
       {{hash=BA}{%
@@ -53,6 +53,34 @@
     \field{year}{2002}
   \endentry
 
+  \entry{BPGuideMe}{article}{}
+    \name{author}{1}{}{%
+      {{hash=CA}{%
+         family={{Coja-Oghlan}},
+         familyi={C\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \keyw{Mathematics - Combinatorics, Computer Science - Discrete Mathematics,
+  68R01, F.2.2}
+    \strng{namehash}{CA1}
+    \strng{fullhash}{CA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \verb{eprint}
+    \verb 1007.1328
+    \endverb
+    \field{title}{{On belief propagation guided decimation for random k-SAT}}
+    \field{journaltitle}{ArXiv e-prints}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{math.CO}
+    \field{month}{07}
+    \field{year}{2010}
+  \endentry
+
   \entry{lecture}{article}{}
     \name{author}{1}{}{%
       {{hash=UR}{%
@@ -78,5 +106,5 @@
     \endverb
     \field{year}{2011}
   \endentry
-\endsortlist
+\enddatalist
 \endinput

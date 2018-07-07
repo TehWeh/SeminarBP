@@ -1,51 +1,45 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
-\defcounter {refsection}{0}\relax 
-\select@language {american}
+\babel@toc {american}{}
 \defcounter {refsection}{0}\relax 
 \vspace {-\cftbeforepartskip }
+\babel@toc {american}{}
+\babel@toc {ngerman}{}
+\babel@toc {american}{}
 \defcounter {refsection}{0}\relax 
-\select@language {american}
+\contentsline {chapter}{\numberline {1}{Einleitung}}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
-\select@language {ngerman}
+\contentsline {chapter}{\numberline {2}{Belief Propagation}}{3}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\select@language {american}
+\contentsline {section}{\numberline {2.1}{Factor Graphs}}{3}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{\numberline {i}{Some Kind of Manual}}{1}{part.1}
+\contentsline {subsection}{\numberline {2.1.1}{Factor graph of a SAT Problem}}{4}{subsection.2.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {1}{Einleitung}}{3}{chapter.1}
+\contentsline {section}{\numberline {2.2}{Message Passing Algorithms on Trees}}{5}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}{Belief Propagation}}{5}{chapter.2}
+\contentsline {section}{\numberline {2.3}{Message Passing on general graphs}}{6}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}{Factor Graphs}}{5}{section.2.1}
+\contentsline {chapter}{\numberline {3}{Belief Propagation for SAT Formulas}}{9}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.1}{Factor graph of a SAT Problem}}{6}{subsection.2.1.1}
+\contentsline {section}{\numberline {3.1}{Warning Propagation}}{9}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}{Message Passing Algorithms on Trees}}{7}{section.2.2}
+\contentsline {subsection}{\numberline {3.1.1}{Propagation Algorithm}}{9}{subsection.3.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}{Message Passing on general graphs}}{8}{section.2.3}
+\contentsline {subsection}{\numberline {3.1.2}{Decimation Algorithm}}{11}{subsection.3.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}{Belief Propagation for SAT Formulas}}{11}{chapter.3}
+\contentsline {section}{\numberline {3.2}{Belief Propagation}}{12}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}{Warning Propagation}}{11}{section.3.1}
+\contentsline {subsection}{\numberline {3.2.1}{Propagation Algorithm}}{12}{subsection.3.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.1}{Propagation Algorithm}}{11}{subsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.2.1.1}{Messages}}{13}{subsubsection.3.2.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.2}{Decimation Algorithm}}{13}{subsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.2.1.2}{Update Rules}}{13}{subsubsection.3.2.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}{Belief Propagation}}{14}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.2}{Marginal Probabilities and valid assignments}}{16}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}{Propagation Algorithm}}{14}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.3}{Number of satisfying assignments}}{17}{subsection.3.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.2.1.1}{Messages}}{15}{subsubsection.3.2.1.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.2.1.2}{Update Rules}}{15}{subsubsection.3.2.1.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}{Marginal Probabilities}}{18}{subsection.3.2.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.3}{Number of satisfying assignments}}{18}{subsection.3.2.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}{Conclusion}}{19}{section.3.3}
+\contentsline {section}{\numberline {3.3}{Conclusion}}{18}{section.3.3}
 \defcounter {refsection}{0}\relax 
 \vspace {\beforebibskip }
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {}{Bibliography}}{21}{section*.9}
+\contentsline {chapter}{\numberline {}{Bibliography}}{19}{section*.9}
