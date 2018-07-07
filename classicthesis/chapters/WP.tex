@@ -12,7 +12,7 @@ The first step in the update procedure is to compute for each $j \in V(a) \setmi
 $$h_{j \rightarrow a} = \sum_{b \in V_+(j)\setminus a}{u_{b \rightarrow j}} - \sum_{b \in V_-(j)\setminus a}{u_{b \rightarrow j}} = -\sum_{b \in V(j)} J^b_j u_{b \rightarrow j}$$
 
 The clauses $b \in V_+(j)$ are the ones that would fix $j$ to $1$ if their warnings are active, the clauses $b \in V_-(j)$ would fix $j$ to $0$.
-So if $h_{j \rightarrow a}$ is positive, the variable $j$ tends to the value $1$, if the cavity field is negative it tends to $0$. If $h_{j \rightarrow a} = 0$ which includes the case $V(j) \setminus a = \emptyset$ no conclusion can be made.
+So if $h_{j \rightarrow a}$ is positive the variable $j$ tends to the value $1$. If the cavity field is negative it tends to $0$. If $h_{j \rightarrow a} = 0$ which includes the case $V(j) \setminus a = \emptyset$ no conclusion can be made.
 
 When all cavity fields are computed, each variable $j$ with $h_{j \rightarrow a} \neq 0$ has a preferred value. This preferred value either makes the clause $a$ satisfied or does not contribute to its satisfaction. If all variables $j \in V(a)\setminus i$ prefer a non satisfying value, the clause $a$ sends a warning to $i$, meaning that $i$ should take the satisfying value.
 
@@ -79,7 +79,7 @@ Now the factor graph is modified (\emph{cleaned}) according to the partial assig
 		1.2 If WP does not converge, return UN-CONVERGED. Else compute the numbers $H_i$ and $c_i$
 		1.3 If at least one $c_i$ is $1$ return UNSAT.
 		1.4 Choose a partial assignment and clean the graph
-	2. return the complete assignment
+	2. Return the complete assignment
 \end{lstlisting}
 
 %\begin{lemma}

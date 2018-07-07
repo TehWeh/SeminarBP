@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.2)  7 JUL 2018 02:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.2)  7 JUL 2018 22:45
 entering extended mode
 **./ClassicThesis.tex
 (ClassicThesis.tex
@@ -2440,7 +2440,13 @@ Overfull \hbox (18.33922pt too wide) in paragraph at lines 37--37
 
  (chapters/Einleitung.tex
 Chapter 1.
-) [1
+)
+Overfull \hbox (17.9019pt too wide) in paragraph at lines 8--59
+[]\T1/pplj/m/n/10.95 A be-lief prop-a-ga-tion ap-proach was used in the SAT sol
+ver "Dimetheus",
+ []
+
+[1
 
 
 
@@ -2549,12 +2555,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 244--245
 Overfull \hbox (37.76791pt too wide) in paragraph at lines 15--15
 \T1/pplj/m/n/10.95 vey prop-a-ga-tion: an al-go-rithm for sat-is-fi-a-bil-ity.
  In: \T1/pplj/m/it/10.95 CoRR \T1/pplj/m/n/10.95 cs.CC/0212002
- []
-
-
-Overfull \hbox (147.17595pt too wide) in paragraph at lines 15--15
-\T1/fvm/m/n/10.95 sa = t & rct = j & q = &esrc = s & source = web & cd = 1 & ve
-d = 0ahUKEwiExLKCmYbcAhWBYVAKHWwbCikQFggqMAA &
  []
 
 ) [19
@@ -2800,16 +2800,16 @@ FrontBackmatter/Declaration.tex
 
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 91.
 Package rerunfilecheck Info: File `ClassicThesis.out' has not changed.
-(rerunfilecheck)             Checksum: 4B664C39067D257A44D10E3EA1F1433D;1401.
+(rerunfilecheck)             Checksum: 5F33C5D4A612FA352EDE61B606E1CEE3;1416.
 Package logreq Info: Writing requests to 'ClassicThesis.run.xml'.
 \openout1 = `ClassicThesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46351 strings out of 493305
- 873341 string characters out of 3140591
- 1334077 words of memory out of 3000000
- 48988 multiletter control sequences out of 15000+200000
+ 46357 strings out of 493305
+ 873463 string characters out of 3140591
+ 1334145 words of memory out of 3000000
+ 48993 multiletter control sequences out of 15000+200000
  621515 words of font info for 162 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  70i,23n,90p,9094b,2258s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2825,9 +2825,9 @@ j8a.pfb><F:/Programme/MiKTeX 2.9/fonts/type1/bera/fvmr8a.pfb><F:/Programme/MiKT
 eX 2.9/fonts/type1/bera/fvmro8a.pfb><F:/Programme/MiKTeX 2.9/fonts/type1/urw/pa
 latino/uplb8a.pfb><F:/Programme/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb>
 <F:/Programme/MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on ClassicThesis.pdf (29 pages, 235608 bytes).
+Output written on ClassicThesis.pdf (29 pages, 234749 bytes).
 PDF statistics:
- 383 PDF objects out of 1000 (max. 8388607)
- 104 named destinations out of 1000 (max. 500000)
+ 386 PDF objects out of 1000 (max. 8388607)
+ 105 named destinations out of 1000 (max. 500000)
  21677 words of extra memory for PDF output out of 24883 (max. 10000000)
 

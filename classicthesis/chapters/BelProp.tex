@@ -12,11 +12,11 @@ For tree factor graphs which do not contain cycles the value of $\mu_{i \rightar
 If a graph contains cycles, the above described messages are in general not well-defined. However, message passing algorithms which are correct for trees can be used as a heuristic for general graphs. \newline
 This \emph{loopy} form of message passing consists of two parts. In the initialization  step each message is provisionally assigned a random value. Now that each message is set the sum-product equation can be used not to compute the absolute result but to repeatedly update the provisional values. In each update step the update rule is applied to all edges $a \rightarrow i$. There are several variants how to schedule these update tasks. For example the messages could be updated in parallel (\emph{synchronous}) or step by step (\emph{asynchronous}) in a fixed order. Here, the order of updates is chosen uniformly at random in each update step. If a message changed its value in the beginning of the step the following updates can instantly access and use its new value. 
 
-The goal is to reach a point where no message would significantly change when applying the update rule to it. If this is the case, the messages are said to have \emph{converged}. A point of convergence is also called a \emph{fixed point}. If a fixed point is found  depends not only on the input graph but also on the chosen starting values and the update schedule. Since there is that the messages will converge it is possible for the update process to never terminate. In this case the computation has to be terminated after a fixed number of steps. Also an instance can have multiple fixed points that are not the desired solution. The converged messages are therefore only a heuristic solution if the factor graph contains cycles.
+The goal is to reach a point where no message would significantly change when applying the update rule to it. If this is the case, the messages are said to have \emph{converged}. A point of convergence is also called a \emph{fixed point}. Wether a fixed point is found  does not only depend on the input graph but also on the chosen starting values and the update schedule. Since there is no guarantee that the messages will converge it is possible for the update process to never terminate. In this case the computation has to be terminated after a fixed number of steps. Also an instance can have multiple fixed points that are not the desired solution. The converged messages are therefore only a heuristic solution if the factor graph contains cycles.
 
-For SAT problems experiments results imply that the possibility of convergence is connected to the \textbf{TODO}
+For SAT problems experimental results imply that the possibility of convergence is connected to the \textbf{TODO}
 
-On trees this heuristic approach always converges to a unique set of fixed point warning. The convergence for trees, like other properties of message passing algorithms, can be shown by induction on the \textit{level} of a message.
+On trees this heuristic approach always converges to a unique set of fixed point warnings. The convergence for trees, like other properties of message passing algorithms, can be shown by induction on the \textit{level} of a message.
 
 \begin{wrapfigure}{r}{0.3\textwidth}
 
@@ -56,7 +56,7 @@ On a tree factor graph the message on an edge $a \rightarrow i$ at level $r$ con
 \begin{itemize}
 \item[] If $r = 0$, $a$ is a leaf since there are no ingoing messages $j \rightarrow a$ so its message is constant at every step. \newline
 Similarly for $r = 1$ all ingoing edges have level $0$ and $m_{a \rightarrow i}$ is constant from step $0$.
-\item[] If $r \geq 2$ the message $m_{a \rightarrow i}$ is determined by the set of messages $m_{b \rightarrow j}$ sent to adjacent variables $j$. These messages are sent on edges with level $\leq r-2$ and have by induction converged on step $\frac{r-2}{2} + 1 = r / 2$. $m_{a \rightarrow i}$ converges on the next update step.
+\item[] If $r \geq 2$ the message $m_{a \rightarrow i}$ is determined by the set of messages $m_{b \rightarrow j}$ sent to adjacent variables $j$. These messages are sent on edges with level $\leq r-2$ and have by induction converged on step $\frac{r-2}{2} + 1 = r / 2$. $m_{a \rightarrow i}$ converges in the next update step.
 \end{itemize}
 \end{proof}
 \end{lemma}
@@ -79,15 +79,15 @@ Similarly for $r = 1$ all ingoing edges have level $0$ and $m_{a \rightarrow i}$
 
 
     
-	\draw[->] (b3) edge [right] node {$m_{b_3 \rightarrow i}$} (i);
-	\draw[->] (b2) edge [above] node {$m_{b_2 \rightarrow i}$} (i);
-	\draw[->] (b1) edge [right] node {$m_{b_1 \rightarrow i}$} (i);
+	\draw[->] (b3) edge [right] node {$m_{j_3 \rightarrow a}$} (i);
+	\draw[->] (b2) edge [above] node {$m_{j_2 \rightarrow a}$} (i);
+	\draw[->] (b1) edge [right] node {$m_{j_1 \rightarrow a}$} (i);
 	\draw[->] (i) edge [above] node {$m_{a \rightarrow i}$} (a);
 	
-	\draw[->] (j1) edge [above] node {$m_{j_1 \rightarrow b_1}$} (b1);
-  	\draw[->] (j2) edge [above] node {$m_{j_2 \rightarrow b_2}$} (b2);
-	\draw[->] (j3) edge [above] node {$m_{j_3 \rightarrow b_2}$} (b2);
-	\draw[->] (j4) edge [above] node {$m_{j_4 \rightarrow b_3}$} (b3);
+	\draw[->] (j1) edge [above] node {$m_{b_1 \rightarrow j_1}$} (b1);
+  	\draw[->] (j2) edge [above] node {$m_{b_2 \rightarrow j_2}$} (b2);
+	\draw[->] (j3) edge [above] node {$m_{b_3 \rightarrow j_2}$} (b2);
+	\draw[->] (j4) edge [above] node {$m_{b_4 \rightarrow j_3}$} (b3);
 
 \end{tikzpicture}
 \caption{Subgraph of a factor tree with all messages required for computing $m_{a \rightarrow i}$}

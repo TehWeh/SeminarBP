@@ -8,11 +8,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}{Einleitung}}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}{Belief Propagation}}{3}{chapter.2}
+\contentsline {chapter}{\numberline {2}{Factor graphs and Message Passing}}{3}{chapter.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.1}{Factor Graphs}}{3}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.1}{Factor graph of a SAT Problem}}{4}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.1}{Factor graph of a SAT formula}}{4}{subsection.2.1.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.2}{Message Passing Algorithms on Trees}}{5}{section.2.2}
 \defcounter {refsection}{0}\relax 

@@ -5,7 +5,7 @@ The Warning Propagation algorithm is able to solve the decision problem and to c
 The messages sent in the BP algorithm are conditional probabilities $\mu \in [0, 1]$. The corresponding events are taken from the probability space built by all configurations $X$ of the  boolean variables $x_1, \ldots, x_n$. The used probability measure is a uniform distribution so for a SAT formula over $n$ variables each configuration has probability $P(X) = 2^{-n}$. \newline
 This probability space can be restricted to only those configurations that satisfy a boolean formula $\mathcal{F}$. If there are $\mathcal{N}$ satisfying assignments this conditioned probability measure factorizes to $$P(X \; | \; X \text{ satisfies } \mathcal{F}) = \mathcal{N}^{-1} \prod_{a \in A} f_a(X)$$
 where $A$ is the set of clauses in $\mathcal{F}$ and $f_a(X)$ the characteristic function of a clause $a$ which is $1$ if $X$ satisfies $a$ and $0$ if not. \newline
-The fraction of satisfying assignments where for example $x_1 = 1$ or $x_4 = 0$ can now be viewed as a marginals of the factorized function. \newline
+The fraction of satisfying assignments where for example $x_1 = 1$ or $x_4 = 0$ can now be viewed as a marginal of the factorized function. \newline
 
 In general, belief propagation is a message passing technique for approximating marginals of factorized probability distributions. In this chapter the BP equations and their interpretations in the SAT context are explained and demonstrated on an example formula.
 
@@ -216,7 +216,7 @@ It can be expressed as $\gamma_{i \rightarrow a} = \left\{
 In the original BP equation for $\mu_{a \rightarrow i}(x_i)$ one has to sum over all satisfying configurations of $a$'s variables $j \neq i$. Since there is only one configuration that does not satisfy $a$ it is easier to just compute the probability of this single configuration. The message $\delta_{a \rightarrow i}$ is the probability that all of $a$'s neighbours are in a state that violates $a$ (conditioned on $\tau_{a \rightarrow i}$ still being satisfiable). The probabilities for each $j$ to be in such a state are exactly the values of the incoming messages $\gamma_{j \rightarrow a}$ which are conditionally independent.
 $\delta_{a \rightarrow i} = \prod_{j \neq i} \gamma_{j \rightarrow a}$ is the first update equation for the modified BP version.
 
-The more complicated part is to compute $\gamma_{i \rightarrow a}$ from incoming messages $\delta_{b \rightarrow i}$. The probability that $i$ violates $a$ conditioned on $\tau_{i \rightarrow a}$ being satisfied is again proportional to the probability  that $\tau_{i \rightarrow a}$ is satisfied conditioned on $i$ violating $a$. This is the case exactly if if no $b \neq a$ fixes $i$ to the value that would satisfy $a$.
+The more complicated part is to compute $\gamma_{i \rightarrow a}$ from incoming messages $\delta_{b \rightarrow i}$. The probability that $i$ violates $a$ conditioned on $\tau_{i \rightarrow a}$ being satisfied is again proportional to the probability  that $\tau_{i \rightarrow a}$ is satisfied conditioned on $i$ violating $a$. This is the case exactly if no $b \neq a$ fixes $i$ to the value that would satisfy $a$.
 $$\gamma_{i \rightarrow a} \propto P_{i \rightarrow a}^u := \prod_{b \in V_a^s(i)} (1 - \delta_{b \rightarrow i})$$
 To get the real value of $\gamma_{i \rightarrow a}$ one has to normalize so that $P_{i \rightarrow a}^u$ and the probability for $i$ to satisfy $a$, $P_{i \rightarrow a}^s$, add up to $1$.
 

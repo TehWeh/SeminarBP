@@ -81,6 +81,31 @@
     \field{year}{2010}
   \endentry
 
+  \entry{satcomp}{online}{}
+    \name{author}{1}{}{%
+      {{hash=LM}{%
+         family={LLC},
+         familyi={L\bibinitperiod},
+         given={MultiMedia},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LM1}
+    \strng{fullhash}{LM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{title}{International SAT Competitions web page}
+    \verb{url}
+    \verb http://www.satcompetition.org
+    \endverb
+    \field{year}{2018}
+    \field{urlday}{03}
+    \field{urlmonth}{07}
+    \field{urlyear}{2018}
+  \endentry
+
   \entry{lecture}{article}{}
     \name{author}{1}{}{%
       {{hash=UR}{%
@@ -98,11 +123,8 @@
     \field{sortinithash}{U}
     \field{title}{Lecture Notes 8: BP-Guided Decimation for SAT Problems}
     \verb{url}
-    \verb https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0
-    \verb ahUKEwiExLKCmYbcAhWBYVAKHWwbCikQFggqMAA&url=https%3A%2F%2Fdocuments.e
-    \verb pfl.ch%2Fgroups%2Fi%2Fip%2Fipg%2Fwww%2F2010-2011%2FStatistical_Physic
-    \verb s_for_Communication_and_Computer_Science%2Flecture_8.pdf&usg=AOvVaw0m
-    \verb Od6nk3ZdURHEf358rHvl
+    \verb https://documents.epfl.ch/groups/i/ip/ipg/www/2010-2011/Statistical_P
+    \verb hysics_for_Communication_and_Computer_Science/lecture_8.pdf
     \endverb
     \field{year}{2011}
   \endentry

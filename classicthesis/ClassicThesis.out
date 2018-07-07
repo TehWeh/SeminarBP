@@ -2,9 +2,9 @@
 \BOOKMARK [1][-]{Zusammenfassung.1}{Zusammenfassung}{}% 2
 \BOOKMARK [1][-]{tableofcontents.1}{Contents}{}% 3
 \BOOKMARK [0][]{chapter.1}{1 Einleitung}{}% 4
-\BOOKMARK [0][]{chapter.2}{2 Belief Propagation}{}% 5
+\BOOKMARK [0][]{chapter.2}{2 Factor graphs and Message Passing}{}% 5
 \BOOKMARK [1][-]{section.2.1}{2.1 Factor Graphs}{chapter.2}% 6
-\BOOKMARK [2][-]{subsection.2.1.1}{2.1.1 Factor graph of a SAT Problem}{section.2.1}% 7
+\BOOKMARK [2][-]{subsection.2.1.1}{2.1.1 Factor graph of a SAT formula}{section.2.1}% 7
 \BOOKMARK [1][-]{section.2.2}{2.2 Message Passing Algorithms on Trees}{chapter.2}% 8
 \BOOKMARK [1][-]{section.2.3}{2.3 Message Passing on general graphs}{chapter.2}% 9
 \BOOKMARK [0][]{chapter.3}{3 Belief Propagation for SAT Formulas}{}% 10
