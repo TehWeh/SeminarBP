@@ -3,7 +3,7 @@
 The Warning Propagation algorithm is able to solve the decision problem and to compute valid assignments of SAT formulas. A different message passing method called the \emph{Belief Propagation} algorithm is able to determine the actual number of satisfying assignments and the fraction of those assignments where variables are restricted to fixed values. 
 
 The messages sent in the BP algorithm are conditional probabilities $\mu \in [0, 1]$. The corresponding events are taken from the probability space built by all configurations $X$ of the  boolean variables $x_1, \ldots, x_n$. The used probability measure is a uniform distribution so for a SAT formula over $n$ variables each configuration has probability $P(X) = 2^{-n}$. \newline
-This probability space can be restricted to only those configurations that satisfy a boolean formula $\mathcal{F}$. If there are $\mathcal{N}$ satisfying assignments this conditioned probability measure factorizes to $$P(X \; | \; X \text{ satisfies } \mathcal{F}) = \mathcal{N}^{-1} \prod_{a \in A} f_a(X)$$
+This probability space can be restricted to only those configurations that satisfy a boolean formula $\mathcal{F}$. If there are $\mathcal{N} > 0$ satisfying assignments this conditioned probability measure factorizes to $$P(X \; | \; X \text{ satisfies } \mathcal{F}) = \mathcal{N}^{-1} \prod_{a \in A} f_a(X)$$
 where $A$ is the set of clauses in $\mathcal{F}$ and $f_a(X)$ the characteristic function of a clause $a$ which is $1$ if $X$ satisfies $a$ and $0$ if not. \newline
 The fraction of satisfying assignments where for example $x_1 = 1$ or $x_4 = 0$ can now be viewed as a marginal of the factorized function. \newline
 
@@ -236,7 +236,7 @@ The overall update procedure can now be described as
 	2. If $t = t_{max}$ return UN-CONVERGED, else return the generated warnings $\delta_{a \rightarrow i}^{\star}$
 \end{lstlisting}
 
-\subsection{Marginal Probabilities and valid assignments}
+\subsection{Marginal Probabilities and Valid Assignments}
 
 If the BP-Algorithm returns a set of converged messages one can obtain the single variable marginal $\mu_i = P(x_i = 1 \; | \mathcal{F} \text{ is satisfied})$ in the same way, the values $P_{i \rightarrow a}$ where defined: The normalized probability that $\mathcal{F}$ is satisfied conditioned on $x_i = 1$.
 $$ \mu_i := \frac{\prod_{b \in V_-(i)} (1 - \delta^\star_{b \rightarrow i})}{\prod_{b \in V_-(i)} (1 - \delta^\star_{b \rightarrow i}) + \prod_{b \in V_+(i)} (1 - \delta^\star_{b \rightarrow i})}$$

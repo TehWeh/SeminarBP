@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.2)  8 JUL 2018 02:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.2)  8 JUL 2018 16:26
 entering extended mode
 **./ClassicThesis.tex
 (ClassicThesis.tex
@@ -2386,12 +2386,17 @@ File: ts1pplj.fd 2004/09/06 font definitions for TS1/pplj.
 
 
 (FrontBackmatter/Abstract.tex
-LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 9.30756pt on input line 15.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 21.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 21.
+Overfull \hbox (10.764pt too wide) in paragraph at lines 12--13
+\T1/pplj/m/n/10.95 Belief Prop-a-ga-tion is a prob-a-bilis-tic method for ap-pr
+ox-i-mat-ing marginal
+ []
+
+
+Overfull \hbox (5.1067pt too wide) in paragraph at lines 12--13
+\T1/pplj/m/n/10.95 dis-tri-bu-tions in fac-tor graphs. For sat-is-fi-able SAT f
+or-mu-las this method
+ []
+
 ) [5
 
 
@@ -2407,14 +2412,13 @@ Package babel Info: Redefining ngerman shorthand "~
  (FrontBackmatter/Contents.tex
 Package tocbasic Info: character protrusion at toc deactivated on input line 12
 .
-
-(ClassicThesis.toc
+ (ClassicThesis.toc
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplj/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 
-Overfull \hbox (18.33922pt too wide) in paragraph at lines 37--37
- [][] []\T1/pplj/m/n/10.95 Marginal Prob-a-bil-i-ties and valid as-sign-ments [
+Overfull \hbox (22.44548pt too wide) in paragraph at lines 35--35
+ [][] []\T1/pplj/m/n/10.95 Marginal Prob-a-bil-i-ties and Valid As-sign-ments [
 ]  
  []
 
@@ -2440,13 +2444,13 @@ Overfull \hbox (18.33922pt too wide) in paragraph at lines 37--37
 
  (chapters/Einleitung.tex
 Chapter 1.
-)
-Overfull \hbox (17.9019pt too wide) in paragraph at lines 8--59
+
+Overfull \hbox (17.9019pt too wide) in paragraph at lines 8--9
 []\T1/pplj/m/n/10.95 A be-lief prop-a-ga-tion ap-proach was used in the SAT sol
 ver "Dimetheus",
  []
 
-[1
+) [1
 
 
 
@@ -2562,6 +2566,9 @@ LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
 \openout2 = `FrontBackmatter/Bibliography.aux'.
 
  (FrontBackmatter/Bibliography.tex
+LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
+(Font)              scaled to size 9.30756pt on input line 15.
+
 Overfull \hbox (37.76791pt too wide) in paragraph at lines 15--15
 \T1/pplj/m/n/10.95 vey prop-a-ga-tion: an al-go-rithm for sat-is-fi-a-bil-ity.
  In: \T1/pplj/m/it/10.95 CoRR \T1/pplj/m/n/10.95 cs.CC/0212002
@@ -2810,16 +2817,16 @@ FrontBackmatter/Declaration.tex
 
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 91.
 Package rerunfilecheck Info: File `ClassicThesis.out' has not changed.
-(rerunfilecheck)             Checksum: 2EBB3921BD4B33C1B8EEB5F5755298BB;1324.
+(rerunfilecheck)             Checksum: D1BE3156FE85DE7766DE4DF4A18B2203;1264.
 Package logreq Info: Writing requests to 'ClassicThesis.run.xml'.
 \openout1 = `ClassicThesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46361 strings out of 493305
- 873533 string characters out of 3140591
- 1314144 words of memory out of 3000000
- 48997 multiletter control sequences out of 15000+200000
+ 46354 strings out of 493305
+ 873405 string characters out of 3140591
+ 1314137 words of memory out of 3000000
+ 48991 multiletter control sequences out of 15000+200000
  622157 words of font info for 164 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  70i,23n,90p,9094b,2258s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2835,9 +2842,9 @@ j8a.pfb><F:/Programme/MiKTeX 2.9/fonts/type1/bera/fvmr8a.pfb><F:/Programme/MiKT
 eX 2.9/fonts/type1/bera/fvmro8a.pfb><F:/Programme/MiKTeX 2.9/fonts/type1/urw/pa
 latino/uplb8a.pfb><F:/Programme/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb>
 <F:/Programme/MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on ClassicThesis.pdf (29 pages, 237809 bytes).
+Output written on ClassicThesis.pdf (29 pages, 238355 bytes).
 PDF statistics:
- 382 PDF objects out of 1000 (max. 8388607)
- 105 named destinations out of 1000 (max. 500000)
- 22693 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 380 PDF objects out of 1000 (max. 8388607)
+ 104 named destinations out of 1000 (max. 500000)
+ 22685 words of extra memory for PDF output out of 24883 (max. 10000000)
 

@@ -1,3 +1,8 @@
 \section{Conclusion}
-The two message passing algorithms described in section \ref{BPFS} are able to to compute assignments and some other parameters of a formula if its factor graph is a tree. For general graphs both algorithms may not converge or even yield wrong anwsers. There is not much known about what conditions a graph must fulfill to assure convergence of the passed messages. \newline
+The two message passing algorithms described in section \ref{BPFS} are able to to compute assignments and some other parameters of a formula if its factor graph is a tree. For general graphs both algorithms may not converge or even yield wrong answers. There is not much known about what conditions a graph must fulfil to assure convergence of the passed messages.
+
+In general the possibility for a random formula to be satisfiable is connected to its clause density, the ratio $r$ between the number of clauses and variables. The higher this ratio, the more likely a formula is to be unsatisfiable.
+For $4$-SAT this threshold is  conjectured to be around $9.93$. In \cite{BPGuideMe} it is stated that belief propagation is able to efficiently find assignments for $4$-SAT fomulas with clause densities up to $9.2$. Conventional SAT solvers need exponential time to find solutions for $r > 5.54$.
+
+Possible approaches to improve convergence are damping the message updates or modifying the factor graph to make it more tree-like. Possible drawbacks are increased computation time and a higher risk of incorrect results. \newline
 Even though both algorithms empirically converge rather often and are even used in praxis there are better techniques based to the general sum-product algorithm. In \cite{survprob} a variant called \emph{survey propagation} is presented which is tied to methods used in statistical physics. On trees this new method behaves like BP but on experiments on random graphs it performs better than standard belief propagation. 
