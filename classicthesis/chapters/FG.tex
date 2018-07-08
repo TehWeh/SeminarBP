@@ -68,7 +68,7 @@ In \cite{survprob} some additional notation is defined to simplify the descripti
 \begin{itemize}
 \item The value $J_i^a$ is $1$ if $i$ appears negated in $a$ and $-1$ if not
 \item $V(a)$ is the set of all variables in $a$ \newline$V(i)$ is the set of all clauses containing $i$.  \newline Alternatively $V(a)$ and $V(i)$ are the neighbourhoods of $a$ and $i$ in the factor graph.
-\item $V_+(a)$ is the set of variables that appear unnegated in $a$ \newline $V_-(a)$ is the set of $a$'s negated variables.
+\item $V_+(i)$ is the set of clauses  in which $i$ appears unnegated  \newline $V_-(i)$ is the set of clauses that contain $i$ in negated form.
 \item $V_a^u(i)$ is the set of $i$'s neighbours $b \neq a$ with $J_i^b \neq J_i^a$ \newline $V_a^s(i)$ is the set of neighbours $b \neq a$ with $J_i^b = J_i^a$\newline
 The letters $u, b$ stand for \emph{(\textbf{u}n)\textbf{s}atisfied} meaning that if $i$ satisfies a clause $b \in V_a^s(i)$, it also satisfies $a$.
 \end{itemize}
@@ -90,7 +90,7 @@ Let $$\mathcal{F} = \underbrace{(x_1 \lor x_2 \lor x_3)}_{a} \land \underbrace{(
     \node[rectangle,draw=black, label = {$a$}, fill] (a) at (0,0) {};
      \node[rectangle,draw=black, label = {$d$}, fill] (d) at (2,-1) {};
      \node[rectangle,draw=black, label = {$b$}, fill] (b) at (4,-2) {};
-     \node[rectangle,draw=black, label = {$b$}, fill] (c) at (0,-3) {};
+     \node[rectangle,draw=black, label = {$c$}, fill] (c) at (0,-3) {};
      
  
     \path [-] (x1) edge node[left] {} (a);
@@ -112,7 +112,7 @@ Let $$\mathcal{F} = \underbrace{(x_1 \lor x_2 \lor x_3)}_{a} \land \underbrace{(
 
 Again the circles are variable nodes, the rectangles are constraint nodes. If $x_i$ appears negated in the clause $a$ (if $J_a^i = 1$), the edge is drawn dashed. With the addition of dashed lines the factor graph completely describes the formula $\mathcal{F}$.
 
-The variable sets of $b$ are for example $V(b) = \{1, 2, 4\}$, $V_+(b) = \{2, 4\}$, $ V_-(b) = \{1\}$.
-The sets of $x_1$ are $V(1) = \{a, b, d\}$, $V_a^s(1) = \emptyset$, $V_a^u(1) = \{b, d\}$.
+The variable set of $b$ is for example $V(b) = \{1, 2, 4\}$.
+The clause sets of $x_1$ are $V(1) = \{a, b, d\}$, $V_+(1) = \{a\}$, $V_-(1) = \{d, b\}$ and $V_a^u(1) = \{b, d\}$, $V_a^s(1) = \emptyset$.
 
 \end{example}
