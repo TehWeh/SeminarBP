@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.2)  7 JUL 2018 22:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.2)  8 JUL 2018 02:16
 entering extended mode
 **./ClassicThesis.tex
 (ClassicThesis.tex
@@ -2514,7 +2514,7 @@ be-tween nodes
  []
 
 [12]
-Overfull \hbox (17.42673pt too wide) detected at line 91
+Overfull \hbox (22.9017pt too wide) detected at line 91
 []
  []
 
@@ -2524,25 +2524,35 @@ Overfull \hbox (110.80103pt too wide) in paragraph at lines 91--91
  []
 
 [13]
-Overfull \hbox (2.8332pt too wide) in paragraph at lines 116--117
+Overfull \hbox (2.8332pt too wide) in paragraph at lines 115--116
  [][] 
  []
 
 
-Overfull \hbox (26.81834pt too wide) detected at line 141
+Overfull \hbox (26.81834pt too wide) detected at line 140
 []
  []
 
 LaTeX Font Info:    Font shape `T1/fvm/m/it' in size <9> not available
-(Font)              Font shape `T1/fvm/m/sl' tried instead on input line 148.
+(Font)              Font shape `T1/fvm/m/sl' tried instead on input line 140.
 LaTeX Font Info:    Font shape `T1/fvm/m/sl' will be
-(Font)              scaled to size 7.65005pt on input line 148.
+(Font)              scaled to size 7.65005pt on input line 140.
 [14] [15]
+Underfull \hbox (badness 10000) in paragraph at lines 219--221
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 244--245
 
  []
 
-[16])) [17]
+[16]
+LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
+(Font)              scaled to size 6.46004pt on input line 258.
+LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
+(Font)              scaled to size 5.10004pt on input line 258.
+)) [17]
 \openout2 = `chapters/Conc.aux'.
 
  (chapters/Conc.tex) [18
@@ -2800,17 +2810,17 @@ FrontBackmatter/Declaration.tex
 
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 91.
 Package rerunfilecheck Info: File `ClassicThesis.out' has not changed.
-(rerunfilecheck)             Checksum: 5F33C5D4A612FA352EDE61B606E1CEE3;1416.
+(rerunfilecheck)             Checksum: 2EBB3921BD4B33C1B8EEB5F5755298BB;1324.
 Package logreq Info: Writing requests to 'ClassicThesis.run.xml'.
 \openout1 = `ClassicThesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46357 strings out of 493305
- 873463 string characters out of 3140591
- 1334145 words of memory out of 3000000
- 48993 multiletter control sequences out of 15000+200000
- 621515 words of font info for 162 fonts, out of 3000000 for 9000
+ 46361 strings out of 493305
+ 873533 string characters out of 3140591
+ 1314144 words of memory out of 3000000
+ 48997 multiletter control sequences out of 15000+200000
+ 622157 words of font info for 164 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  70i,23n,90p,9094b,2258s stack positions out of 5000i,500n,10000p,200000b,50000s
 {F:/Programme/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<F:/Programme/MiKTeX 2.9
@@ -2825,9 +2835,9 @@ j8a.pfb><F:/Programme/MiKTeX 2.9/fonts/type1/bera/fvmr8a.pfb><F:/Programme/MiKT
 eX 2.9/fonts/type1/bera/fvmro8a.pfb><F:/Programme/MiKTeX 2.9/fonts/type1/urw/pa
 latino/uplb8a.pfb><F:/Programme/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb>
 <F:/Programme/MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on ClassicThesis.pdf (29 pages, 234749 bytes).
+Output written on ClassicThesis.pdf (29 pages, 237809 bytes).
 PDF statistics:
- 386 PDF objects out of 1000 (max. 8388607)
+ 382 PDF objects out of 1000 (max. 8388607)
  105 named destinations out of 1000 (max. 500000)
- 21677 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 22693 words of extra memory for PDF output out of 24883 (max. 10000000)
 

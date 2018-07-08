@@ -1,11 +1,12 @@
+
 \section{Message Passing Algorithms on Trees}
 
 If the factor graph is a tree, many problems can be solved efficiently using a form of dynamic programming called \emph{message passing}. \newline 
 In general, message passing algorithms compute values for each edge of the factor graph. These values can be interpreted as \emph{messages} that are sent between the nodes. Since all edges connect factor nodes to variable nodes there can be two types of messages: messages passed from a variable $i$ to a factor $a$, denoted as $\mu_{i \rightarrow a}$ and messages passed from $a$ to $i$, denoted as $\mu_{a \rightarrow i}$. \newline
 The messages must be defined so that a message $\mu_{a \rightarrow i}$ is determined by the messages $\mu_{j \rightarrow a}$ that $a$ received from neighbour variables $j \neq i$. 
 The same must hold for $\mu_{i \rightarrow a}$. \newline
-Usually the massages $\mu_{i \rightarrow a}$ are obtained by summing over $\mu_{b \rightarrow i}$ and $\mu_{a \rightarrow i}$ by multiplying the messages $\mu_{j \rightarrow a}$. The fundamental equation often has the form \textbf{TODO} $$\mu_{a \rightarrow i} = \prod_{j \in V(a) \setminus i} \underbrace{\sum_{b \in V(j) \setminus a} \mu_{b \rightarrow j}}_{\mu_{j \rightarrow a}}$$ Therefore these types of algorithms are called \emph{sum-product}-algorithms. The messages sent from factors to variables only appear as intermediate results in the computation of messages sent from variables to factors. \newline
-For tree factor graphs which do not contain cycles the value of $\mu_{i \rightarrow a}$ does not influence its predecessors $\mu_{b \rightarrow i}$. The messages can be computed sequentially starting with the factor graph's leaves.
+Usually the massages $\mu_{i \rightarrow a}$ are obtained by summing over $\mu_{b \rightarrow i}$ and $\mu_{a \rightarrow i}$ by multiplying the messages $\mu_{j \rightarrow a}$. The fundamental equation often has the form $$\mu_{a \rightarrow i} = \prod_{j \in V(a) \setminus i} \underbrace{\sum_{b \in V(j) \setminus a} \mu_{b \rightarrow j}}_{\mu_{j \rightarrow a}}$$ Therefore these types of algorithms are called \emph{sum-product}-algorithms. The reasoning behind the formula is explained in the description of the BP algorithm. The rule is formulated so that messages sent from factors to variables only appear as intermediate results in the computation of messages sent from variables to factors. \newline
+For tree factor graphs which do not contain cycles the value of $\mu_{a \rightarrow i}$ does not influence its predecessors $\mu_{j \rightarrow a}$. The messages can therefore be computed sequentially starting with the factor graph's leaves.
 
 
 \section{Message Passing on general graphs}
@@ -14,7 +15,6 @@ This \emph{loopy} form of message passing consists of two parts. In the initiali
 
 The goal is to reach a point where no message would significantly change when applying the update rule to it. If this is the case, the messages are said to have \emph{converged}. A point of convergence is also called a \emph{fixed point}. Wether a fixed point is found  does not only depend on the input graph but also on the chosen starting values and the update schedule. Since there is no guarantee that the messages will converge it is possible for the update process to never terminate. In this case the computation has to be terminated after a fixed number of steps. Also an instance can have multiple fixed points that are not the desired solution. The converged messages are therefore only a heuristic solution if the factor graph contains cycles.
 
-For SAT problems experimental results imply that the possibility of convergence is connected to the \textbf{TODO}
 
 On trees this heuristic approach always converges to a unique set of fixed point warnings. The convergence for trees, like other properties of message passing algorithms, can be shown by induction on the \textit{level} of a message.
 
@@ -49,12 +49,12 @@ On trees this heuristic approach always converges to a unique set of fixed point
 \begin{definition} Let $(u, v)$ be an edge of a tree $\tau$. \newline
 The tree $\tau_{u \rightarrow v}$ is the component of $\tau \setminus (u, v)$ that still contains $u$. The \emph{level} of the directed edge $u \rightarrow v$ is the height of $u$ in $\tau_{u \rightarrow v}$. 
 \end{definition}
-The level can be thought as the length of the longest path in $\tau$ that ends in $u$ and does not pass $v$.
+The level can be thought as the length of the longest path (the longest possible chain of messages) in $\tau$  that ends in $u$ and does not pass $v$.
 \begin{lemma}\cite{survprob}
 On a tree factor graph the message on an edge $a \rightarrow i$ at level $r$ converges after at most $r/2 + 1$ update steps.
 \begin{proof} Induction on $r$:
 \begin{itemize}
-\item[] If $r = 0$, $a$ is a leaf since there are no ingoing messages $j \rightarrow a$ so its message is constant at every step. \newline
+\item[] If $r = 0$, $a$ must be a leaf. Since there are no incoming messages $j \rightarrow a$ the message  $j \rightarrow i$ is constant at every step. \newline
 Similarly for $r = 1$ all ingoing edges have level $0$ and $m_{a \rightarrow i}$ is constant from step $0$.
 \item[] If $r \geq 2$ the message $m_{a \rightarrow i}$ is determined by the set of messages $m_{b \rightarrow j}$ sent to adjacent variables $j$. These messages are sent on edges with level $\leq r-2$ and have by induction converged on step $\frac{r-2}{2} + 1 = r / 2$. $m_{a \rightarrow i}$ converges in the next update step.
 \end{itemize}
