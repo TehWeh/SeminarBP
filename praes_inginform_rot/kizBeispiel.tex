@@ -1,0 +1,69 @@
+\documentclass{beamer}
+\mode<presentation>
+{
+  \usetheme{myulm}
+  \setbeamercovered{transparent}
+  \setbeamertemplate{navigation symbols}{} % no navigation bar
+  \setbeamersize{sidebar width left=1.17cm}
+}
+
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{fancyvrb}
+\usepackage{array}
+\usepackage{colortbl} % ING INF PSY
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{listings}
+\usepackage{verbatim}
+
+% Anfang der Titelfolie
+% Anpassung von: Titel, Untertitel, Autor, Datum und Institut
+
+\title{Belief Propagation}
+%\subtitle{Manchmal wird ein Untertitel ben\"{o}tigt, der ebenfalls einzeilig oder mehrzeilig sein kann}
+\author{Michael Ruderer}
+\newcommand{\presdatum}{\today} % alternativ zu \today: Eingabe eines festen Datums
+\institute
+{Uni Ulm\\}
+%Ende der Titelfolie
+
+
+% Anfang der Kopfzeile der Folien
+% Anpassung von: Zwischentitel, Leitthema oder Name
+% Das Datum wird oben geändert: unter \presdatum{}!
+
+\newcommand{\zwischentitel}{\insertsection}
+\newcommand{\leitthema}{Belief Propagation}
+% Ende der Kopfzeile
+
+% Anfang der Folien
+\begin{document}
+\hspace*{-1.49cm}
+\frame[plain]{\titlepage}
+
+% Das Inhaltsverzeichnis
+\hspace*{-0.7cm}
+\section*{Inhalt/Überblick} % diese Section erscheint nicht im Inhaltsverzeichnis
+\begin{frame}
+  \frametitle{Inhaltsverzeichnis}
+  \tableofcontents
+\end{frame}
+
+
+% 1. Folie
+\section{Begriffe}
+\include{chapters/Begriffe}
+
+\section{Warning Propagation}
+\include{chapters/WP}
+
+\section{Belief Propagation}
+\include{chapters/BP}
+\section{Conclusion}
+
+
+\end{document}
