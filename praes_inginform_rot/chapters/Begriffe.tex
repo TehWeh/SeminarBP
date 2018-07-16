@@ -167,9 +167,8 @@
 	\frametitle{Message Passing}
 	Message Passing Algorithms on factor graphs
 	\begin{itemize}
-		\item Nodes communicate through messages
-		\item Messages are passed over the graph's edges
 		\item Message $\mu_{a \rightarrow i}$ determined by incoming messages $\mu_{j \rightarrow a}$ from neighbours $j \neq i$
+		\item Computation Rule depends on application
 			
 	\end{itemize}
 \begin{figure}
@@ -282,9 +281,6 @@
 		
 \end{frame}
 
-
-
-
 \begin{frame}[containsverbatim]
 	\frametitle{Message Passing}
 	Generic Message Passing Algorithm
@@ -297,4 +293,20 @@
 		3. If $t = t_{max}$ return UNGONVERGED
 		   Else      return the converged messages
 	\end{lstlisting}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Message Passing}
+	\begin{itemize}
+		\item Loopy Message Passing converges on trees
+		\item On cyclic graphs
+			\begin{itemize}
+				\item no guarantee of convergence
+				\item no guarantee of correctness
+			\end{itemize}
+		\item Can be used as heuristics
+		\item In practice often correct
+			\end{itemize}
+
+		
 \end{frame}

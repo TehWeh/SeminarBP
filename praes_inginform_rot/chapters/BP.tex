@@ -1,9 +1,42 @@
 \begin{frame}
 	\frametitle{Belief Propagation Algorithm}
-	Generalization of Warning Propagation
 	\begin{itemize}
-		\item Compute the \emph{probability} that a warning is sent
+		\item General Algorithm for approximating marginal probabilities on factor graphs
+		\item Applied in many different areas
+		\item Can be viewed as generalization of Warning Propagation
 	\end{itemize}
+\end{frame}
 
-		
+\begin{frame}
+	\frametitle{Belief Propagation Algorithm}
+	Probability space built by all valid variable assignments $X = (x_1, \ldots, x_n)$ of a formula $\mathcal{F}$.
+	\begin{itemize}
+		\item Uniform distribution on all assignments 
+		$$P(X) = \frac{1}{2^n}$$
+		\item Restriction on valid assignments
+	$$P(X \; | \; X \text{ satisfies } \mathcal{F}) = \frac{1}{\mathcal{N}} \prod_{a \in A} f_a(X)$$
+	\item Goal: Compute $P(x_i = 1 \; X \text{ satisfies } \mathcal{F})$m
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Messages}
+	
+	\begin{itemize}
+		\item WP: $u_{a \rightarrow i}$ is $1$ if all neighbours $j \in V(a) \setminus i$ violate $a$
+		\item BP: $\delta_{a \rightarrow i}$ is the \emph{probability} for this event
+	\end{itemize}
+	
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Messages}
+	
+	\begin{itemize}
+		\item WP: $h_{i \rightarrow i}$: preferred value of $i$
+		\item BP: $\gamma_{a \rightarrow i}$: \emph{probability} for $i$ to violate $a$
+	\end{itemize}
+	
+	
 \end{frame}

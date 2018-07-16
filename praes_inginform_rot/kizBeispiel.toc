@@ -1,5 +1,4 @@
-\beamer@endinputifotherversion {3.36pt}
-\select@language {ngerman}
+\babel@toc {ngerman}{}
 \beamer@sectionintoc {2}{Begriffe}{3}{0}{1}
-\beamer@sectionintoc {3}{Warning Propagation}{32}{0}{2}
-\beamer@sectionintoc {4}{Belief Propagation}{33}{0}{3}
+\beamer@sectionintoc {3}{Warning Propagation}{33}{0}{2}
+\beamer@sectionintoc {4}{Belief Propagation}{63}{0}{3}

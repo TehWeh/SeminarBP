@@ -56,7 +56,7 @@ Factor graphs can also be used for describing constraint satisfaction problems. 
 
 
 \subsection{Factor Graph of a SAT Formula}
-Any SAT formula over the variables $x_1, \ldots, x_n$ in CNF form can be interpreted as a function that factorizes to the formulas clauses. \newline
+Any SAT formula over the variables $x_1, \ldots, x_n$ in CNF form can be interpreted as a function that factorizes into the formulas clauses. \newline
 $x_1, \ldots, x_n$ are boolean variables which can be either $0$ or $1$. A SAT formula $\mathcal{F}$ is a conjunction / product of special constraints, the formula's \emph{clauses}. A clause is a disjunction of variables and their negations  $(x_i\lor \overline{x_j} \lor \ldots)$ and is satisfied if at least one variable $x_i$ that appears unnegated is set to $1$ or at least one $x_j$ that appears negated is set to $0$. \newline
 In the factor graph of a formula each factor node $a$ represents the local function defined by a single clause. If the variable $x_i$ or its negation $\overline{x_i}$ appears in this clause the factor graph contains an edge between $a$ and the variable node $i$. 
 
@@ -113,6 +113,6 @@ Let $$\mathcal{F} = \underbrace{(x_1 \lor x_2 \lor x_3)}_{a} \land \underbrace{(
 Again the circles are variable nodes, the rectangles are constraint nodes. If $x_i$ appears negated in the clause $a$ (if $J_a^i = 1$), the edge is drawn dashed. With the addition of dashed lines the factor graph completely describes the formula $\mathcal{F}$.
 
 The variable set of $b$ is for example $V(b) = \{1, 2, 4\}$.
-The clause sets of $x_1$ are $V(1) = \{a, b, d\}$, $V_+(1) = \{a\}$, $V_-(1) = \{d, b\}$ and $V_a^u(1) = \{b, d\}$, $V_a^s(1) = \emptyset$.
+The clause sets of $x_1$ are $V(1) = \{a, b, d\}$, $V_+(1) = \{a\}$, $V_-(1) = \{b, d\}$ and $V_a^u(1) = \{b, d\}$, $V_a^s(1) = \emptyset$.
 
 \end{example}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.2)  8 JUL 2018 18:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.2)  8 JUL 2018 22:03
 entering extended mode
 **./ClassicThesis.tex
 (ClassicThesis.tex
@@ -2193,8 +2193,7 @@ File: german.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
 (FrontBackmatter/Titlepage.aux) (FrontBackmatter/Titleback.aux)
 (FrontBackmatter/Abstract.aux) (FrontBackmatter/Contents.aux)
 (chapters/Einleitung.aux) (chapters/Begriffe.aux) (chapters/BPFS.aux)
-(chapters/Conc.aux) (FrontBackmatter/Bibliography.aux)
-(FrontBackmatter/Declaration.aux))
+(chapters/Conc.aux) (FrontBackmatter/Bibliography.aux))
 \openout1 = `ClassicThesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
@@ -2559,7 +2558,15 @@ LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
 )) [17]
 \openout2 = `chapters/Conc.aux'.
 
- (chapters/Conc.tex) [18
+ (chapters/Conc.tex
+Chapter 4.
+[18
+
+
+
+
+]) [19] [20
+
 
 
 ]
@@ -2574,35 +2581,20 @@ Overfull \hbox (37.76791pt too wide) in paragraph at lines 15--15
  In: \T1/pplj/m/it/10.95 CoRR \T1/pplj/m/n/10.95 cs.CC/0212002
  []
 
-) [19
+) [21
 
 
-
-
-
-
-
-
-] [20
-
-
-
-]
-\openout2 = `FrontBackmatter/Declaration.aux'.
-
- (FrontBackmatter/Declaration.tex) [21
 
 
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 91.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 91.
- (ClassicThesis.aux
-(FrontBackmatter/DirtyTitlepage.aux) (FrontBackmatter/Titlepage.aux)
-(FrontBackmatter/Titleback.aux) (FrontBackmatter/Abstract.aux)
-(FrontBackmatter/Contents.aux) (chapters/Einleitung.aux) (chapters/Begriffe.aux
-) (chapters/BPFS.aux) (chapters/Conc.aux) (FrontBackmatter/Bibliography.aux)
-(FrontBackmatter/Declaration.aux))
+ (ClassicThesis.aux (FrontBackmatter/DirtyTitlepage.aux)
+(FrontBackmatter/Titlepage.aux) (FrontBackmatter/Titleback.aux)
+(FrontBackmatter/Abstract.aux) (FrontBackmatter/Contents.aux)
+(chapters/Einleitung.aux) (chapters/Begriffe.aux) (chapters/BPFS.aux)
+(chapters/Conc.aux) (FrontBackmatter/Bibliography.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 91.
 
 
@@ -2812,21 +2804,20 @@ chapters/WP.tex
 chapters/BP.tex
 chapters/Conc.tex
 FrontBackmatter/Bibliography.tex
-FrontBackmatter/Declaration.tex
  ***********
 
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 91.
 Package rerunfilecheck Info: File `ClassicThesis.out' has not changed.
-(rerunfilecheck)             Checksum: D1BE3156FE85DE7766DE4DF4A18B2203;1264.
+(rerunfilecheck)             Checksum: 583C9A8F2191D2DC94F91DB3F210F5FB;1201.
 Package logreq Info: Writing requests to 'ClassicThesis.run.xml'.
 \openout1 = `ClassicThesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46354 strings out of 493305
- 873405 string characters out of 3140591
- 1314137 words of memory out of 3000000
- 48991 multiletter control sequences out of 15000+200000
+ 46339 strings out of 493305
+ 872837 string characters out of 3140591
+ 1311522 words of memory out of 3000000
+ 48985 multiletter control sequences out of 15000+200000
  622157 words of font info for 164 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  70i,23n,90p,9094b,2258s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2842,9 +2833,9 @@ j8a.pfb><F:/Programme/MiKTeX 2.9/fonts/type1/bera/fvmr8a.pfb><F:/Programme/MiKT
 eX 2.9/fonts/type1/bera/fvmro8a.pfb><F:/Programme/MiKTeX 2.9/fonts/type1/urw/pa
 latino/uplb8a.pfb><F:/Programme/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb>
 <F:/Programme/MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on ClassicThesis.pdf (29 pages, 238402 bytes).
+Output written on ClassicThesis.pdf (29 pages, 237691 bytes).
 PDF statistics:
- 380 PDF objects out of 1000 (max. 8388607)
- 104 named destinations out of 1000 (max. 500000)
- 22685 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 374 PDF objects out of 1000 (max. 8388607)
+ 102 named destinations out of 1000 (max. 500000)
+ 22677 words of extra memory for PDF output out of 24883 (max. 10000000)
 

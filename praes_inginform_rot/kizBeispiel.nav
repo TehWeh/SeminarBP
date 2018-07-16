@@ -1,9 +1,8 @@
-\beamer@endinputifotherversion {3.36pt}
 \headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
 \headcommand {\beamer@framepages {1}{1}}
-\headcommand {\sectionentry {1}{Inhalt/\IeC {\"U}berblick}{2}{Inhalt/\IeC {\"U}berblick}{0}}
 \headcommand {\beamer@sectionpages {1}{1}}
 \headcommand {\beamer@subsectionpages {1}{1}}
+\headcommand {\sectionentry {1}{Inhalt/\IeC {\"U}berblick}{2}{Inhalt/\IeC {\"U}berblick}{0}}
 \headcommand {\slideentry {1}{0}{1}{2/2}{}{0}}
 \headcommand {\beamer@framepages {2}{2}}
 \headcommand {\slideentry {2}{0}{1}{3/3}{}{0}}
@@ -28,21 +27,53 @@
 \headcommand {\beamer@framepages {30}{30}}
 \headcommand {\slideentry {2}{0}{11}{31/31}{}{0}}
 \headcommand {\beamer@framepages {31}{31}}
-\headcommand {\sectionentry {2}{Begriffe}{3}{Begriffe}{0}}
+\headcommand {\slideentry {2}{0}{12}{32/32}{}{0}}
+\headcommand {\beamer@framepages {32}{32}}
 \headcommand {\beamer@sectionpages {2}{2}}
 \headcommand {\beamer@subsectionpages {2}{2}}
-\headcommand {\slideentry {3}{0}{1}{32/32}{}{0}}
-\headcommand {\beamer@framepages {32}{32}}
-\headcommand {\sectionentry {3}{Warning Propagation}{32}{Warning Propagation}{0}}
-\headcommand {\beamer@sectionpages {3}{31}}
-\headcommand {\beamer@subsectionpages {3}{31}}
-\headcommand {\slideentry {4}{0}{1}{33/33}{}{0}}
+\headcommand {\sectionentry {2}{Begriffe}{3}{Begriffe}{0}}
+\headcommand {\slideentry {3}{0}{1}{33/33}{}{0}}
 \headcommand {\beamer@framepages {33}{33}}
-\headcommand {\sectionentry {4}{Belief Propagation}{33}{Belief Propagation}{0}}
-\headcommand {\beamer@sectionpages {32}{32}}
-\headcommand {\beamer@subsectionpages {32}{32}}
-\headcommand {\beamer@partpages {1}{33}}
-\headcommand {\beamer@subsectionpages {34}{33}}
-\headcommand {\beamer@sectionpages {34}{33}}
-\headcommand {\beamer@documentpages {33}}
-\headcommand {\def \inserttotalframenumber {15}}
+\headcommand {\slideentry {3}{0}{2}{34/34}{}{0}}
+\headcommand {\beamer@framepages {34}{34}}
+\headcommand {\slideentry {3}{0}{3}{35/35}{}{0}}
+\headcommand {\beamer@framepages {35}{35}}
+\headcommand {\slideentry {3}{0}{4}{36/36}{}{0}}
+\headcommand {\beamer@framepages {36}{36}}
+\headcommand {\slideentry {3}{0}{5}{37/37}{}{0}}
+\headcommand {\beamer@framepages {37}{37}}
+\headcommand {\slideentry {3}{0}{6}{38/38}{}{0}}
+\headcommand {\beamer@framepages {38}{38}}
+\headcommand {\slideentry {3}{0}{7}{39/39}{}{0}}
+\headcommand {\beamer@framepages {39}{39}}
+\headcommand {\slideentry {3}{0}{8}{40/40}{}{0}}
+\headcommand {\beamer@framepages {40}{40}}
+\headcommand {\slideentry {3}{0}{9}{41/58}{}{0}}
+\headcommand {\beamer@framepages {41}{58}}
+\headcommand {\slideentry {3}{0}{10}{59/59}{}{0}}
+\headcommand {\beamer@framepages {59}{59}}
+\headcommand {\slideentry {3}{0}{11}{60/60}{}{0}}
+\headcommand {\beamer@framepages {60}{60}}
+\headcommand {\slideentry {3}{0}{12}{61/61}{}{0}}
+\headcommand {\beamer@framepages {61}{61}}
+\headcommand {\slideentry {3}{0}{13}{62/62}{}{0}}
+\headcommand {\beamer@framepages {62}{62}}
+\headcommand {\beamer@sectionpages {3}{32}}
+\headcommand {\beamer@subsectionpages {3}{32}}
+\headcommand {\sectionentry {3}{Warning Propagation}{33}{Warning Propagation}{0}}
+\headcommand {\slideentry {4}{0}{1}{63/63}{}{0}}
+\headcommand {\beamer@framepages {63}{63}}
+\headcommand {\slideentry {4}{0}{2}{64/64}{}{0}}
+\headcommand {\beamer@framepages {64}{64}}
+\headcommand {\slideentry {4}{0}{3}{65/65}{}{0}}
+\headcommand {\beamer@framepages {65}{65}}
+\headcommand {\slideentry {4}{0}{4}{66/66}{}{0}}
+\headcommand {\beamer@framepages {66}{66}}
+\headcommand {\beamer@sectionpages {33}{62}}
+\headcommand {\beamer@subsectionpages {33}{62}}
+\headcommand {\sectionentry {4}{Belief Propagation}{63}{Belief Propagation}{0}}
+\headcommand {\beamer@partpages {1}{66}}
+\headcommand {\beamer@subsectionpages {67}{66}}
+\headcommand {\beamer@sectionpages {67}{66}}
+\headcommand {\beamer@documentpages {66}}
+\headcommand {\gdef \inserttotalframenumber {31}}

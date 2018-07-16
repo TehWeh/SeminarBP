@@ -4,7 +4,7 @@
 \vspace {-\cftbeforepartskip }
 \babel@toc {american}{}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {1}{Einleitung}}{1}{chapter.1}
+\contentsline {chapter}{\numberline {1}{Introduction}}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}{Factor graphs and Message Passing}}{3}{chapter.2}
 \defcounter {refsection}{0}\relax 
@@ -14,7 +14,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.2}{Message Passing Algorithms on Trees}}{5}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}{Message Passing on general graphs}}{6}{section.2.3}
+\contentsline {section}{\numberline {2.3}{Message Passing on General Graphs}}{6}{section.2.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}{Belief Propagation for SAT Formulas}}{9}{chapter.3}
 \defcounter {refsection}{0}\relax 
@@ -34,8 +34,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.2}{Marginal Probabilities and Valid Assignments}}{16}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}{Conclusion}}{18}{section.3.3}
+\contentsline {chapter}{\numberline {4}{Conclusion}}{19}{chapter.4}
 \defcounter {refsection}{0}\relax 
 \vspace {\beforebibskip }
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {}{Bibliography}}{19}{section*.10}
+\contentsline {chapter}{\numberline {}{Bibliography}}{21}{section*.10}
