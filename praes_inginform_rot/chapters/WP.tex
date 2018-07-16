@@ -116,18 +116,18 @@
 \end{frame}
 
 \begin{frame}
-$$\mathcal{F} = \overline{x_1} \land x_5 \land (x_1 \lor \overline{x_2} \lor \overline{x_5}) \land  (x_2 \lor x_3 \lor x_4)$$
+$$\mathcal{F} = \underbrace{\overline{x_1}}_{a} \land \underbrace{ x_5}_b \land \underbrace{(x_1 \lor \overline{x_2} \lor \overline{x_5})}_c \land  \underbrace{(x_2 \lor x_3 \lor x_4)}_d$$
 \begin{figure}[h]
 \centering
 
 \begin{tikzpicture}[scale=1.0,transform shape]
 	
    \node[rectangle,draw=black, label = left:{$a$}, fill] (a) at (0,1.5) {};
-   \node[rectangle,draw=black, label = above:{$b$}, fill] (b) at (3,0) {};
+   \node[rectangle,draw=black, label = above:{$c$}, fill] (b) at (3,0) {};
   % \node[rectangle,draw=black, label = above:{$c$}, fill] (c) at (2,4) {};
    \node[rectangle,draw=black, label = below left:{$d$}, fill] (d) at (6,0) {};
 
-   \node[rectangle,draw=black, label = left:{$e$}, fill] (e) at (0,-1.5) {};
+   \node[rectangle,draw=black, label = left:{$b$}, fill] (e) at (0,-1.5) {};
 
    	
    	\node[shape=circle,draw=black, scale = 0.7] (x1) at (1.5,1.5) {$1$};
