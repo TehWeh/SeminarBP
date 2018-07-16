@@ -11,11 +11,11 @@
 	\frametitle{Belief Propagation Algorithm}
 	Probability space built by all valid variable assignments $X = (x_1, \ldots, x_n)$ of a formula $\mathcal{F}$.
 	\begin{itemize}
-		\item Uniform distribution on all assignments 
+		\item Uniform distribution over all assignments 
 		$$P(X) = \frac{1}{2^n}$$
 		\item Restriction on valid assignments
 	$$P(X \; | \; X \text{ satisfies } \mathcal{F}) = \frac{1}{\mathcal{N}} \prod_{a \in A} f_a(X)$$
-	\item Goal: Compute $\mu_i := P(x_i = 1 \; X \text{ satisfies } \mathcal{F})$
+	\item Goal: Compute $\mu_i := P(x_i = 1 \; | \; X \text{ satisfies } \mathcal{F})$
 	\end{itemize}
 \end{frame}
 
@@ -41,7 +41,7 @@
 
 \begin{frame}
 	\frametitle{Decimation}
-	Decimation Algorithm is pased on computed marginals
+	Decimation Algorithm is based on computed marginals
 	\begin{itemize}
 		\item Similiar to Warning Propagation
 		\item Run BP Algorithm

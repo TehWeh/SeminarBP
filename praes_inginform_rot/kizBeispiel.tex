@@ -16,9 +16,9 @@
 \usepackage{array}
 \usepackage{colortbl} % ING INF PSY
 \usepackage{tikz}
-\usetikzlibrary{arrows}
 \usepackage{listings}
 \usepackage{verbatim}
+\usetikzlibrary{arrows, decorations.markings}
 
 % Anfang der Titelfolie
 % Anpassung von: Titel, Untertitel, Autor, Datum und Institut
@@ -27,8 +27,7 @@
 %\subtitle{Manchmal wird ein Untertitel ben\"{o}tigt, der ebenfalls einzeilig oder mehrzeilig sein kann}
 \author{Michael Ruderer}
 \newcommand{\presdatum}{\today} % alternativ zu \today: Eingabe eines festen Datums
-\institute
-{Uni Ulm\\}
+\institute{Uni Ulm\\}
 %Ende der Titelfolie
 
 
@@ -56,6 +55,7 @@
 
 % 1. Folie
 \section{Begriffe}
+
 \include{chapters/Begriffe}
 
 \section{Warning Propagation}
@@ -64,6 +64,9 @@
 \section{Belief Propagation}
 \include{chapters/BP}
 \section{Conclusion}
+\frame{
+	\frametitle{Conclusion}
+}
 
 
 \end{document}

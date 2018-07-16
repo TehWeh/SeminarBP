@@ -27,16 +27,16 @@
 
 	\node[rectangle,draw=black, label = {$a$}, fill] (a) at (0,0) {};
 	
-		\node[rectangle,draw=black, label = {$b$}, fill] (b) at (2,0) {};
+	\node[rectangle,draw=black, label = {$b$}, fill] (b) at (2,0) {};
 
-    \draw[-, >= stealth] (a) edge [right] node {} (x1);
+    \draw[-, >= stealth, dashed] (a) edge [right] node {} (x1);
  \draw[-, >= stealth] (b) edge [right] node {} (x1);
 	 \draw[-, >= stealth] (b) edge [right] node {} (x2);
 
 \end{tikzpicture}
 %\caption{Subgraph of a factor tree with all messages required for computing $m_{a \rightarrow i}$}
 \end{figure}
-\item The clause $a$ \emph{fixes} the variable $i$ to a value
+\item The clause $a$ \emph{fixes} the variable $i$ to the value $0$
 \end{itemize}
 \end{frame}
 
@@ -44,7 +44,8 @@
 	\frametitle{Warning Propagation Algorithm}
 	Apply Message Passing to SAT
 	\begin{itemize}
-		\item Variables send their preferred state to factors
+		\item Variable $i$ receives warnings  $u_{b \rightarrow i}$
+		\item $i$ to sends to $a$ its preferred value considering only the neighbours $b \neq a$
 		\item \emph{Cavity Field} $h_{i \rightarrow a}$
 		\begin{itemize}
 		\item $>0$, if $i$ prefers the value $1$    \item $<0$ if $i$ prefers the value $0$
@@ -82,7 +83,7 @@
     \item $j$ prefers to violate $a$, if $J_j^a h_{j \rightarrow a} > 0$ 
     \item Define $\theta(x) = \begin{cases}
       1, & x > 0  \\
-      , & x \leq 0
+      0, & x \leq 0
     \end{cases}$
 	\end{itemize}
 \end{frame}
@@ -152,8 +153,8 @@ $$\mathcal{F} = \overline{x_1} \land x_5 \land (x_1 \lor \overline{x_2} \lor \ov
 \draw[->, >= stealth, dashed] (b) edge [bend right, below] node {\only<6-18>{1}} (x2);
 \only<6>{\draw[->, >= stealth, dashed, thick] (b) edge [bend right, below] node {\only<6-10>{1}} (x2);}
 
-\draw[<-, >= stealth] (b) edge [bend left, above] node[pos = 0.5] {\only<13-17>{0}} (x2);
-\only<13>{\draw[<-, >= stealth, thick] (b) edge [bend left, above] node[pos = 0.5] {0} (x2);}
+\draw[<-, >= stealth, dashed] (b) edge [bend left, above] node[pos = 0.5] {\only<13-17>{0}} (x2);
+\only<13>{\draw[<-, >= stealth, dashed, thick] (b) edge [bend left, above] node[pos = 0.5] {0} (x2);}
 
 
 %\draw[->, >= stealth] (x2) edge [bend right, right] node {\only<1-10>{x}} (c);
@@ -188,8 +189,8 @@ $$\mathcal{F} = \overline{x_1} \land x_5 \land (x_1 \lor \overline{x_2} \lor \ov
 \only<16>{\draw[<-, >= stealth, thick] (e) edge [bend left, above] node {\only<16-18>{0}} (x5);}
 
 
-\draw[<-, >= stealth] (x5) edge [bend left, above] node {\only<15-18>{0}} (b);
-\only<15>{\draw[<-, >= stealth, thick] (x5) edge [bend left, above] node {0} (b);}
+\draw[<-, >= stealth, dashed] (x5) edge [bend left, above] node {\only<15-18>{0}} (b);
+\only<15>{\draw[<-, >= stealth, dashed, thick] (x5) edge [bend left, above] node {0} (b);}
 
 \draw[->, >= stealth, dashed] (x5) edge [bend right, right] node {\only<5-17>{1}} (b);
 \only<5>{\draw[->, >= stealth, thick, dashed] (x5) edge [bend right, right] node {1} (b);}
