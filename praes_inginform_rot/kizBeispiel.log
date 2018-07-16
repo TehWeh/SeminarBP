@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.2)  16 JUL 2018 02:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.2)  16 JUL 2018 03:13
 entering extended mode
 **./kizBeispiel.tex
 (kizBeispiel.tex
@@ -1545,6 +1545,8 @@ Overfull \hbox (8.51207pt too wide) in paragraph at lines 294--295
 
 ] [66
 
+] [67
+
 ])
 \tf@nav=\write7
 \openout7 = `kizBeispiel.nav'.
@@ -1565,10 +1567,10 @@ Package rerunfilecheck Info: File `kizBeispiel.out' has not changed.
 (rerunfilecheck)             Checksum: 6E768674F4DDAE3F334F817F08D0B52E;208.
  ) 
 Here is how much of TeX's memory you used:
- 23813 strings out of 493305
- 448894 string characters out of 3140591
- 559398 words of memory out of 3000000
- 26670 multiletter control sequences out of 15000+200000
+ 23817 strings out of 493305
+ 448929 string characters out of 3140591
+ 559433 words of memory out of 3000000
+ 26672 multiletter control sequences out of 15000+200000
  36826 words of font info for 80 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,20n,59p,799b,1127s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1586,9 +1588,9 @@ ls/msam10.pfb><F:/Programme/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm
 e/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><F:/Programme/MiKTeX 2.9/fonts
 /type1/urw/helvetic/uhvr8a.pfb><F:/Programme/MiKTeX 2.9/fonts/type1/urw/helveti
 c/uhvro8a.pfb>
-Output written on kizBeispiel.pdf (66 pages, 2096221 bytes).
+Output written on kizBeispiel.pdf (67 pages, 2098163 bytes).
 PDF statistics:
- 542 PDF objects out of 1000 (max. 8388607)
- 137 named destinations out of 1000 (max. 500000)
+ 550 PDF objects out of 1000 (max. 8388607)
+ 139 named destinations out of 1000 (max. 500000)
  117 words of extra memory for PDF output out of 10000 (max. 10000000)
 

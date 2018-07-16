@@ -69,11 +69,13 @@
 \headcommand {\beamer@framepages {65}{65}}
 \headcommand {\slideentry {4}{0}{4}{66/66}{}{0}}
 \headcommand {\beamer@framepages {66}{66}}
+\headcommand {\slideentry {4}{0}{5}{67/67}{}{0}}
+\headcommand {\beamer@framepages {67}{67}}
 \headcommand {\beamer@sectionpages {33}{62}}
 \headcommand {\beamer@subsectionpages {33}{62}}
 \headcommand {\sectionentry {4}{Belief Propagation}{63}{Belief Propagation}{0}}
-\headcommand {\beamer@partpages {1}{66}}
-\headcommand {\beamer@subsectionpages {67}{66}}
-\headcommand {\beamer@sectionpages {67}{66}}
-\headcommand {\beamer@documentpages {66}}
-\headcommand {\gdef \inserttotalframenumber {31}}
+\headcommand {\beamer@partpages {1}{67}}
+\headcommand {\beamer@subsectionpages {68}{67}}
+\headcommand {\beamer@sectionpages {68}{67}}
+\headcommand {\beamer@documentpages {67}}
+\headcommand {\gdef \inserttotalframenumber {32}}

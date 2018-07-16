@@ -15,7 +15,7 @@
 		$$P(X) = \frac{1}{2^n}$$
 		\item Restriction on valid assignments
 	$$P(X \; | \; X \text{ satisfies } \mathcal{F}) = \frac{1}{\mathcal{N}} \prod_{a \in A} f_a(X)$$
-	\item Goal: Compute $P(x_i = 1 \; X \text{ satisfies } \mathcal{F})$m
+	\item Goal: Compute $\mu_i := P(x_i = 1 \; X \text{ satisfies } \mathcal{F})$
 	\end{itemize}
 \end{frame}
 
@@ -34,9 +34,20 @@
 	\frametitle{Messages}
 	
 	\begin{itemize}
-		\item WP: $h_{i \rightarrow i}$: preferred value of $i$
-		\item BP: $\gamma_{a \rightarrow i}$: \emph{probability} for $i$ to violate $a$
+		\item WP: $h_{i \rightarrow a}$: preferred value of $i$
+		\item BP: $\gamma_{i \rightarrow a}$: \emph{probability} for $i$ to violate $a$
 	\end{itemize}
-	
-	
 \end{frame}
+
+\begin{frame}
+	\frametitle{Decimation}
+	Decimation Algorithm is pased on computed marginals
+	\begin{itemize}
+		\item Similiar to Warning Propagation
+		\item Run BP Algorithm
+		\item Assign $x_i = 1$ if $\mu_i > 0.5$ and $x_i = 0$ otherwise
+		\item Clean the graph
+	\end{itemize}
+\end{frame}
+
+
