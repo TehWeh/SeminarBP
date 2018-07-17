@@ -35,7 +35,7 @@
 	
 	\begin{itemize}
 		\item WP: $h_{i \rightarrow a}$: preferred value of $i$
-		\item BP: $\gamma_{i \rightarrow a}$: \emph{probability} for $i$ to violate $a$
+		\item BP: $\gamma_{i \rightarrow a}$: \emph{probability} that $i$ has a certain value
 	\end{itemize}
 \end{frame}
 
@@ -45,9 +45,9 @@
 	\begin{itemize}
 		\item Similiar to Warning Propagation
 		\item Run BP Algorithm
+		\item Choose an unassigned variable $x_i$
+		\item Compute the \emph{belief} $\mu_i$
 		\item Assign $x_i = 1$ if $\mu_i > 0.5$ and $x_i = 0$ otherwise
 		\item Clean the graph
 	\end{itemize}
 \end{frame}
-
-
